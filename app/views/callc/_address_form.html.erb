@@ -1,0 +1,86 @@
+<tr>
+  <td align="left"> <%= _('Country') %>: *</td>
+  <td align="left">
+    <div class="nb">
+      <select name="country_id" id="country_id" onchange="get_prefix();">
+        <%
+           comp_country = Confline.get_value("Default_Country_ID").to_i
+           comp_country = session[:reg_country_id] if session[:reg_country_id]
+        %>
+        <% for country in @countries %>            
+			<% dst = Destination.where("direction_code = '#{country.code}'").order("LENGTH(prefix)").first %>
+            <% if dst %>
+			   <option value="<%= country.id %>" 
+			   <% if comp_country.to_s == country.id.to_s %>
+				   <% current_dst = dst %>
+				   selected
+			   <% end %>
+			   >
+               <%= country.name[0,30] %></option> 
+            <% end %> 
+			
+        <% end %>
+      </select>
+
+    </div>
+  </td>
+</tr>
+<tr>
+  <td align="left"> <%= _('Mob_phone') %>: *</td>
+  <td align="left">
+	<table>
+		<tbody>
+			<tr>
+				<td align="left">
+					<div>
+						<span style="font-weight: bold;" id="prefix_number"><%= draw_flag(current_dst.direction_code) %><%= current_dst.prefix  %></span>
+						<%= text_field_tag 'mob_phone', session[:reg_mob_phone], "class" => "input", :size => "20", :maxlength => "20" %>
+						<%= submit_tag _('Send_code'), :type => 'button', :onclick => "send_code();", :id => 'click_commit' %>	
+						<%= _('Verification_code') %>: *
+						<%= text_field_tag 'verif_code', session[:reg_verif_code], "class" => "input", :size => "4", :maxlength => "4" %>
+																    
+					</div>
+					<div id="send_code_result" >
+					</div>
+					<script type="text/javascript">
+						// <![CDATA[
+						function send_code() {
+							new Ajax.Updater('send_code_result', '<%=Web_Dir%>/callc/send_sms_code?country_id=' + $('country_id').value + '&number=' + $('mob_phone').value + '&reg_owner=' + $('id').value, {
+								method:'post',
+								asynchronous:true,
+								evalScripts:true,
+								onComplete:function (request) {
+									Element.hide('spinner');
+									$('click_commit').disabled = false
+								},
+								onLoading:function (request) {
+									Element.show('spinner');
+									$('click_commit').disabled = true
+								}});
+						}
+						function get_prefix() {
+							new Ajax.Updater('prefix_number', '<%=Web_Dir%>/callc/get_prefix?country_id=' + $('country_id').value, {
+								method:'post',
+								asynchronous:true,
+								evalScripts:true,
+								onComplete:function (request) {
+									Element.hide('spinner');
+									$('clock_commit').disabled = false
+								},
+								onLoading:function (request) {
+									Element.show('spinner');
+									$('clock_commit').disabled = true
+								}});
+						}
+						// ]]>
+					</script>					
+				</td>
+			    
+			</tr>
+		</tbody>
+    </table>
+  </td>
+</tr>
+
+
+

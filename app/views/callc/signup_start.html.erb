@@ -1,0 +1,101 @@
+<script>
+    window.onload = function () {
+        document.getElementById('mob_phone').focus()
+    }
+
+</script>
+<div style="background-image: url('https://fututel.com/images/supervoz/City-lights-tokyo_1280.jpg'); height: 700px;">
+<%= form_tag(:action => 'signup_end') do %>
+    <table width="100%">
+      <tr>
+        <td valign="top" align="center">
+          <table class="simple" style="color: white; background-color: rgb(28, 23, 77);">
+		    <tr>
+              <td colspan="2">
+                <h3><%= _('Welcome_signup_page') %></h3>
+              </td>
+            </tr>
+            <tr>
+              <td height="10"></td>
+            </tr>
+			<%= render :partial => 'address_form' %>					
+			<tr>
+                  <td height="10"></td>
+            </tr>
+            <% if Confline.get_value("reCAPTCHA_enabled").to_i == 1 %>
+                </table>
+                <snap><%=raw recaptcha_tags :display => {:theme => 'white'} %> </snap>
+                <table class="simple"  style="color: white;">
+            <% end %>
+            <% if @agreement and @agreement.value == "1" %>
+                <tr>
+                  <script type="text/javascript">
+                      Event.observe(window, 'load', function () {
+                          var agree = $('agree');
+
+                          Event.observe(agree, 'click', function () {
+                              if (agree.checked) {
+                                  $('submit_f').disabled = false;
+
+                              } else {
+                                  $('submit_f').disabled = true;
+
+                              }
+                          });
+                      });
+                  </script>
+                  <td colspan="2" align="left">
+                    <strong><%= _('Terms_and_conditions') %></strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 350px; border: 1px solid #DCDCDC; padding: 0 5px 0 5px;" colspan="2" align="left">
+                    <%= simple_format(@agreement.value2) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="10"></td>
+                </tr>
+                <tr>
+                  <td height="20" colspan="2" align="center">
+                    <%= check_box_tag 'agree', '1', false, :id => "agree" %> <%= _('I_agree') %>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="10"></td>
+                </tr>
+            <% end %>
+            <tr>
+              <td colspan="2" align="center">
+                <% if @agreement and @agreement.value == "1" %>
+                    <%= submit_tag(_('Sign_up'), :disabled => "disabled", :id => "submit_f") %>
+                <% else %>
+                    <%= submit_tag(_('Sign_up'), :id => "submit_f") %>
+                <% end %>
+              </td>
+            </tr>
+			<tr>
+				<td height="20"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center" style="font-size: 12px;">
+					<b><%= _('You_can_login') %> <%= link_to _('here'), {:action => "login", :id => params[:id]}, :style =>"font-size: 14px; color: white;" %></b>
+				</td>
+			</tr>			
+            </table>
+            </td>
+      </tr>
+    </table>
+    <%= hidden_field_tag('id', params[:id]) %>
+<% end %>
+</div>
+
+<% content_for :scripts do %>
+    <script type="text/javascript">
+        $j("#submit_f").click(function () {
+            $j("#submit_f").attr('disabled', 'disabled');
+            $j("#submit_f").attr('value', '<%=_('Processing..')%>');
+            $j("#submit_f").parents("form").submit();
+        });
+    </script>
+<% end %>

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/day_setup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>page_title_icon</td>
+	<td>Day setup</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>date_year</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>page_title_icon</td>
+	<td>New IVR Voice</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>ivr[voice]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ivr[voice]</td>
+	<td>invs</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>ivr[description]</td>
+	<td>good invs</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>IVR Voice created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>page_title_icon</td>
+	<td>Edit IVR Voice</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>voice[description]</td>
+	<td>good invs</td>
+</tr>
+<!--assert-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>user_admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>user_admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/day_setup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>Day setup</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>New IVR Voice</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>Edit IVR Voice</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/destroy/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>IVR Voice deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>IVR Voices</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Refresh</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>//th[1]</td>
+	<td>IVR Voice</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>accountant</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>accountant1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/day_setup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>Day setup</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>New IVR Voice</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>Edit IVR Voice</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/destroy/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>IVR Voice deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>IVR Voices</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Refresh</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>//th[1]</td>
+	<td>IVR Voice</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/day_setup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>Day setup</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>New IVR Voice</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>Edit IVR Voice</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Ivr voice was not found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ivrvoices/destroy/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>IVR Voice deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>page_title_icon</td>
+	<td>IVR Voices</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Refresh</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>//th[1]</td>
+	<td>IVR Voice</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<table class="nb" width="100%">
+  <tr>
+    <td width="45%" valign="top" id="hello">
+      <br/>
+      <%= _('hello') %>, <%= @username %>
+      <br/>
+      <br/>
+
+      <%= raw session[:frontpage_text].to_s.html_safe.encode("UTF-8", :invalid => :replace, :undef => :replace, :replace => "?") %>
+
+      <% if sms_active? && Confline.get_value("Send_SMS_from_Front_page").to_i == 1 && current_user.can_send_sms? %>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <%= raw session[:frontpage_sms_text].to_s.html_safe %>
+          <br/>
+          <%= render :file => "/sms/sms" %>
+      <% end %>
+
+      <% if @user.postpaid == 0 or (@user.postpaid == 1 and Confline.get_value("Hide_payment_options_for_postpaid_users", 0).to_i == 0) %>
+
+          <% if  @pp_enabled == 1 or @wm_enabled == 1 or @vouch_enabled == 1 or @lp_enabled == 1 or @cp_enabled == 1 or @ob_enabled == 1 or @spay_enabled == 1 %>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <%= _('We_accept') %>:
+          <% end %>
+
+          <% if  @vouch_enabled == 1 %>
+              <br/>
+              <br/>
+              <%= link_to image_tag("/images/logo/vouchers_logo.png", :style => 'border-style:none', :title => "Vouchers"), :controller => "vouchers", :action => "voucher_use" %>
+          <% end %>
+		  
+		  <% if @spay_enabled == 1 %>
+              <br/>
+              <br/>
+              <%= link_to image_tag("/images/logo/safetypay-pse.jpg", :style => 'border-style:none', :width => '190', :title => "Pague a través de SafetyPay"), :controller => "payments", :action => "safetypay" %>
+			  <p><%= Confline.get_value("SafetyPay_Frontend_Message").to_s %></p>
+          <% end %>
+		  
+		  <% if @mercadopago_enabled == 1 %>
+              <br/>
+              <br/>
+              <%= link_to image_tag("/images/logo/mercadopago-co.gif", :style => 'border-style:none', :width => '190', :title => "Pague a través de MercadoPago"), :controller => "payments", :action => "mercadopago" %>
+			  <p><%= raw Confline.get_value("MercadoPago_Frontend_Message").to_s.html_safe %></p>
+          <% end %>
+
+		  
+
+		  <% if @balotoc_enabled == 1 %>
+              <br/>
+              <br/>
+              <%= image_tag("/images/logo/balotociti.jpg", :style => 'border-style:none', :width => '190', :title => "Pague a través de Baloto-Citibank") %>
+			  <p><%= raw Confline.get_value("BalotoCiti_Frontend_Message").to_s.html_safe %></p>
+          <% end %>
+		  
+          <% if @pp_enabled == 1 %>
+              <br/>
+              <br/>
+              <%= link_to image_tag("/images/logo/paypal_logo.gif", :style => 'border-style:none', :title => "PayPal", :width => '190'), :controller => "payments", :action => "paypal" %>
+          <% end %>
+
+          <% if @wm_enabled == 1 %>
+              <br/>
+              <br/>
+              <%= link_to image_tag("/images/logo/webmoney_logo.gif", :style => 'border-style:none', :title => "WebMoney", :width => '190'), :controller => "payments", :action => "webmoney" %>
+          <% end %>
+
+          <% if @lp_enabled == 1 %>
+              <br/>
+              <br/>
+              <%= link_to image_tag("/images/logo/linkpoint_logo.jpg", :style => 'border-style:none', :title => "LinkPoint", :width => '190'), :controller => "payments", :action => "linkpoint" %>
+          <% end %>
+
+          <% if  @cp_enabled == 1 %>
+              <br/>
+              <br/>
+              <%= link_to image_tag("/images/logo/cyberplat_logo.gif", :style => 'border-style:none', :title => "Cyberplat") + image_tag("/images/logo/cyberplat_logo.jpg", :style => 'border-style:none', :title => "Cyberplat"), :controller => "payments", :action => "cyberplat" %>
+          <% end %>
+
+          <% if  @ob_enabled == 1 %>
+              <br/>
+              <br/>
+              <table>
+                <tr>
+                  <td>
+                    <%= link_to image_tag("/images/logo/ouroboros_logo.jpg", :style => 'border-style:none', :title => "Ouroboros", :width => '190'), :controller => "payments", :action => "ouroboros" %>
+                  </td>
+                </tr>
+                <% if @ob_link_name.to_s != "" and @ob_link_url.to_s != "" %>
+                    <tr>
+                      <td align="center">
+                        <a href="<%= nice_web(@ob_link_url.to_s) %>" target="cont"><%= @ob_link_name.to_s %></a>
+                      </td>
+                    </tr>
+                <% end %>
+              </table>
+          <% end %>
+
+          <% if payment_gateway_active? %>
+              <% @engine = GatewayEngine.find(:enabled, {:for_user => current_user.id}).enabled_by(current_user.owner_id) %>
+              <% if @engine.size > 0 %>
+                  <% test_env = Confline.get_value("test_production_environment") %>
+                  <table>
+                    <% @engine.enabled_by(current_user.owner_id).gateways.each do |engine, gateways| %>
+                        <% gateways.each do |name, gateway| %>
+                            <% if test_env == "true" %>
+                                <% if gateway.settings['testing'] %>
+                                    <tr>
+                                      <td>
+                                        <br/>
+                                        <br/>
+                                        <%= gateway_link(name, engine, gateway) %>
+                                      </td>
+                                    </tr>
+                                <% end %>
+                            <% else %>
+                                <% unless gateway.settings['testing'] %>
+                                    <tr>
+                                      <td>
+                                        <br/>
+                                        <br/>
+                                        <%= gateway_link(name, engine, gateway) %>
+                                      </td>
+                                    </tr>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                    <% end %>
+                  </table>
+              <% end %>
+          <% end %>
+      <% end %>
+
+    </td>
+
+    <td valign="top">
+
+      <% if Confline.get_value("Hide_quick_stats").to_i == 0 %>
+          <div id="quick_stats">
+            <b><%= _('Quick_stats') %></b> <%= link_to b_refresh+_('Refresh'), '?refresh_stats', onclick: "reload_stats();" %><br/><br/>
+            <table id="quick" class="nb" width="50%">
+              <%= image_tag("290.gif", alt: 'loading', id: 'stat_spinner', border: 0, style: 'margin: 200px; display: none;') %> 
+              <% if params.key? :refresh_stats %>
+                <tbody id='quick_stat'>
+                  <% load_ok? %>
+                  <%= render :partial => 'quick_stat' %>
+                </tbody>
+              <% end %>
+              <script type="text/javascript">
+                function reload_stats() {
+                  this.document.getElementById('stat_spinner').style.display = 'block';
+                  this.document.getElementById('quick_stat').style.display = 'none';
+                }
+              </script>
+            </table>
+          </div>
+      <% end %>
+    </td>
+    <% if current_user.webphone_device and !Confline.get_value2("Webphone_hash", 0).blank?%>
+        <td valign="top" width="200px" align="center"><iframe src="webphone" frameborder="0" width="300px" height="600px" scrolling=no></iframe></td>
+    <%end%>
+  </tr>
+</table>
+<% @temp %>

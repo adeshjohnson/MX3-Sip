@@ -1,0 +1,169 @@
+<tr>
+  <td height="20"></td>
+</tr>
+
+<tr>
+  <td class="bottom_border">
+    <b><%= _('Network_related') %></b>
+  </td>
+</tr>
+<tr>
+  <td height="10"></td>
+</tr>
+<tr>
+  <td valign="top">
+
+    <table class="simple">
+      <% if @device
+           device_host = @device.host
+           device_ipaddr = @device.ipaddr
+           device_port = @device.port
+           device_regseconds = @device.regseconds
+           device_canreinvite = @device.canreinvite
+           device_nat = @device.nat
+           device_qualify = @device.qualify
+           device_type = (@device.device_type ? @device.device_type : @device_type)
+           device_trunk = @device_trunk
+         else
+           device_host = Confline.get_value("Default_device_host", session[:user_id])
+           device_ipaddr = Confline.get_value("Default_device_ipaddr", session[:user_id])
+           device_port = Confline.get_value("Default_device_port", session[:user_id])
+           device_regseconds = Confline.get_value("Default_device_regseconds", session[:user_id]).to_i
+           device_canreinvite = Confline.get_value("Default_device_canreinvite", session[:user_id])
+           device_nat = Confline.get_value("Default_device_nat", session[:user_id])
+           device_qualify = Confline.get_value("Default_device_qualify", session[:user_id])
+       end %>
+
+
+
+      <% if !@device.username.blank? %>
+          <tr id='dev_reg_line'>
+            <td id='registration_expire'>
+              <% if @device_type == "SIP" %>
+                  <%= _('Registration_will_expire') %>:
+              <% else %>
+                  <%= _('Last_time_registered') %>:
+              <% end %>
+            </td>
+            <td id='registration_expire_time'>
+              <b>
+                <% if device_regseconds.to_i > 0 %>
+                    <%= nice_date_time(Time.at(device_regseconds)) %>
+                <% else %>
+                    <%= _('Never') %>
+                <% end %>
+
+              </b>
+            </td>
+          </tr>
+      <% end %>
+
+      <tr>
+        <td colspan=2>
+          <%= _('Media_control') %> - <%= _('canreinvite') %>:
+          <select id="canreinvite" name="device[canreinvite]">
+            <option value="no" <%= "selected" if device_canreinvite == "no" %>> <%= _('no') %></option>
+            <option value="yes" <%= "selected" if device_canreinvite == "yes" %>> <%= _('yes') %></option>
+            <option value="nonat" <%= "selected" if device_canreinvite == "nonat" %>> <%= _('nonat') %></option>
+            <option value="update" <%= "selected" if device_canreinvite == "update" %>> <%= _('update_small') %></option>
+            <option value="update,nonat" <%= "selected" if device_canreinvite == "update,nonat" %>> <%= _('update_small') %>,<%= _('nonat') %></option>
+          </select>
+        </td>
+      </tr>
+      <script type="text/javascript">
+          //<![CDATA[
+          function disable_media_control_if_necesary(value) {
+              /*if some other than SIP device type was selected, then disable
+               canreinvite option completly*/
+              var canreinvite = $('canreinvite');
+              var enable = (value != 'SIP');
+              canreinvite.disabled = enable;
+          }
+
+          /*add event listener for onload event and for onclick event for all device
+           type checkboxes.
+           TODO: should be using jquery to get element by name*/
+          Event.observe(window, 'load', function () {
+              var type = '<%= @device_type.to_s %>';
+              disable_media_control_if_necesary(type);
+
+              if ($('registration_expire') && <%= @device_type == "SIP" %>) {
+                  Event.observe($('ip_authentication_dynamic_2'), 'click', function () {
+                      $('registration_expire').hide();
+                  });
+                  Event.observe($('ip_authentication_dynamic_1'), 'click', function () {
+                      $('registration_expire').show();
+                  })
+              }
+
+          })
+          //]]>
+      </script>
+
+      <tr>
+        <td colspan=2>
+          NAT:
+          <%= radio_button_tag('device[nat]', 'no', checked = (device_nat == 'no')) %> <%= _('No') %>
+          <%= radio_button_tag('device[nat]', 'yes', checked = (device_nat == 'yes')) %> <%= _('Yes') %>
+          <% if ast_18? %>
+            <%= radio_button_tag('device[nat]', 'force_rport', checked = (device_nat == 'force_rport') ) %> <%= _('force_rport') %>
+            <%= radio_button_tag('device[nat]', 'comedia', checked = (device_nat == 'comedia') ) %> <%= _('comedia') %>
+          <% else %>
+            <%= radio_button_tag('device[nat]', 'never', checked = (device_nat == 'never')) %> <%= _('Never') %>
+            <%= radio_button_tag('device[nat]', 'route', checked = (device_nat == 'route') ) %> <%= _('Route') %>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan=2>
+          <div id="qualify_row1">
+            <%= _('Qualify') %>:
+            <%= radio_button_tag('qualify', 'no', device_qualify == 'no') %> <%= _('No') %>
+            <%= radio_button_tag('qualify', 'yes', device_qualify != 'no') %> <%= _('Yes') %>
+            &nbsp;<%= text_field_tag 'qualify_time', @qualify_time, "class" => "input", :size => "5", :maxlength => "10", :disabled => device_qualify == 'no' %>
+            ms
+          </div>
+          <% if ccl_active? %>
+            <div id="qualify_row2">
+              <%= _('Qualify') %>:
+              <%= _('No') %>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <% if device_type == "IAX2" or (@device_type == "IAX2" rescue false) %>
+      <tr>
+        <td colspan=2>
+          IAX2 Trunking Mode:
+          <%= radio_button_tag('iax2_trunking', 'no', checked = (device_trunk == 'no')) %> <%= _('No') %>
+          <%= radio_button_tag('iax2_trunking', 'yes', checked = (device_trunk == 'yes')) %> <%= _('Yes') %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+
+  </td>
+</tr>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+    function check(checked) {
+        if ($('qualify_yes').checked) {
+            $('qualify_time').disabled = false;
+        } else {
+            $('qualify_time').disabled = true;
+        }
+    }
+    Event.observe(window, 'load', function () {
+        check($('qualify_yes').checked);
+        Event.observe($('qualify_yes'), 'click', function () {
+            check($('qualify_yes').checked)
+        });
+        Event.observe($('qualify_no'), 'click', function () {
+            check($('qualify_yes').checked)
+        });
+    });
+    //]]>
+</script>

@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>country_stats</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">country_stats</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/various_calls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/calls_for_user_graphs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please note that incoming calls are not included in Country Stats. </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=img[alt=&quot;Information&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_year</td>
+	<td>label=2009</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_month</td>
+	<td>label=January</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_day</td>
+	<td>label=7</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_year</td>
+	<td>label=2013</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_month</td>
+	<td>label=December</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_day</td>
+	<td>label=31</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name_376</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tr.row1 &gt; td</td>
+	<td>Ecuador</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tr.row2 &gt; td</td>
+	<td>Lithuania</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_376</td>
+	<td>Senegal</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_396</td>
+	<td>Spain</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_448</td>
+	<td>United States</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_125</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_250</td>
+	<td>46</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_376</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_396</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_448</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>logins_img376</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Stats by HangupCause codes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=country_id</td>
+	<td>Senegal</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tr.row1 &gt; td</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='table']/table[2]/tbody/tr[2]/td[3]</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tr.row2 &gt; td</td>
+	<td>16</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='table']/table[2]/tbody/tr[3]/td[3]</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=country_id</td>
+	<td>label=United States</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Country: United States</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tr.row1 &gt; td</td>
+	<td>16</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='table']/table[2]/tbody/tr[2]/td[3]</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats?csv=1&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;46&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;2&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;1&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;12&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=user_id</td>
+	<td>label=user_admin - Test User #1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_125</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_250</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_376</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_396</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_448</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats?csv=1&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;1&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;10&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;2&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;55&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;16&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=user_id</td>
+	<td>label=accountant - Test Accountant</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>calls_250</td>
+	<td>16</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats?csv=1&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;16&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;1&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;11&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>&quot;calls&quot;=&gt;&quot;55&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=img[alt=&quot;Chart_pie&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Chart_pie&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Stats by HangupCause codes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=country_id</td>
+	<td>Ecuador</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Country: Ecuador</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=country_id</td>
+	<td>label=Lithuania</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_user</td>
+	<td>label=Test User #1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=s_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_device</td>
+	<td>label=IAX2/1002</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Country: Lithuania</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='table']/table[2]/tbody/tr[2]/td[3]</td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Call&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/last_calls_stats?csv=1&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;destination&quot;=&gt;&quot;Lithuania MOB Lithuania mobile&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats</td>
+	<td></td>
+</tr>
+<!--user dropdowne neturi buti admino, nes jam negalima daryti skambuciu-->
+<tr>
+	<td>assertText</td>
+	<td>name=user_id</td>
+	<td>All accountant - Test Accountant reseller - Test Reseller user_admin - Test User #1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=csv_file_size</td>
+	<td>9999999999999999999999999999</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=own_providers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed: </td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats?date_from[year]=2009&amp;date_from[month]=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Export to CSV</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/country_stats?csv=1&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>&quot;dg_name&quot;=&gt;&quot;Lithuania&quot;, &quot;dg_type&quot;=&gt;&quot;MOB&quot;, &quot;calls&quot;=&gt;&quot;10&quot;, &quot;billsec&quot;=&gt;&quot;490&quot;, &quot;selfcost&quot;=&gt;&quot;96&quot;, &quot;price&quot;=&gt;&quot;95&quot;, &quot;profit&quot;=&gt;&quot;-1&quot;</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<script type="text/javascript">
+	
+    function get_prefix(value) {
+        new Ajax.Updater('results', '<%= Web_Dir %>/stats/prefix_finder_find?prefix=' + encodeURIComponent(value), {asynchronous:true, evalScripts:true, onComplete:function (request) {
+            Element.hide('spinner');
+            Element.toggle('spinner2');
+        }, onLoading:function (request) {
+            Element.show('spinner');
+            Element.toggle('spinner2');
+        } })
+    }
+    function get_country(value) {
+        new Ajax.Updater('country_results', '<%= Web_Dir %>/stats/prefix_finder_find_country?prefix=' + encodeURIComponent(value), {asynchronous:true, evalScripts:true, onComplete:function (request) {
+            Element.hide('spinner');
+            Element.toggle('spinner2');
+        }, onLoading:function (request) {
+            Element.show('spinner');
+            Element.toggle('spinner2');
+        } })
+    }
+    function get_rate(value) {
+        new Ajax.Updater('rate_results', '<%= Web_Dir %>/stats/rate_finder_find?prefix=' + encodeURIComponent(value), {asynchronous:true, evalScripts:true, onComplete:function (request) {
+            Element.hide('spinner');
+            Element.toggle('spinner2');
+        }, onLoading:function (request) {
+            Element.show('spinner');
+            Element.toggle('spinner2');
+        } })
+    }
+	
+	function get_search(e)
+	{ 
+		var event = e || window.event;		
+		if(event.keyCode == 13 || event.which == 13) 
+		{   			
+			switch (this.id)
+			{
+				case "search":
+					get_prefix(this.value);
+					break;
+				case "country_search":
+					get_country(this.value);
+					break;
+				case "rate_search":
+					get_rate(this.value);				
+			}
+		} 
+	}
+	
+</script>
+
+<b><%= _("Type_Prefix_To_Get_Destination") %></b>:
+<%= text_field_tag :search, "", "class" => "input", :onkeyup => "get_search.call(this);" %>
+<br/>
+<br/>
+<div id="results"><br/></div>
+<br/>
+<br/>
+<b><%= _("Type_Country") %></b>:
+<%= text_field_tag :country_search, "", "class" => "input", :onkeyup => "get_search.call(this);" %>
+<div id="country_results"></div>
+
+<br/>
+<br/>
+<b><%= _("Type_number_To_Get_Rate") %></b>:
+<%= text_field_tag :rate_search, "", "class" => "input", :onkeyup => "get_search.call(this);" %>
+<br/>
+<br/>
+<div id="rate_results"></div>

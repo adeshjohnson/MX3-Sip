@@ -1,0 +1,17 @@
+<% dids = plan.dids %>
+<td align="left" id='<%= id %>'
+    <% if dids.size.to_i > 0 %>
+>
+<% if dids.size > 10 %>
+<%=raw dids.size %> DID(s) 
+<% else %>
+<% dids.limit(10).map do |did| %>
+<%= link_to did.did, :controller => 'dids', :action => "edit", :id => did.id %>
+<br/>
+<% end %>
+<% end %>
+<% else %>
+class='red' <%= raw tooltip(_('DP_without_DID'), _('DP_without_DID_explanation')).html_safe %> >
+<%= link_to b_warning + _('Assign_DID'), {:controller => :dids, :action => :list}, :id => "dp_not_assign_#{plan.id}" %>
+<% end %>
+</td>

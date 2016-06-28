@@ -1,0 +1,49 @@
+<table>
+  <tr>
+    <td colspan="2"><%= b_info + _('Showing_users_with_email_only') %></td>
+  </tr>
+  <tr>
+    <td><%= _('Show_Block_Users') %></td>
+    <td>
+      <%= radio_button_tag('sbu', 0, (@options[:sbu].to_s == 'false'), :onclick=>'update_users();') %> <%= _('No') %>
+      <%= radio_button_tag('sbu', 1, (@options[:sbu].to_s == 'true'), :onclick=>'update_users();') %> <%= _('Yes') %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= _('Show_Hidden_Users') %></td>
+    <td>
+      <%= radio_button_tag('shu', 0, (@options[:shu].to_s == 'false'), :onclick=>'update_users();') %> <%= _('No') %>
+      <%= radio_button_tag('shu', 1, (@options[:shu].to_s == 'true'), :onclick=>'update_users();') %> <%= _('Yes') %>
+    </td>
+  </tr>
+</table>
+<br />
+<br />
+<br />
+<%= form_tag({:action => 'send_emails', :id => @email.id}, :name => "emails_form") %>
+
+<div align="center" id='users_list'>
+  <%= render :partial => 'send_emails_users_list' %>
+</div>
+<br/>
+<%= submit_tag _('Send'), :disable_with => _('Processing..') %>
+<br/>
+<br/>
+
+<script type="text/javascript">
+    // <![CDATA[
+    function update_users() {
+        new Ajax.Updater('users_list', '<%=Web_Dir%>/emails/users_for_send_email?sbu=' + $('sbu_1').checked + '&shu=' + $('shu_1').checked, {
+            method:'post',
+            asynchronous:true,
+            evalScripts:true,
+            onComplete:function (request) {
+                Element.hide('spinner');
+               },
+            onLoading:function (request) {
+                Element.show('spinner');
+               }});
+    }
+    // ]]>
+</script>
+

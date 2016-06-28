@@ -1,0 +1,1256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>manage_device2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">manage_device2</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<!--* check if javascript magic in device edit works (dynamic?)-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=ip_authentication_dynamic_2</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>host</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>port</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>host</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>port</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>host</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>port</td>
+	<td>4569</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>grace_time</td>
+	<td>14</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_secret</td>
+	<td>12345678</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>settings updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=ip_authentication_dynamic_2</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>host</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>port</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ip_authentication_dynamic_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>grace_time</td>
+	<td>14</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--h323 tell time-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_device_type_H323</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_description</td>
+	<td>H323 device</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_tell_time_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>device_tell_time_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_tell_time_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_tell_time_0</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_tell_time_0</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_tell_time_1</td>
+	<td>on</td>
+</tr>
+<!--* validate device creation by POST!-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/create?user_id=5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_enable_mwi_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_enable_mwi_1</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>device_enable_mwi_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[@id='edit_link_4']/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_enable_mwi_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Device details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>mailbox_value</td>
+	<td>1002@default</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>enable_mwi_value</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>device_enable_mwi_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device's settings updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>device_enable_mwi_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>device_enable_mwi_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>WzBoDyI</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOut</td>
+	<td>device_enable_mwi_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>WzBoDyI</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_enable_mwi_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>device_enable_mwi_1</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Device details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>mailbox 	1002@default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>mailbox_value</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>enable_mwi_value</td>
+	<td>0</td>
+</tr>
+<!--* should not allow to save device which is not dynamic, uses IP authentication and has no host set.-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>host</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device was not updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You must specify proper host name in case IP authentication is used</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>host</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device's settings updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_update?487999999</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device was not found</td>
+	<td></td>
+</tr>
+<!--* assert device codec sorting-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#item_1 input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>css=#item_1 input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#item_2 input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>css=#item_2 input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>codec[alaw]</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>codec[ulaw]</td>
+	<td>on</td>
+</tr>
+<!--* assert if dev_ind_0 changes position-->
+<!--netinkamas tikrinamas: elementu pavadinimai ir id nesikeiciau sukeitus vietomis, nors vizualiai susikeicia-->
+<!--<tr> 	<td>assertElementPresent</td> 	<td>css=#item_1 #dev_ind_0</td> 	<td></td> </tr> <tr> 	<td>dragAndDropToObject</td> 	<td>item_1</td> 	<td>item_2</td> </tr> <tr> 	<td>assertElementNotPresent</td> 	<td>css=#item_1 #dev_ind_1</td> 	<td></td> </tr> <tr> 	<td>assertElementPresent</td> 	<td>css=#item_1 #dev_ind_0</td> 	<td></td> </tr> <tr> 	<td>open</td> 	<td>/billing/devices/device_edit/2</td> 	<td></td> </tr> <tr> 	<td>assertElementPresent</td> 	<td>css=#item_1 #dev_ind_1</td> 	<td></td> </tr> <tr> 	<td>assertElementNotPresent</td> 	<td>css=#item_1 #dev_ind_0</td> 	<td></td> </tr>-->
+<tr>
+	<td>open</td>
+	<td>billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_description</td>
+	<td>testdevice1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>IP Authentication is disabled when Host is marked as dynamic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOut</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Registration will expire</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=host</td>
+	<td>1.1.1.1</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Registration will expire</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_description</td>
+	<td>testdevice2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=host</td>
+	<td>1.1.1.1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=ip_authentication_dynamic_1</td>
+	<td>on</td>
+</tr>
+<!--tikrinama, ar viskas, kas buvo ivesta pries ismetant klaida, islieka-->
+<tr>
+	<td>type</td>
+	<td>id=device_description</td>
+	<td>Test Device #1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_pin</td>
+	<td>70828</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_extension</td>
+	<td>1004</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=device[dtmfmode]</td>
+	<td>label=info</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_timeout</td>
+	<td>80</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_max_timeout</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=trunk_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=call_limit</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ip_authentication_dynamic_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_secret</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_name</td>
+	<td>device-name</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cid_number</td>
+	<td>wrong callerid number</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cid_name</td>
+	<td>caller id name</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=canreinvite</td>
+	<td>label=yes</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_nat_force_rport</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=qualify_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=qualify_time</td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=callgroup</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=pickupgroup</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vm_email</td>
+	<td>wrong email format</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_enable_mwi_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=codec_g723</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=codec_g726</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=fromuser</td>
+	<td>from user</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=fromdomain</td>
+	<td>from domain</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_trustrpid_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_sendrpid_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=insecure_invite</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_promiscredir_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=grace_time</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//td[2]/table/tbody/tr[13]/td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_progressinband_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_videosupport_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_allow_duplicate_calls_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_fake_ring_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_language</td>
+	<td>lt</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_use_ani_for_cli_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=device_calleridpres</td>
+	<td>label=Presentation Allowed, Failed Screen</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=device[change_failed_code_to]</td>
+	<td>label=18 no user responding / 408 Request Timeout</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;18&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=forward_did</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_anti_resale_auto_answer_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_time_limit_per_day</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_transport_tcp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_t38pt_udptl_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_encryption_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=block_callerid_enable_yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=forward_did</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=forward_did</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_tell_rate_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_tell_balance_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_tell_time_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_tell_rtime_when_left</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_repeat_rtime_every</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_qf_tell_balance_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_qf_tell_time_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=process_sipchaninfo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_call_log</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_record_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_recording_to_email_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_record_forced_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_recording_keep_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_recording_email</td>
+	<td>test@email.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=vm_psw</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device was not updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device CallerID Number must be numerical</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Extension is in use</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Wrong format of Email Address</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_description</td>
+	<td>Test Device #1</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_pin</td>
+	<td>70828</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_extension</td>
+	<td>1004</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>device[dtmfmode]</td>
+	<td>info</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_timeout</td>
+	<td>80</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_max_timeout</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=trunk_2</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=call_limit</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=ip_authentication_dynamic_2</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_secret</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_name</td>
+	<td>device-name</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=cid_number</td>
+	<td>wrong callerid number</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=cid_name</td>
+	<td>caller id name</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=canreinvite</td>
+	<td>yes</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_nat_force_rport</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=qualify_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=qualify_time</td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=callgroup</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=pickupgroup</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=vm_email</td>
+	<td>wrong email format</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=vm_psw</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_enable_mwi_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=codec_g723</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=codec_g726</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=fromuser</td>
+	<td>from user</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=fromdomain</td>
+	<td>from domain</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_trustrpid_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_sendrpid_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=insecure_invite</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_promiscredir_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=grace_time</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_progressinband_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_videosupport_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_allow_duplicate_calls_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_fake_ring_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_language</td>
+	<td>lt</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_use_ani_for_cli_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=device_calleridpres</td>
+	<td>Presentation Allowed, Failed Screen</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=device[change_failed_code_to]</td>
+	<td>18 no user responding / 408 Request Timeout</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_anti_resale_auto_answer_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_time_limit_per_day</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_transport_tcp</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_t38pt_udptl_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_encryption_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=block_callerid_enable_yes</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=forward_did</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_tell_rate_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_tell_balance_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_tell_time_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_tell_rtime_when_left</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_repeat_rtime_every</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_qf_tell_balance_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_qf_tell_time_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=process_sipchaninfo</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=save_call_log</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_record_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_recording_to_email_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_record_forced_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_recording_keep_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_recording_email</td>
+	<td>test@email.com</td>
+</tr>
+<!--This must be the last in the AT-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/drop_devices_server_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DB is outdated, please upgrade it</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=page_title</td>
+	<td>Devices</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_description</td>
+	<td>aaaaaa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DB is outdated, please upgrade it</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<table width="50%" class="simple">
+  <tr>
+    <td><%= _('Name') %>:</td>
+    <td><%= text_field 'service', 'name', "class" => "input" %></td>
+  </tr>
+  <tr>
+    <td><%= _('Type') %>:</td>
+    <td>
+      <%= radio_button :service, :servicetype, :periodic_fee, {:onChange => "show_params(this.value);"} %> <%= _('periodic_fee') %>
+      <br>
+      <%= radio_button :service, :servicetype, :one_time_fee, {:onChange => "show_params(this.value);"} %> <%= _('one_time_fee') %>
+      <br>
+      <%= radio_button :service, :servicetype, :flat_rate, {:onChange => "show_params(this.value);"} %> <%= _('flat_rate') %>
+      <br>
+    </td>
+  </tr>
+  <tr id="period_options">
+    <td> <%= _('Period') %>:</td>
+    <td>
+      <select name="service[periodtype]">
+        <option value="month" <%= "selected" if @service.periodtype == "month" %>> <%= _('month') %> </option>
+        <option value="day" <%= "selected" if @service.periodtype == "day" %>> <%= _('day') %> </option>
+      </select>
+    </td>
+  </tr>
+  <% if can_see_finances? %>
+    <tr id="price_options">
+      <td> <%= _('Sell_Price') %> (<%= current_user.currency.name %>):</td>
+      <td> <%= text_field_tag 'service[price]', nice_number(@service.price), "class" => "input", :disabled => (current_user.is_accountant? and not accountant_can_write?('see_financial_data')), :onkeyup => "this.value=this.value.replace(/[^0-9.-]/,'');" %></td>
+    </tr>
+    <tr id="price_options2">
+      <td> <%= _('Self-Cost') %> (<%= current_user.currency.name %>):</td>
+      <td> <%= text_field_tag 'service[selfcost_price]', nice_number(@service.selfcost_price), "class" => "input", :disabled => (current_user.is_accountant? and not accountant_can_write?('see_financial_data')), :onkeyup => "this.value=this.value.replace(/[^0-9.-]/,'');" %></td>
+    </tr>
+  <% end %>
+  <tr id="quantity_options">
+    <td> <%= _('Minutes') %>/<%= _('month') %>:</td>
+    <td> <%= text_field_tag 'service[quantity]', @service.quantity, "class" => "input", :onkeyup=>"this.value=this.value.replace(/[^0-9-]/,'');" %></td>
+  </tr>
+
+
+</table>
+<div id="foo">
+</div>
+
+<script type="text/javascript">
+
+    function show_params(val) {
+        if (val == "periodic_fee") {
+        <%=
+          update_page do |page|
+            page.show("period_options")
+            page.hide("quantity_options")
+            if can_see_finances?
+              page.show("price_options")
+              page.show("price_options2")
+            end
+          end
+        %>
+        } else if (val == "one_time_fee") {
+        <%=
+          update_page do |page|
+            page.hide("period_options")
+            page.hide("quantity_options")
+            if can_see_finances?
+              page.show("price_options")
+              page.show("price_options2")
+            end
+          end
+        %>
+        } else if (val == "flat_rate") {
+        <%=
+          update_page do |page|
+            page.hide("period_options")
+            page.show("quantity_options")
+            if can_see_finances?
+              page.show("price_options")
+              page.show("price_options2")
+            end
+          end
+        %>
+        } else {<%=
+          update_page do |page|
+            page.hide("period_options")
+            page.hide("quantity_options")
+            if can_see_finances?
+              page.hide("price_options")
+              page.hide("price_options2")
+            end
+          end
+%>
+        }
+    }
+    show_params("<%= @service.servicetype %>");
+</script>

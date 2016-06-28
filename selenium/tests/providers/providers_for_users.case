@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>providers_for_users.case</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/acc_groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Not Found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/providers/provider_test_data</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Not Found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Assign Provider</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Assign Provider</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=provdevice</td>
+	<td>commonusepro1 - SIP /0.0.0.0 commonusepro2 - SIP /0.0.0.0 commonusepro3 - SIP /0.0.0.0 commonusepro4 - SIP /65.8.78.45 commonusepro5 - SIP /65.8.78.45 commonusepro_h323 - H323 /0.0.0.0 dahdi_provider - dahdi /0.0.0.0 Test Provider - IAX2 /22.33.44.55 Test Provider - IAX2 /22.33.44.55 Test Provider #2 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>provdevice</td>
+	<td>label=commonusepro1 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider assigned</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller21</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>provdevice</td>
+	<td>commonusepro1 - SIP /0.0.0.0 commonusepro2 - SIP /0.0.0.0 commonusepro3 - SIP /0.0.0.0 commonusepro4 - SIP /65.8.78.45 commonusepro5 - SIP /65.8.78.45 Test Provider - IAX2 /22.33.44.55 Test Provider #2 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Assign Provider</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=provdevice</td>
+	<td>proforrspro1 - SIP /0.0.0.0 proforrspro2 - SIP /0.0.0.0 proforrspro3 - SIP /0.0.0.0 proforrspro4 - SIP /0.0.0.0 proforrspro5 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>provdevice</td>
+	<td>label=proforrspro3 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider assigned</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Assign Provider</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=provdevice</td>
+	<td>proforrspro1 - SIP /0.0.0.0 proforrspro2 - SIP /0.0.0.0 proforrspro4 - SIP /0.0.0.0 proforrspro5 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>provdevice</td>
+	<td>label=proforrspro4 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider assigned</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Assign Provider</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>provdevice</td>
+	<td>proforrspro1 - SIP /0.0.0.0 proforrspro2 - SIP /0.0.0.0 proforrspro5 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>provdevice</td>
+	<td>label=proforrspro5 - SIP /0.0.0.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider assigned</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>description_19</td>
+	<td>proforrspro3</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>description_20</td>
+	<td>proforrspro4</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>description_21</td>
+	<td>proforrspro5</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/14</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>provider_name</td>
+	<td>proforrspro4</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Edit Provider: proforrspro4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//a[@id='unassign_link_13']/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//a[@id='unassign_link_13']/img[@title=&quot;Unassign provider&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#unassign_link_15 &gt; img[alt=&quot;User_delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider unassigned</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Edit Provider: proforrspro3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider was not found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/destroy/19</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Provider unassigned</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>user_rspro</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User was not found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller21</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>description_19</td>
+	<td>proforrspro3</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>description_20</td>
+	<td>proforrspro4</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/providers/providers_delete_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

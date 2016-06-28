@@ -1,0 +1,86 @@
+<% if @results and @results.length > 0 %>
+  <%= draw_flag(@flag) if @flag %> <%= @results %>
+<% elsif params[:prefix].present? %>
+  <%= _('NO_RESULTS') %>
+<% end %>
+
+<% if !@results2.blank? %>
+  <br/>
+  <%= draw_flag(@flag2) if @flag2 %>
+  <% if reseller? or @callshop.to_i > 0 %>
+    <%= @results2 %>
+  <% else %>
+    <%= link_to @results2, :controller => :destination_groups, :action => :destinations, :id => @dg.id %>
+  <% end %>
+<% end %>
+
+<% if @rates && (@rates.size.to_i > 0) %>
+  <br/>
+  <br/>
+  <b><%= _('Rates') %>:</b>
+  <br/>
+  <% @rates.group_by{ |rate| [rate['purpose']] }.map { |key, rates_grouped_by_purpose| %>
+    <% first_rate = rates_grouped_by_purpose[0] %>
+    <% first_rate_purpose = first_rate.tariff.purpose.to_s %>
+    <% if first_rate.tariff %>
+        <br/>
+        <br/>
+        <b style='text-decoration:underline;'>
+          <%= _('User_Retail') if first_rate_purpose == 'user' %>
+          <%= _('Provider') if first_rate_purpose == 'provider' %>
+          <%= _('User_Wholesale') if first_rate_purpose == 'user_wholesale' %>
+          <%= _('Tariffs') %>:
+        </b>
+        <br/>
+    <%end%>
+    <% rates_grouped_by_purpose.group_by{ |rate| [rate.tariff_id] }.map { |key, rates_grouped_by_tariff| %>
+      <% first_rate = rates_grouped_by_tariff[0] %>
+      <br/>
+      <b>
+        <% if @callshop.to_i > 0 %>
+          <% @booths.each { |booth|
+            if booth.tariff_id.to_i == first_rate.tariff.id.to_i and booth.gusertype != 'manager' %>
+              Booth <%= booth.position %>
+            <% end } %>
+        <% else %>
+          <%= first_rate.tariff.name.to_s %>:
+        <% end %>
+      </b>
+      <% rates_grouped_by_tariff.each { |rate| %>
+      <% effective_from = rate.effective_from %>
+      <% currency = rate.tariff.currency %>
+      <% color = (rate.active == 0) ? 'color: #BFBFBF;' : ''; text_color = "style=\"#{color}\"".html_safe if color.present? %>
+        <div <%= text_color %>>
+          <% if rate.tariff.purpose == 'user' %>
+            <% rate.aratedetails.each { |rr| %>
+                <%= nice_time2 rr.start_time %> - <%= nice_time2 rr.end_time %> => <%= rr.price %>
+                (<%= rate.tariff.currency %>)
+                <% if rate.tariff.currency != Currency.get_default.name%>
+                    / <%= nice_number(rr.price * Currency.count_exchange_rate(currency,  Currency.get_default.name)) %> (<%= Currency.get_default.name %>)
+                <%end%>
+                <% if effective_from.present? %>
+                <%= _('Effective_from') %>: <%= nice_date_time effective_from %>
+                <% end %>
+            <% } %>
+          <% else %>
+            <% rate.ratedetails.each { |rr| %>
+              <%= nice_time2 rr.start_time %> - <%= nice_time2 rr.end_time %> => <%= rr.rate %>
+              (<%= rate.tariff.currency %>)
+              <% if rate.tariff.currency != Currency.get_default.name%>
+                  / <%= nice_number(rr.rate * Currency.count_exchange_rate(currency, Currency.get_default.name)) %> (<%= Currency.get_default.name %>)
+              <%end%>
+              <% if effective_from.present? %>
+              <%= _('Effective_from') %>: <%= nice_date_time effective_from %>
+              <% end %>
+            <% } %>
+          <% end %>
+          <br/>
+        </div>
+      <% } %>
+    <% } %>
+  <% } %>
+<% elsif !@results2.blank? %>
+  <p>
+<%= _("Rate_for_this_prefix_is_not_set") %>
+</p>
+<% end %>

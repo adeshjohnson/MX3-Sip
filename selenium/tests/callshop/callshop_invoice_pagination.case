@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title> callshop _invoice_pagination</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3"> callshop _invoice_pagination</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/callshop/callshop</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/groups/members/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=new_member</td>
+	<td>label=cs_manager - Callshop manager #1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Make this user a manager</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=new_member</td>
+	<td>label=cs_user1 - Callshop user 1 #1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=new_member</td>
+	<td>label=cs_user2 - Callshop user 2 #1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>cs_manager</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>cs_manager</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--su puslapiavimu-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>items_per_page</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/callshop/callshop_calls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>cs_manager</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>cs_manager</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#booth-7 a.end-session</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=tr.slide</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='End Session and Generate Invoice']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.question</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.question span.yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=tr.slide</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/callshop/callshop_calls_postpaid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>cs_manager</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>cs_manager</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#booth-7 a.end-session</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=tr.slide</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='End Session and Generate Invoice']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.question</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.question span.yes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>css=tr.slide</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>postpaid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=span.current</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>prepaid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=td.comment</td>
+	<td>postpaid komentaras</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=td.amount</td>
+	<td>15.0000 USD</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>10.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>prepaid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>link=Amount</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().$.active == 0</td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>10.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>komentaras</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>15.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>postpaid komentaras</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>link=User type</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().$.active == 0</td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>15.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>postpaid komentaras</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().$.active == 0</td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>10.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>prepaid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callshop/invoices/2?page=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>link=Comment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().$.active == 0</td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>10.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>komentaras</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().$.active == 0</td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>15.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>postpaid komentaras</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().$.active == 0</td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>15.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>postpaid komentaras</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getUserWindow().$.active == 0</td>
+	<td>15000</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>10.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>prepaid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callshop/invoice_print/2?invoice_id=10</td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>5.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//table[@id='calls']/tbody/tr/td[5]</td>
+	<td>5.0000 USD</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='calls']/tbody/tr[2]/td[5]</td>
+	<td>5.0000 USD</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='calls']/tbody/tr[3]/td[5]</td>
+	<td>5.0000 USD</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='calls']/tfoot/tr/td[3]</td>
+	<td>15.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='calls']/tfoot/tr/td[2]</td>
+	<td>exact:00:00:03</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT+08:00) Singapore</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed: Callshop manager #1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT+13:00) Nuku'alofa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Personal details changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>cs_manager</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>cs_manager</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callshop/invoice_print/2?invoice_id=10</td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>5.0000 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//table[@id='calls']/tbody/tr/td[5]</td>
+	<td>5.0000 USD</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='calls']/tbody/tr[2]/td[5]</td>
+	<td>5.0000 USD</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='calls']/tbody/tr[3]/td[5]</td>
+	<td>5.0000 USD</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='calls']/tfoot/tr/td[3]</td>
+	<td>15.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@id='calls']/tfoot/tr/td[2]</td>
+	<td>exact:00:00:03</td>
+</tr>
+</tbody></table>
+</body>
+</html>

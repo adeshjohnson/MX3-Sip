@@ -1,0 +1,17 @@
+<% if @enabled == 1 %>
+
+    <div align="right"><%= image_tag("/images/logo/safetypay-pse.jpg", :style => 'border-style:none', :title => "SafetyPay-PSE") %></div>
+
+    <%= form_tag :action => 'safetypay_pay', :id => params[:id] do %>
+        <%= _('Please_enter_amount_to_update_your_balance') %>*: <%= text_field_tag 'amount', Confline.get_value("SafetyPay_Default_Amount", @user.owner_id), "class" => "input", :size => "8", :maxlength => "8" %> <%= @currency %>
+        <br/><br/>
+        <%= submit_tag _('Confirm'), :disable_with => _('Processing..') %>
+    <% end %>
+
+    <br/>
+    <div class="simple">*<%= _('Minimum_amount') %>
+      : <%= nice_number Confline.get_value("SafetyPay_Min_Amount", @user.owner_id) %> <%= @currency %></div>
+
+<% else %>
+    <%= _('SafetyPay_disabled') %>
+<% end %>

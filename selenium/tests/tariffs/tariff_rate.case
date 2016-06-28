@@ -1,0 +1,2099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>tariff_rate</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">tariff_rate</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--==Open link==-->
+<tr>
+	<td>open</td>
+	<td>billing/tariffs/rate_new_by_direction/6?dir_id=41&amp;st=C</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff was not found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>show_rates_for_users</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tariff_name</td>
+	<td>test_aaaa</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>tariff_purpose_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tariff_name</td>
+	<td>test_bbbbb</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>tariff_purpose_user_wholesale</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate1</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate2</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate473</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate3</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate4</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Update']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_new/7?st=A</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate_2</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate_7</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate_8</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate_5</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate_9</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>rate_6</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/ratedetail_edit/503</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=ratedetail_end_time</td>
+	<td>23:59:59</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user_tariff_id</td>
+	<td>label=Retail - test_aaaa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rates_list/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='quick_add_new_rate']/form/table/tbody/tr[2]/td[3]</td>
+	<td>USD</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Connection Fee</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal Time</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Increment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370600</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.0255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=increment_s</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=min_time</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=increment_s</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=min_time</td>
+	<td>60</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370601</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=increment_s</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370602</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.0255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=min_time</td>
+	<td>-10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rates_list/1?st=L</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_514</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_515</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_516</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/514</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_509</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_509</td>
+	<td>60</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/515</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_510</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_510</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/516</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_511</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_511</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/ghost_percent_edit/1?rate_id=135</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=rate_ghost_min_perc</td>
+	<td></td>
+</tr>
+<!---------->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>5.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>2.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>1.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>7.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=tariff_name</td>
+	<td>user wholesale tariff EUR</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tariff_purpose_user_wholesale</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=tariff[currency]</td>
+	<td>label=EUR</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rates_list/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='quick_add_new_rate']/form/table/tbody/tr[2]/td[3]</td>
+	<td>EUR</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='quick_add_new_rate']/form/table/tbody/tr[3]/td[3]</td>
+	<td>EUR</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Connection Fee</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal Time</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Increment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370600</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.0255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=increment_s</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=min_time</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=increment_s</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=min_time</td>
+	<td>60</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370601</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=increment_s</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370602</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.0255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=min_time</td>
+	<td>-10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=L</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_517</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_518</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_519</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/517</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_512</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_512</td>
+	<td>60</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/518</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_513</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_513</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/519</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_514</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_514</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/ghost_percent_edit/8?rate_id=518</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=rate_ghost_min_perc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>items_per_page</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>5.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>items_per_page</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user_tariff_id</td>
+	<td>label=Wholesale - test_bbbbb</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>6.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>5.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>items_per_page</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>6.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>5.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_arates_full/6?dg=196</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_hour</td>
+	<td>label=06</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_minute</td>
+	<td>label=45</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rate details updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>23:45:59</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/acc_groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/permissions/edit/11?group_type=accountant</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tariff_manage_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=see_financial_data_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Group updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>items_per_page</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/520</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rate does not have assigned destination</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/5200000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rate was not found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>accountant</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>accountant1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rates_list/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='quick_add_new_rate']/form/table/tbody/tr[2]/td[3]</td>
+	<td>USD</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='quick_add_new_rate']/form/table/tbody/tr[3]/td[3]</td>
+	<td>USD</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Connection Fee</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal Time</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Increment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370603</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.0255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=increment_s</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=min_time</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=increment_s</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=min_time</td>
+	<td>60</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370604</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=increment_s</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Quick add new Rate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=prefix</td>
+	<td>370605</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>0.0255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=connection_fee</td>
+	<td>0.0001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=min_time</td>
+	<td>-10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ghost_percent</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rates_list/1?st=L</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_514</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_515</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_516</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_521</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_522</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ghost_percent_523</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/514</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_509</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_509</td>
+	<td>60</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/515</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_510</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_510</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/516</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_511</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_511</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/521</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_516</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_516</td>
+	<td>60</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/522</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_517</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_517</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/523</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=increment_s_518</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=min_time_518</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/rate_details/520</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rate does not have assigned destination</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_user_rates_pdf/4?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.pdf&quot;,&quot;file&quot;:&quot;File rendered&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_provider_rates_pdf/2?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.pdf&quot;,&quot;file&quot;:&quot;File rendered&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_provider_rates_pdf/1?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.pdf&quot;,&quot;file&quot;:&quot;File rendered&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_user_rates_csv/4?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.csv&quot;,&quot;file&quot;:&quot;Destination,Subcode,Rate(USD),Round\n&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_providers_rates_csv/2?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.csv&quot;,&quot;file&quot;:&quot;Direction,Destination,Prefix,Subcode,Country code,Rate(USD),Connection Fee(USD),Increment,Minimal Time,Start Time,End Time,Week Day\nAfghanistan,Afghanistan </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>billing/tariffs/generate_providers_rates_csv/1?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.csv&quot;,&quot;file&quot;:&quot;Direction,Destination,Prefix,Subcode,Country code,Rate(USD),Connection Fee(USD),Increment,Minimal Time,Start Time,End Time,Week Day\nAfghanistan,Afghanistan </td>
+	<td></td>
+</tr>
+<!--isitikinimui, kad nera po laiko pridedama laiko juosta (0200)-->
+<tr>
+	<td>assertTextPresent</td>
+	<td>23:59:59,\&quot;\&quot;\nAlbania</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0200</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_user_rates_pdf/3?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.pdf&quot;,&quot;file&quot;:&quot;File rendered&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_provider_rates_pdf/8?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.pdf&quot;,&quot;file&quot;:&quot;File rendered&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_user_rates_csv/3?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.csv&quot;,&quot;file&quot;:&quot;Destination,Subcode,Rate(USD),Round\n&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_providers_rates_csv/8?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.csv&quot;,&quot;file&quot;:&quot;Direction,Destination,Prefix,Subcode,Country code,Rate(USD),Connection Fee(USD),Increment,Minimal Time,Start Time,End Time,Week Day\nLithuania,Lithuania Mobile </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>accountant</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>accountant1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_user_rates_pdf/4?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.pdf&quot;,&quot;file&quot;:&quot;File rendered&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_provider_rates_pdf/2?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.pdf&quot;,&quot;file&quot;:&quot;File rendered&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_provider_rates_pdf/1?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.pdf&quot;,&quot;file&quot;:&quot;File rendered&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_user_rates_csv/4?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.csv&quot;,&quot;file&quot;:&quot;Destination,Subcode,Rate(USD),Round\n&quot;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_providers_rates_csv/2?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.csv&quot;,&quot;file&quot;:&quot;Direction,Destination,Prefix,Subcode,Country code,Rate(USD),Connection Fee(USD),Increment,Minimal Time,Start Time,End Time,Week Day\nAfghanistan,Afghanistan </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/generate_providers_rates_csv/1?test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>{&quot;filename&quot;:&quot;Rates-USD.csv&quot;,&quot;file&quot;:&quot;Direction,Destination,Prefix,Subcode,Country code,Rate(USD),Connection Fee(USD),Increment,Minimal Time,Start Time,End Time,Week Day\nAfghanistan,Afghanistan </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>INTERNAL ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/4?page=1&amp;st=A</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate1</td>
+	<td>2.65</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=gch1</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=gch1</td>
+	<td>20.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_arates/524?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=check_box</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>200</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>xpath=(//input[@id='price'])[2]</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=add_img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/4?page=1&amp;st=A</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=gch1</td>
+	<td>35</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rates updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=gch1</td>
+	<td>35.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate1</td>
+	<td>2.65</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=gch1</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=gch1</td>
+	<td>20.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_arates/525?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>3.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rate updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=gch1</td>
+	<td>25</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rates updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=gch1</td>
+	<td>25.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_arates/525?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=check_box</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>200</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>xpath=(//input[@id='price'])[2]</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=add_img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=gch1</td>
+	<td>35</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rates updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=gch1</td>
+	<td>35.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate5</td>
+	<td>2.65</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=gch5</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=gch5</td>
+	<td>20.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_arates/526?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>3.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rate updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=gch5</td>
+	<td>25</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rates updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=gch5</td>
+	<td>25.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_arates/526?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=check_box</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=duration</td>
+	<td>200</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>xpath=(//input[@id='price'])[2]</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=add_img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=gch5</td>
+	<td>35</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rates updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=gch5</td>
+	<td>35.0</td>
+</tr>
+</tbody></table>
+</body>
+</html>

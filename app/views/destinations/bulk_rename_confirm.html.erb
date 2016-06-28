@@ -1,0 +1,27 @@
+<!--<b>
+  <p><%= _("Prefix") %>: <%=h @prefix %></p>
+</b>-->
+<br />
+<br />
+<%= _('Destinations_quantity')%>: <%= @destination_count %>
+<br />
+<br />
+<%= _('Destination_names_will_be_changed_to') %> "<%= @destination_name %>" <%= _('for_these_prefixes') %>:
+<br />
+<br />
+<div align="center" style="overflow:auto;max-height:500px;width:250px">
+  <table width="100%" class="maintable">
+    <%@destinations.each{|d|%>
+      <tr id="<%=d.id%>">
+        <td id="prefix_<%=d.id%>"><%= d.prefix %></td>
+        <td id="name_<%=d.id%>"><%= d.name %></td>
+      </tr>
+    <%}%>
+  </table>
+</div>
+<br />
+<span style="float:left;"><%=link_to b_back + _('back'), session[:return_to]%></span>
+<span style="float:left;margin-left: 30px;"><%= button_to _('Confirm_changes'), {:controller=>:destinations, :action=>:bulk_rename, :prefix=>@prefix, :destination=>@destination_name}, :disable_with=>_('Processing..'), :onclick => "return confirm('#{_('Are_you_sure')}');", :method => :post %></span>
+
+
+

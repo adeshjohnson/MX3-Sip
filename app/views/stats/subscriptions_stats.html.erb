@@ -1,0 +1,86 @@
+<div align="left" class="nb">
+
+  <%= form_tag :action => 'subscriptions_stats' do %>
+      <%= select_date(Time.mktime(session[:year_from], session[:month_from], session[:day_from]), :end_year => Date.today.year+1, :prefix => "date_from") %>
+      <%= select_date(Time.mktime(session[:year_till], session[:month_till], session[:day_till]), :end_year => Date.today.year+1, :prefix => "date_till") %>
+      &nbsp;&nbsp;<%= submit_tag _('Change'), :disable_with => _('Processing..') %>
+  <% end %>
+</div>
+
+<br/>
+<br/>
+<% if @res %>
+    <table>
+      <tr>
+        <td><%= _('Subscriptions') %> :</td>
+        <td><%= @res[0]['sub_size'].to_i %></td>
+      </tr>
+      <tr>
+        <td><%= _('In_first_day_subscriptions') %> :</td>
+        <td><%= @res2[0]['sub_size'].to_i %>&nbsp;&nbsp;<%= link_to b_view, :action => "subscriptions_first_day", :date => @date_from %></td>
+      </tr>
+    </table>
+<% end %>
+
+<br/>
+<br/>
+
+<% if @res3 %>
+    <br>
+    <% if @total_pages > 1 %>
+        <br>
+        <%= render :partial => "page_select_header" %>
+    <% end %>
+    <br>
+    <%= b_info %> <%= _('Activation_start') + " and " + _('Activation_end') + " " + _('values_in_system_time_zone') %>: <%= nice_system_time_string %>
+    <br/><br/>
+
+    <table width="100%" class="maintable">
+      <tr>
+        <th id="sub_user" align="left"><%= nice_list_order('user', _('User'), @options) %></th>
+        <th id="sub_service" align="left"><%= nice_list_order('service', _('Service'), @options) %></th>
+        <% if can_see_finances? %>
+            <th align="right"><%=nice_list_order('price', _('Price') + "(" + current_user.currency.name + ")", @options) %></th>
+        <% end %>
+        <th id="sub_memo" align="left"><%= nice_list_order('memo', _('Memo'), @options) %></th>
+        <th id="sub_added" align="center"><%= nice_list_order('added', _('Added'), @options) %></th>
+        <th id="sub_activation_start" align="center"><%= nice_list_order('activation_start', _('Activation_start'), @options) %></th>
+        <th id="sub_activation_end" align="center"><%= nice_list_order('activation_end', _('Activation_end'), @options) %></th>
+        <th id="sub_time_left" align="center"><%= _('Time_left') %></th>
+        <% if session[:acc_manage_subscriptions_opt_1].to_i > 1 or (@allow_edit and session[:usertype] != 'accountant') %>
+            <th id="sub_edit"></th>
+            <th id="sub_delete"></th>
+        <% end %>
+      </tr>
+      <% @res3.each_with_index { |r, i| %>
+          <tr>
+            <% if session[:acc_user_manage].to_i > 0 or session[:usertype] != 'accountant' %>
+                <%if r.first_name.to_s.length + r.last_name.to_s.length > 0 %>
+                    <td><%= link_to r.first_name.to_s + ' ' + r.last_name.to_s, :controller => "users", :action => "edit", :id =>r.id, :return_to_controller=>'stats', :return_to_action=>'subscriptions_stats' %></td>
+                <%else%>
+                    <td><%= link_to r.username,:controller => "users", :action => "edit", :id => r.id, :return_to_controller=>'stats', :return_to_action => 'subscriptions_stats'%></td>
+                <%end%>
+            <% else %>
+                <%if r.first_name.length + r.last_name.length > 0 %>
+                    <td><%= r.first_name.to_s + ' ' + r.last_name.to_s %></td>
+                <%else%>
+                    <td><%= r.username %></td>
+                <%end%>
+            <% end %>
+            <td id="service_name_<%= r.id %>" align="left"><%= r.service_name %></td>
+            <% if can_see_finances? %>
+                <td id="service_price_<%= r.id %>" align="right"> <%= nice_number r.service_price %> </td>
+            <% end %>
+            <td id="memo_<%= r.id %>"align="left"> <%= r.memo if r.memo %> </td>
+            <td id="added_<%= r.id %>" align="center"> <%= nice_date_time r.added %> </td>
+            <td id="activation_start_<%= r.id %>" align="center"> <%= nice_date_time(r.activation_start, 0) %> </td>
+            <td id="activation_end_<%= r.id %>" align="center"> <%= nice_date_time(r.activation_end, 0) %> </td>
+            <td id="time_left_<%= r.id %>" align="center"> <%= nice_time time_untill_expire(r) if r.servicetype == "flat_rate" %></td>
+            <% if session[:acc_manage_subscriptions_opt_1].to_i > 1 or (@allow_edit and session[:usertype] != 'accountant') %>
+                <td id="edit_<%= r.id %>" align="center"><%= link_to(b_edit, {:controller => "services", :action => 'subscription_edit', :id => r.subscription_id}, :id=>"edit_link_" + r.id.to_s) %></td>
+                <td id="destroy_<%= r.id %>" align="center"><%= link_to(b_delete, {:controller => "services", :action => 'subscription_confirm_destroy', :id => r.subscription_id }, :id=>"destroy_link_" + r.id.to_s) %></td>
+            <% end %>
+          </tr>
+      <% } %>
+    </table>
+<% end %>

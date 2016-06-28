@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>warning_balance</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">warning_balance</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/update_currencies</td>
+	<td></td>
+</tr>
+<!--TIME ZONES-->
+<!--<tr> 	<td>open</td> 	<td>/billing/functions/settings</td> 	<td></td> </tr> <tr> 	<td>check</td> 	<td>id=email_sending_enabled</td> 	<td></td> </tr> <tr> 	<td>type</td> 	<td>id=email_from</td> 	<td>test@test.com</td> </tr> <tr> 	<td>clickAndWait</td> 	<td>name=commit</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Settings saved</td> 	<td></td> </tr>-->
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT-10:00) Hawaii</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed: System Admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT-03:00) Buenos Aires</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_warning_email_hour_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_user_warning_email_hour</td>
+	<td>label=11</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT+05:00) Islamabad</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_warning_email_hour_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_user_warning_email_hour</td>
+	<td>label=11</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT+08:00) Hong Kong</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_warning_email_hour_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_user_warning_email_hour</td>
+	<td>label=11</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT+10:00) Hobart</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_warning_email_hour_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_user_warning_email_hour</td>
+	<td>label=11</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT-10:00) Hawaii</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_warning_email_hour_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_user_warning_email_hour</td>
+	<td>label=11</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=warning_active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=warning_active</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<!--<tr> 	<td>open</td> 	<td>/billing/functions/settings</td> 	<td></td> </tr> <tr> 	<td>type</td> 	<td>id=email_from</td> 	<td>no-reply@kolmisoft.com</td> </tr> <tr> 	<td>click</td> 	<td>id=email_sending_enabled</td> 	<td></td> </tr> <tr> 	<td>clickAndWait</td> 	<td>name=commit</td> 	<td></td> </tr> <tr> 	<td>open</td> 	<td>/billing/callc/hourly_actions</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Mission complete</td> 	<td></td> </tr> <tr> 	<td>open</td> 	<td>/billing/stats/action_log</td> 	<td></td> </tr> <tr> 	<td>assertTextNotPresent</td> 	<td>Cant_send_email</td> 	<td></td> </tr>-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/integrity_check</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>devices_with_weak_password_size</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/make_select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=users</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=time_zone_value</td>
+	<td>Hawaii</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=warning_email_hour_value</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=time_zone_value</td>
+	<td>Buenos Aires</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=warning_email_hour_value</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=time_zone_value</td>
+	<td>Islamabad</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=warning_email_hour_value</td>
+	<td>17</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=time_zone_value</td>
+	<td>Hong Kong</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<!--4 turi būti-->
+<!--<tr> 	<td>assertText</td> 	<td>id=warning_email_hour_value</td> 	<td>14</td> </tr>-->
+<tr>
+	<td>assertText</td>
+	<td>id=time_zone_value</td>
+	<td>Hobart</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=warning_email_hour_value</td>
+	<td>-1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=time_zone_value</td>
+	<td>Vilnius</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=warning_email_hour_value</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=time_zone_value</td>
+	<td>Hawaii</td>
+</tr>
+<!--CURRENCIES-->
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_currency_id</td>
+	<td>label=EUR</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_currency_id</td>
+	<td>label=ALL</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_currency_id</td>
+	<td>label=EUR</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_currency_id</td>
+	<td>label=DZD</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_warning_email_balance</td>
+	<td>2.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>retail_reseller </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>retail_reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=balance</td>
+	<td>0.0000 EUR</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=user_currency_id</td>
+	<td>EUR</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_warning_email_balance</td>
+	<td>1.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>wholesale_rspro </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>wholesale_rspro1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=balance</td>
+	<td>0.0000 ALL</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=user_currency_id</td>
+	<td>ALL</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_warning_email_balance</td>
+	<td>4.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>retail_user </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>retail_user1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=balance</td>
+	<td>2.5000 EUR</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_warning_email_balance</td>
+	<td>1.0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>wholesale_user </td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>wholesale_user1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=balance</td>
+	<td>8.0000 DZD</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=user_warning_email_balance</td>
+	<td>8.0</td>
+</tr>
+</tbody></table>
+</body>
+</html>

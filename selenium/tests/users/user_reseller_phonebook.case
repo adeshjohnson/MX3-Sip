@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>user_reseller_phonebook</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">user_reseller_phonebook</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=own_providers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=commit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed: Test Reseller</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>user_reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>user_reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//a[@href='/billing/phonebooks/list']</td>
+	<td>PhoneBook</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/phonebooks/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_name</td>
+	<td>Name</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_number</td>
+	<td>8888888888888</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_speeddial</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=add_phonebook</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>added</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>8888888888888</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>123</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=Edit]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/phonebooks/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=phonebook_name</td>
+	<td>Name</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=phonebook_number</td>
+	<td>8888888888888</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=phonebook_speeddial</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_name</td>
+	<td>SecondName</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_number</td>
+	<td>555</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Record successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>SecondName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>555</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=Delete]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_name</td>
+	<td>qwerty67ui</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_number</td>
+	<td>34567890-=</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_speeddial</td>
+	<td>sdcfgvb</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=add_phonebook</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please fill all fields</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>* SpeedDial must be numeric</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>* Record number must be numeric</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_speeddial</td>
+	<td>345678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phonebook_number</td>
+	<td>34567890</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=add_phonebook</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>added</td>
+	<td></td>
+</tr>
+<!---->
+</tbody></table>
+</body>
+</html>

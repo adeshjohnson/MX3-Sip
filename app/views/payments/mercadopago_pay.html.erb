@@ -1,0 +1,14 @@
+<div align="right"><%= image_tag("/images/logo/mercadopago-co.gif", :style => 'border-style:none', :title => "MercadoPago") %></div>
+
+<%= form_tag(@mercadopago_url_token) do %>
+	<%= _('Please_press_here_to_pay') %>* <%= nice_number @amount %> <%= @currency %>
+	<br/>
+	<br/>
+	<%= submit_tag _('Pay'), :disable_with => _('Processing..') %>
+<% end %>
+
+<br/>
+<div class="simple">
+  *<%= _('Your_VAT') %>: <%= @vat %>%. <%= _('Total_amount_to_pay') %>
+  : <%= nice_number @amount_with_vat %> <%= @currency %>
+</div>

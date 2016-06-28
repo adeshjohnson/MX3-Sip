@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>device_duplicate_username</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">device_duplicate_username</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/default_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Default User saved</td>
+	<td></td>
+</tr>
+<!--CHECK SETTINGS-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>disalow_duplicate_device_usernames</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--CREATE TEST DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_description</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_extension</td>
+	<td>5000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<!--REGISTER NEW USER-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/signup_start/hfttv7bcqt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>Test_user_new</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>10111101</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password2</td>
+	<td>10111101</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>first_name</td>
+	<td>!!!!</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>last_name</td>
+	<td>!!!!!</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Registration successful</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<!--VERIFY DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>type_9</td>
+	<td>SIP</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>extension_9</td>
+	<td>1004</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_9</td>
+	<td>1004</td>
+</tr>
+<!--VERIFY DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertChecked</td>
+	<td>codec[alaw]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertChecked</td>
+	<td>codec[g729]</td>
+	<td></td>
+</tr>
+<!--VERIFY DEVICE DETAILS-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_all_details/9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>username_value</td>
+	<td>5000</td>
+</tr>
+<!--CREATE TEST DEVICE 2-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_description</td>
+	<td>test1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--VERIFY DEVICE DETAILS-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_all_details/10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>username_value</td>
+	<td>1005</td>
+</tr>
+<!--VERIFY DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_extension</td>
+	<td>1005</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_extension</td>
+	<td>101</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device was not updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Extension is in use</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=device_extension</td>
+	<td>101</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_extension</td>
+	<td>50001</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device's settings updated</td>
+	<td></td>
+</tr>
+<!--CREATE TEST DEVICE 3-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_description</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--VERIFY DEVICE DETAILS-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_all_details/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>username_value</td>
+	<td>5002</td>
+</tr>
+<!--VERIFY DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_extension</td>
+	<td>50002</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--UNCHECK SETTINGS-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>disalow_duplicate_device_usernames</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--CREATE TEST DEVICE 4-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_description</td>
+	<td>test3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--VERIFY DEVICE DETAILS-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_all_details/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>username_value</td>
+	<td>5003</td>
+</tr>
+<!--VERIFY DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_name</td>
+	<td>1005</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device's settings updated</td>
+	<td></td>
+</tr>
+<!--CREATE TEST DEVICE 4-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_description</td>
+	<td>test4</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--VERIFY DEVICE DETAILS-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_all_details/13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>username_value</td>
+	<td>5003</td>
+</tr>
+<!--VERIFY DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_extension</td>
+	<td>50004</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--VERIFY DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_name</td>
+	<td>103-GDD</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>device_secret</td>
+	<td>103123123123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device's settings updated</td>
+	<td></td>
+</tr>
+<!--CHECK SETTING-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tabTabdhtmlgoodies_tabView1_4 &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Do not allow duplicate device user names:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=disalow_duplicate_device_usernames</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=disalow_duplicate_device_usernames</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<!--VERIFY DEVICES-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_10</td>
+	<td>1005</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_11</td>
+	<td>1006</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_12</td>
+	<td>1005</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_13</td>
+	<td>1008</td>
+</tr>
+<!--VERIFY DEVICE-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/device_edit/10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device was not updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Authentication details should be unique</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_name</td>
+	<td>101</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Authentication details should be unique</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_name</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device's settings updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_10</td>
+	<td>admin</td>
+</tr>
+</tbody></table>
+</body>
+</html>

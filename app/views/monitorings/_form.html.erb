@@ -1,0 +1,98 @@
+<style type="text/css">
+    .field_with_errors {
+        display: inline;
+    }
+</style>
+
+<script type="text/javascript">
+    Event.observe(window, 'load', function () {
+        var minutes = $('monitoring_period_in_past_type_minutes');
+        var hours = $('monitoring_period_in_past_type_hours');
+        var days = $('monitoring_period_in_past_type_days');
+
+        adjustPeriod(minutes, hours, days);
+
+        $$(".period_select").each(function (opt) {
+            Event.observe(opt, 'click', function () {
+                adjustPeriod(minutes, hours, days);
+            });
+        });
+
+
+        Event.observe($("bellow_monitoringamount"),'click', function(event){ 
+           $('amount_bellow').disabled = !event.target.checked; 
+           $('amount_above').disabled = event.target.checked; 
+        }); 
+ 
+        Event.observe($("above_monitoringamount"),'click', function(event){ 
+           $('amount_above').disabled = !event.target.checked; 
+          $('amount_bellow').disabled = event.target.checked; 
+        }); 
+
+        Event.observe($("simultaneous_calls"),'click', function(event){ 
+           $('amount_above').disabled = true; 
+           $('amount_bellow').disabled = true;  
+        }); 
+    });
+
+    function adjustPeriod(minutes, hours, days) {
+        if (minutes.checked) {
+            $$(".period_minutes").first().disabled = false;
+            $$(".period_hours").first().disabled = true;
+            $$(".period_days").first().disabled = true;
+        }
+        if (hours.checked) {
+            $$(".period_minutes").first().disabled = true;
+            $$(".period_hours").first().disabled = false;
+            $$(".period_days").first().disabled = true;
+        }
+        if (days.checked) {
+            $$(".period_minutes").first().disabled = true;
+            $$(".period_hours").first().disabled = true;
+            $$(".period_days").first().disabled = false;
+        }
+    }
+</script>
+<td>
+  <%= raw form.period_select :period_in_past %>
+</td>
+<td>
+  <b <%= tooltip(_('Amount'), _('Amount_explanation')) %>> <%= b_info %> <%= _('Amount') %> (<%= Currency.get_default.name %>)</b><br/> 
+  <%= form.radio_button :monitoring_type, 'bellow', :id => "bellow_monitoringamount" %> <%= _('Drops_bellow') %> 
+  <%= _('than') %> <%= form.text_field :amount, :class => "input", :size => 10, :id => "amount_bellow", :disabled => @monitoring.monitoring_type != 'bellow' %> 
+  <br/> 
+  <%= form.radio_button :monitoring_type, 'above', :id => "above_monitoringamount" %> <%= _('Increases_more') %> 
+  <%= _('than') %> <%= form.text_field :amount, :class => "input", :size => 10, :id => "amount_above", :disabled => @monitoring.monitoring_type != 'above' %> 
+  <br/> 
+  <%= hidden_field_tag "default_currency", Currency.get_default.name, :id => "default_currency" %>
+  <b <%= tooltip(_('Calls'), _('Monitoring_calls_explanation'))%>><%= b_info %> <%= _('Calls') %></b> 
+  <br />
+  <%= form.radio_button :monitoring_type, 'simultaneous', :id => "simultaneous_calls" %> <%= _('Simultaneous_calls') %>
+  <br/>
+</td>
+<td>
+  <table> 
+    <tr> 
+    <td>
+      <b <%= tooltip(_('Block_user'), _('Block_user_explanation'))%>><%= b_info %> <%= _('Block_user') %>:</b>
+    </td>
+    <td>
+      <%= form.radio_button :block, false, :id => "will_not_be_blocked" %> <%= _('No') %>
+      <%= form.radio_button :block, true, :id => "will_be_blocked" %> <%= _('Yes') %>
+    </td>
+    </tr>
+    <tr>
+      <td>
+        <% if !reseller? %>
+          <b <%= tooltip(_('Send_email_to_admin'), _('Send_email_explanation'))%>><%= b_info %> <%= _('Send_email_to_admin') %>:</b>
+        <% else %>
+          <b <%= tooltip(_('Send_email_to_reseller'), _('Send_email_explanation'))%>><%= b_info %> <%= _('Send_email_to_reseller') %>:</b>
+        <% end %>
+      </td> 
+      <td> 
+        <%= form.radio_button :email, false, :id => "will_not_be_sent" %> <%= _('No') %> 
+        <%= form.radio_button :email, true, :id => "will_be_sent" %> <%= _('Yes') %> 
+      </td> 
+    </tr> 
+  </table> 
+</td>

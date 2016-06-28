@@ -1,0 +1,197 @@
+Asterisk 1.8.23.0, Copyright (C) 1999 - 2012 Digium, Inc. and others.
+Created by Mark Spencer <markster@digium.com>
+Asterisk comes with ABSOLUTELY NO WARRANTY; type 'core show warranty' for details.
+This is free software, with components licensed under the GNU General Public
+License version 2 and other licenses; you are welcome to redistribute it under
+certain conditions. Type 'core show license' for details.
+=========================================================================
+Connected to Asterisk 1.8.23.0 currently running on sip (pid = 20003)
+sip*CLI> [0KVerbosity is at least 6
+[Ksip*CLI> [0K  == Using SIP RTP CoS mark 5
+[Ksip*CLI> [0K    -- Executing [00956965015957@mor_local:1] [1;36mGoto[0m("[1;35mSIP/258-00000280[0m", "[1;35mmor,00956965015957,1[0m")
+    -- Goto (mor,00956965015957,1)
+    -- Executing [00956965015957@mor:1] [1;36mNoOp[0m("[1;35mSIP/258-00000280[0m", "[1;35mMOR starts[0m") in new stack
+    -- Executing [00956965015957@mor:2] [1;36mGosub[0m("[1;35mSIP/258-00000280[0m", "[1;35mdiversion_settings,00956965015957,1[0m") in new stack
+[Ksip*CLI> [0K    -- Executing [00956965015957@diversion_settings:1] [1;36mGotoIf[0m("[1;35mSIP/258-00000280[0m", "[1;35m1?2:return[0m") in new stack
+[Ksip*CLI> [0K    -- Goto (diversion_settings,00956965015957,2)
+[Ksip*CLI> [0K    -- Executing [00956965015957@diversion_settings:2] [1;36mGotoIf[0m("[1;35mSIP/258-00000280[0m", "[1;35m0?3:return[0m") in new stack
+    -- Goto (diversion_settings,00956965015957,5)
+    -- Executing [00956965015957@diversion_settings:5] [1;36mReturn[0m("[1;35mSIP/258-00000280[0m", "[1;35m[0m") in new stack
+    -- Executing [00956965015957@mor:3] [1;36mGosub[0m("[1;35mSIP/258-00000280[0m", "[1;35mproxy_settings,00956965015957,1[0m") in new stack
+    -- Executing [00956965015957@proxy_settings:1] [1;36mGotoIf[0m("[1;35mSIP/258-00000280[0m", "[1;35m1?2:proxy_return[0m") in new stack
+    -- Goto (proxy_settings,00956965015957,2)
+[Ksip*CLI> [0K    -- Executing [00956965015957@proxy_settings:2] [1;36mGotoIf[0m("[1;35mSIP/258-00000280[0m", "[1;35m0?3:proxy_return[0m") in new stack
+    -- Goto (proxy_settings,00956965015957,6)
+    -- Executing [00956965015957@proxy_settings:6] [1;36mReturn[0m("[1;35mSIP/258-00000280[0m", "[1;35m[0m") in new stack
+    -- Executing [00956965015957@mor:4] [1;36mSet[0m("[1;35mSIP/258-00000280[0m", "[1;35mTIMEOUT(response)=20[0m") in new stack
+[Ksip*CLI> [0K    -- Response timeout set to 20.000
+    -- Executing [00956965015957@mor:5] [1;36mSet[0m("[1;35mSIP/258-00000280[0m", "[1;35mTIMEOUT(digit)=10[0m") in new stack
+    -- Digit timeout set to 10.000
+    -- Executing [00956965015957@mor:6] [1;36mmor[0m("[1;35mSIP/258-00000280[0m", "[1;35m00956965015957[0m") in new stack
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor.c[0m:[1;37m140[0m [1;37mmor_exec[0m: Core version: 13.0.239, Server ID: 1, Dial out settings: , active calls enabled: 1, active calls count: 1, weekday: FD (2015-05-02), use lcr partials: 1, check_banned_clis: 1, use_speed_dials: 1, play_hgc_audio: 0, use_flat_rates: 1, server ip: 127.0.0.1
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_various.c[0m:[1;37m715[0m [1;37mmor_get_variables[0m: Tell balance: 0, tell time: 0, tell time mod.: 1.000000, tell r.time when left: 0 s, tell r.time every: 60 s, card_id: 0, callback: 0, call_leg1: 0
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authentication.c[0m:[1;37m1574[0m [1;37mmor_read_data_from_channel[0m: Date: 2015-05-02, time: 11:19:52
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_various.c[0m:[1;37m515[0m [1;37mmor_check_weekday[0m: Weekday: FD for date: 2015-05-02
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authentication.c[0m:[1;37m1738[0m [1;37mmor_read_data_from_channel[0m: CLID: 258, Src: 258, Dst: 00956965015957, Acc/dev_id: 465, CallerID: 258, uniqueid: 1430583592.714, LegA Channel Type: 1
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authentication.c[0m:[1;37m293[0m [1;37mmor_get_user_by_acc[0m: User's data retrieved: id: 405, lcr_id: 3, balance: 20957.167274, frozen_balance: 0.000000, credit: 0.000000, blocked: 0, lcr_order: price, tariff_id: 185, postpaid: 0, day type: FD, exchange rate: 1.000000, ani: 0, tell balance: 0, time: 0, when left: 60s, every: 60s, user currency: COP, def.curr: COP, tariff type: user, allow loss calls: 0, cid from dids: 0, cid from did: , record: 0, owner: 0, sipchaninfo: 0, allow duplicate calls: 0, user call limit: 0, device call limit: 0, device active calls: 1, user active calls: 0, is_trunk: 0, vat_percent: 0.000000, originator_ip: 181.152.67.54, canreinvite: 0, record_forced: 0, recording_forced_enabled: 0, fake_ring: 0, save_call_log: 0, warning balance(wb) active: 1, wb value: 4985.957246, wb call: 0, wb file id: 123, grace time: 0, reseller_allow_loss_calls: 0, lang: es, lcr_first_prov_perc: 0.000000, change_failed_code_to: 0, device_max_timeout: 0, forward_did: , user tell currency: COP, failover_provider_id: 42, no_failover: 0, anti_resale_auto_answer: 0, device_time_limit_per_day: 0, control_callerid_by_cids: 0, qf_tell balance/time: 0/0, callerid advanced control: 0, block callerid: 0, tell rate: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callerid.c[0m:[1;37m146[0m [1;37mmor_localize_callerid[0m: Localized CallerID: 258 (cut: , add: )
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callerid.c[0m:[1;37m164[0m [1;37mmor_localize_callerid[0m: Changed CallerID to: 258
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m136[0m [1;37mmor_authorize[0m: Caller type: Local
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callerid.c[0m:[1;37m478[0m [1;37mmor_check_phonebooks[0m: Checking Phonebooks for CallerID Name change...
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_destinations.c[0m:[1;37m277[0m [1;37mmor_localize_destination[0m: Localization info: cut: 009, add: , new_did: , new_device_id: 0
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_destinations.c[0m:[1;37m303[0m [1;37mmor_localize_destination[0m: Localized destination: 56965015957
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_dids.c[0m:[1;37m22[0m [1;37mmor_check_did[0m: Checking DID (56965015957) ...
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_dids.c[0m:[1;37m581[0m [1;37mmor_check_did[0m: DID not found...
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_flatrates.c[0m:[1;37m21[0m [1;37mmor_flatrates_get_data[0m: Checking FlatRate plan...
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_flatrates.c[0m:[1;37m82[0m [1;37mmor_flatrates_get_data[0m: FlatRate plan not applicable for this number
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callingdata.c[0m:[1;37m75[0m [1;37mmor_get_user_calling_data[0m: Adv.rates for user: prefix|from|duration|type|round|price
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callingdata.c[0m:[1;37m157[0m [1;37mmor_get_user_calling_data[0m: 569|1|-1|1|60|149.000000
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callingdata.c[0m:[1;37m189[0m [1;37mmor_get_user_calling_data[0m: Retrieved 1 adv.rates, max adv.rate: 149.000000, total event price: 0.000000, ghost_min_perc: 0.000000%
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callingdata.c[0m:[1;37m415[0m [1;37mmor_get_provider_calling_data[0m: LCR table:
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callingdata.c[0m:[1;37m555[0m [1;37mmor_get_provider_calling_data[0m:  prov_id: 6, SIP/  @ 216.53.4.1, device_id: 16, prefix: 569, rate: 0.040330000000000, increment: 1, min_time: 0, conn_fee: 0.000000, exchange rate: 0.000389, cut: , add: 99901, timeout: 60, interpret as failed: no answer: 0, busy: 0, priority: 4, call limit: 0, active calls: 0, latency: 0.000000, grace_time: 0, percent: 0, fake_ring: 0, save_call_log: 0, use pai: 0, 302 support: 0, common use: 1, owner_id: 0, time_limit_per_day: 0, max_timeout: 0, user_id: -1
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callingdata.c[0m:[1;37m585[0m [1;37mmor_get_provider_calling_data[0m: Retrieved 1 route(s)
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callingdata.c[0m:[1;37m694[0m [1;37mmor_get_provider_calling_data_by_id[0m: Failover provider:
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callingdata.c[0m:[1;37m837[0m [1;37mmor_get_provider_calling_data_by_id[0m:  prov_id: 42, SIP/  @ 216.53.4.1, device_id: 277, prefix: 569, rate: 0.040330000000000, increment: 1, min_time: 0, conn_fee: 0.000000, exchange rate: 0.000389, cut: , add: 99901, timeout: 60, interpret as failed: no answer: 0, busy: 0, priority: 0, call limit: 0, active calls: 0, latency: 0.000000, grace_time: 3, percent: 0, fake_ring: 0, save_call_log: 0, use pai: 0, 302 support: 0, common use: 1, owner_id: 0, time_limit_per_day: 0, max_timeout: 0, user_id: -1
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m776[0m [1;37mmor_authorize[0m: Initial timeout: 8439
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m871[0m [1;37mmor_authorize[0m: DID owner timeout: -1, DID incoming timeout: -1, reseller timeout: -1
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m895[0m [1;37mmor_authorize[0m: Selected lowest timeout: 8439
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m912[0m [1;37mmor_authorize[0m: Timeout after global timeout(7200) adjustment: 7200
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m930[0m [1;37mmor_authorize[0m: Timeout after increment(60) adjustment: 7200
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m951[0m [1;37mmor_authorize[0m: Timeout after prepaid control: 1797
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m1007[0m [1;37mmor_authorize[0m: Timeout: 1797, real timeout: 8439, user_id: 405, callertype: Local, anitype: , postpaid: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_authorization.c[0m:[1;37m1136[0m [1;37mmor_authorize[0m: Caller/card balance to freeze: 4462.550000
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor.c[0m:[1;37m225[0m [1;37mmor_exec[0m: SRC record: 0, record_forced: 0, rec_forced_enabled: 0, DST record: 0, record_forced: 0, rec_forced_enabled: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_various.c[0m:[1;37m829[0m [1;37mmor_cdr_reset[0m: Reseting CDR! Previously answered billsec: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor_callerid.c[0m:[1;37m276[0m [1;37mmor_prov_rules_callerid[0m: CallerID after Provider Rules applied: 258 (cut: , add: )
+[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor.c[0m:[1;37m881[0m [1;37mmor_exec[0m: Destination after Provider Rules applied: 9990156965015957 (cut: , add: 99901)
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor.c[0m:[1;37m1006[0m [1;37mmor_exec[0m: Terminator IP: 216.53.4.1
+[Ksip*CLI> [0K[2015-05-02 11:19:52] [1;33mNOTICE[0m[11520]: [1;37mapp_mor.c[0m:[1;37m1062[0m [1;37mmor_exec[0m: Dial string (Local to Outside): 'SIP/9990156965015957@ipauthnXs7dwSG,60,L(1797000:60000:60000)iIgM(mor_answer,1430583592.714)'
+       > Limit Data for this call:
+[Ksip*CLI> [0K       > timelimit      = 1797000 ms (1797.000 s)
+       > play_warning   = 60000 ms (60.000 s)
+[Ksip*CLI> [0K       > play_to_caller = yes
+       > play_to_callee = no
+       > warning_freq   = 60000 ms (60.000 s)
+[Ksip*CLI> [0K       > start_sound    = 
+[Ksip*CLI> [0K       > warning_sound  = timeleft
+[Ksip*CLI> [0K       > end_sound      = 
+[Ksip*CLI> [0K  == Using SIP RTP CoS mark 5
+[Ksip*CLI> [0K    -- Called SIP/9990156965015957@ipauthnXs7dwSG
+[Ksip*CLI> [0K  == Using SIP RTP CoS mark 5
+[Ksip*CLI> [0K    -- Executing [3132815814@mor_local:1] [1;36mGoto[0m("[1;35mSIP/01-00000282[0m", "[1;35mmor,3132815814,1[0m")
+[Ksip*CLI> [0K    -- Goto (mor,3132815814,1)
+    -- Executing [3132815814@mor:1] [1;36mNoOp[0m("[1;35mSIP/01-00000282[0m", "[1;35mMOR starts[0m") in new stack
+    -- Executing [3132815814@mor:2] [1;36mGosub[0m("[1;35mSIP/01-00000282[0m", "[1;35mdiversion_settings,3132815814,1[0m") in new stack
+    -- Executing [3132815814@diversion_settings:1] [1;36mGotoIf[0m("[1;35mSIP/01-00000282[0m", "[1;35m1?2:return[0m") in new stack
+    -- Goto (diversion_settings,3132815814,2)
+    -- Executing [3132815814@diversion_settings:2] [1;36mGotoIf[0m("[1;35mSIP/01-00000282[0m", "[1;35m0?3:return[0m") in new stack
+    -- Goto (diversion_settings,3132815814,5)
+    -- Executing [3132815814@diversion_settings:5] [1;36mReturn[0m("[1;35mSIP/01-00000282[0m", "[1;35m[0m") in new stack
+    -- Executing [3132815814@mor:3] [1;36mGosub[0m("[1;35mSIP/01-00000282[0m", "[1;35mproxy_settings,3132815814,1[0m") in new stack
+    -- Executing [3132815814@proxy_settings:1] [1;36mGotoIf[0m("[1;35mSIP/01-00000282[0m", "[1;35m1?2:proxy_return[0m") in new stack
+    -- Goto (proxy_settings,3132815814,2)
+    -- Executing [3132815814@proxy_settings:2] [1;36mGotoIf[0m("[1;35mSIP/01-00000282[0m", "[1;35m0?3:proxy_return[0m") in new stack
+[Ksip*CLI> [0K    -- Goto (proxy_settings,3132815814,6)
+[Ksip*CLI> [0K    -- Executing [3132815814@proxy_settings:6] [1;36mReturn[0m("[1;35mSIP/01-00000282[0m", "[1;35m[0m") in new stack
+[Ksip*CLI> [0K    -- Executing [3132815814@mor:4] [1;36mSet[0m("[1;35mSIP/01-00000282[0m", "[1;35mTIMEOUT(response)=20[0m") in new stack
+[Ksip*CLI> [0K    -- Response timeout set to 20.000
+[Ksip*CLI> [0K    -- Executing [3132815814@mor:5] [1;36mSet[0m("[1;35mSIP/01-00000282[0m", "[1;35mTIMEOUT(digit)=10[0m") in new stack
+[Ksip*CLI> [0K    -- Digit timeout set to 10.000
+[Ksip*CLI> [0K    -- Executing [3132815814@mor:6] [1;36mmor[0m("[1;35mSIP/01-00000282[0m", "[1;35m3132815814[0m") in new stack
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor.c[0m:[1;37m140[0m [1;37mmor_exec[0m: Core version: 13.0.239, Server ID: 1, Dial out settings: , active calls enabled: 1, active calls count: 2, weekday: FD (2015-05-02), use lcr partials: 1, check_banned_clis: 1, use_speed_dials: 1, play_hgc_audio: 0, use_flat_rates: 1, server ip: 127.0.0.1
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_various.c[0m:[1;37m715[0m [1;37mmor_get_variables[0m: Tell balance: 0, tell time: 0, tell time mod.: 1.000000, tell r.time when left: 0 s, tell r.time every: 60 s, card_id: 0, callback: 0, call_leg1: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authentication.c[0m:[1;37m1574[0m [1;37mmor_read_data_from_channel[0m: Date: 2015-05-02, time: 11:19:54
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_various.c[0m:[1;37m515[0m [1;37mmor_check_weekday[0m: Weekday: FD for date: 2015-05-02
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authentication.c[0m:[1;37m1738[0m [1;37mmor_read_data_from_channel[0m: CLID: "01-VentasFututel" <5713811667>, Src: 5713811667, Dst: 3132815814, Acc/dev_id: 73, CallerID: 5713811667, uniqueid: 1430583594.716, LegA Channel Type: 1
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authentication.c[0m:[1;37m293[0m [1;37mmor_get_user_by_acc[0m: User's data retrieved: id: 13, lcr_id: 3, balance: 2016.083630, frozen_balance: 0.000000, credit: 0.000000, blocked: 0, lcr_order: price, tariff_id: 185, postpaid: 0, day type: FD, exchange rate: 1.000000, ani: 0, tell balance: 0, time: 0, when left: 60s, every: 60s, user currency: COP, def.curr: COP, tariff type: user, allow loss calls: 1, cid from dids: 0, cid from did: , record: 0, owner: 0, sipchaninfo: 0, allow duplicate calls: 0, user call limit: 0, device call limit: 0, device active calls: 1, user active calls: 0, is_trunk: 0, vat_percent: 0.000000, originator_ip: 186.119.121.188, canreinvite: 0, record_forced: 0, recording_forced_enabled: 0, fake_ring: 0, save_call_log: 0, warning balance(wb) active: 1, wb value: 2000.000000, wb call: 0, wb file id: 145, grace time: 0, reseller_allow_loss_calls: 0, lang: es, lcr_first_prov_perc: 0.000000, change_failed_code_to: 0, device_max_timeout: 0, forward_did: , user tell currency: COP, failover_provider_id: 42, no_failover: 0, anti_resale_auto_answer: 0, device_time_limit_per_day: 0, control_callerid_by_cids: 0, qf_tell balance/time: 0/0, callerid advanced control: 0, block callerid: 0, tell rate: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callerid.c[0m:[1;37m146[0m [1;37mmor_localize_callerid[0m: Localized CallerID: 5713811667 (cut: , add: )
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callerid.c[0m:[1;37m164[0m [1;37mmor_localize_callerid[0m: Changed CallerID to: 5713811667
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authorization.c[0m:[1;37m136[0m [1;37mmor_authorize[0m: Caller type: Local
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callerid.c[0m:[1;37m478[0m [1;37mmor_check_phonebooks[0m: Checking Phonebooks for CallerID Name change...
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_destinations.c[0m:[1;37m277[0m [1;37mmor_localize_destination[0m: Localization info: cut: , add: 57, new_did: , new_device_id: 0
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_destinations.c[0m:[1;37m303[0m [1;37mmor_localize_destination[0m: Localized destination: 573132815814
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_dids.c[0m:[1;37m22[0m [1;37mmor_check_did[0m: Checking DID (573132815814) ...
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_dids.c[0m:[1;37m581[0m [1;37mmor_check_did[0m: DID not found...
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_flatrates.c[0m:[1;37m21[0m [1;37mmor_flatrates_get_data[0m: Checking FlatRate plan...
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_flatrates.c[0m:[1;37m75[0m [1;37mmor_flatrates_get_data[0m: FlatRate plan seconds: 3000, used: 3, available: 2997, data_id: 9, subscription_id: 15
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m75[0m [1;37mmor_get_user_calling_data[0m: Adv.rates for user: prefix|from|duration|type|round|price
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m157[0m [1;37mmor_get_user_calling_data[0m: 57313|1|-1|1|1|65.000000
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m189[0m [1;37mmor_get_user_calling_data[0m: Retrieved 1 adv.rates, max adv.rate: 65.000000, total event price: 0.000000, ghost_min_perc: 0.000000%
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m415[0m [1;37mmor_get_provider_calling_data[0m: LCR table:
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m555[0m [1;37mmor_get_provider_calling_data[0m:  prov_id: 55, SIP/  @ 67.205.102.87, device_id: 716, prefix: 57313, rate: 42.000000000000000, increment: 1, min_time: 0, conn_fee: 0.000000, exchange rate: 1.000000, cut: 57313, add: 7757313, timeout: 60, interpret as failed: no answer: 0, busy: 1, priority: 10, call limit: 0, active calls: 0, latency: 0.000000, grace_time: 0, percent: 0, fake_ring: 0, save_call_log: 0, use pai: 0, 302 support: 0, common use: 0, owner_id: 0, time_limit_per_day: 0, max_timeout: 0, user_id: 706
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m555[0m [1;37mmor_get_provider_calling_data[0m:  prov_id: 6, SIP/  @ 216.53.4.1, device_id: 16, prefix: 57313, rate: 0.023000000000000, increment: 1, min_time: 0, conn_fee: 0.000000, exchange rate: 0.000389, cut: , add: 99901, timeout: 60, interpret as failed: no answer: 0, busy: 0, priority: 4, call limit: 0, active calls: 1, latency: 0.000000, grace_time: 0, percent: 0, fake_ring: 0, save_call_log: 0, use pai: 0, 302 support: 0, common use: 1, owner_id: 0, time_limit_per_day: 0, max_timeout: 0, user_id: -1
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m585[0m [1;37mmor_get_provider_calling_data[0m: Retrieved 2 route(s)
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m694[0m [1;37mmor_get_provider_calling_data_by_id[0m: Failover provider:
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callingdata.c[0m:[1;37m837[0m [1;37mmor_get_provider_calling_data_by_id[0m:  prov_id: 42, SIP/  @ 216.53.4.1, device_id: 277, prefix: 57313, rate: 0.023000000000000, increment: 1, min_time: 0, conn_fee: 0.000000, exchange rate: 0.000389, cut: , add: 99901, timeout: 60, interpret as failed: no answer: 0, busy: 0, priority: 0, call limit: 0, active calls: 0, latency: 0.000000, grace_time: 3, percent: 0, fake_ring: 0, save_call_log: 0, use pai: 0, 302 support: 0, common use: 1, owner_id: 0, time_limit_per_day: 0, max_timeout: 0, user_id: -1
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authorization.c[0m:[1;37m776[0m [1;37mmor_authorize[0m: Initial timeout: 1861
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authorization.c[0m:[1;37m807[0m [1;37mmor_authorize[0m: Timeout after FlatRates: 4858 (2997 seconds added)
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authorization.c[0m:[1;37m871[0m [1;37mmor_authorize[0m: DID owner timeout: -1, DID incoming timeout: -1, reseller timeout: -1
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authorization.c[0m:[1;37m895[0m [1;37mmor_authorize[0m: Selected lowest timeout: 4858
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authorization.c[0m:[1;37m951[0m [1;37mmor_authorize[0m: Timeout after prepaid control: 1797
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authorization.c[0m:[1;37m1007[0m [1;37mmor_authorize[0m: Timeout: 1797, real timeout: 4858, user_id: 13, callertype: Local, anitype: , postpaid: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_authorization.c[0m:[1;37m1136[0m [1;37mmor_authorize[0m: Caller/card balance to freeze: 1946.750000
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor.c[0m:[1;37m225[0m [1;37mmor_exec[0m: SRC record: 0, record_forced: 0, rec_forced_enabled: 0, DST record: 0, record_forced: 0, rec_forced_enabled: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_various.c[0m:[1;37m829[0m [1;37mmor_cdr_reset[0m: Reseting CDR! Previously answered billsec: 0
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_callerid.c[0m:[1;37m276[0m [1;37mmor_prov_rules_callerid[0m: CallerID after Provider Rules applied: 5713811667 (cut: , add: )
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor.c[0m:[1;37m881[0m [1;37mmor_exec[0m: Destination after Provider Rules applied: 77573132815814 (cut: 57313, add: 7757313)
+[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor.c[0m:[1;37m1006[0m [1;37mmor_exec[0m: Terminator IP: 67.205.102.87
+[Ksip*CLI> [0K[2015-05-02 11:19:54] [1;33mNOTICE[0m[11522]: [1;37mapp_mor.c[0m:[1;37m1062[0m [1;37mmor_exec[0m: Dial string (Local to Outside): 'SIP/77573132815814@ipauthZHZhccXZ,60,L(1797000:60000:60000)iIgM(mor_answer,1430583594.716)'
+       > Limit Data for this call:
+[Ksip*CLI> [0K       > timelimit      = 1797000 ms (1797.000 s)
+       > play_warning   = 60000 ms (60.000 s)
+       > play_to_caller = yes
+       > play_to_callee = no
+       > warning_freq   = 60000 ms (60.000 s)
+[Ksip*CLI> [0K       > start_sound    = 
+       > warning_sound  = timeleft
+       > end_sound      = 
+[Ksip*CLI> [0K  == Using SIP RTP CoS mark 5
+[Ksip*CLI> [0K    -- Called SIP/77573132815814@ipauthZHZhccXZ
+[Ksip*CLI> [0K    -- SIP/ipauthZHZhccXZ-00000283 is making progress passing it to SIP/01-00000282
+[Ksip*CLI> [0K    -- SIP/ipauthZHZhccXZ-00000283 PDD is 1.598542
+[Ksip*CLI> [0K  == Manager 'mor' logged on from 127.0.0.1
+[Ksip*CLI> [0K    -- Registered SIP '113' at 186.119.121.188:51898
+[Ksip*CLI> [0K[2015-05-02 11:20:02] [1;33mNOTICE[0m[20027]: [1;37mchan_sip.c[0m:[1;37m21576[0m [1;37mhandle_response_peerpoke[0m: Peer '113' is now Reachable. (193ms / 3000ms)
+[Ksip*CLI> [0K  == Manager 'mor' logged off from 127.0.0.1
+[Ksip*CLI> [0K[2015-05-02 11:20:02] [1;33mNOTICE[0m[20027]: [1;37mchan_sip.c[0m:[1;37m25547[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: 113
+[Ksip*CLI> [0K[2015-05-02 11:20:14] [1;33mNOTICE[0m[20027]: [1;37mchan_sip.c[0m:[1;37m25547[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: 384
+[Ksip*CLI> [0K    -- SIP/ipauthZHZhccXZ-00000283 answered SIP/01-00000282
+[Ksip*CLI> [0K    -- Executing [s@macro-mor_answer:1] [1;36mAGI[0m("[1;35mSIP/ipauthZHZhccXZ-00000283[0m", "[1;35mmor_answer_mark[0m") in new stack
+[Ksip*CLI> [0K    -- Launched AGI Script /var/lib/asterisk/agi-bin/mor_answer_mark
+[Ksip*CLI> [0Kmor_answer_mark: Channel: SIP/ipauthZHZhccXZ-00000283, Master Channel: SIP/01-00000282
+[Ksip*CLI> [0Kmor_answer_mark: Call Answered at 2015-05-02 11:20:14, mili-unix time: 1430583614.497
+[Ksip*CLI> [0Kmor_answer_mark: Callee's (Leg B) Codec: g729, PDD: 1.598542, PDD limit less: 0.00000, PDD limit more: 0.00000
+[Ksip*CLI> [0Kmor_answer_mark: Channel variable 'MOR_ACTIVECALLS_UNIQUEID' was not found!
+[Ksip*CLI> [0Kmor_answer_mark: Call marked as Answered
+[Ksip*CLI> [0K    -- <SIP/ipauthZHZhccXZ-00000283>AGI Script mor_answer_mark completed, returning 0
+[Ksip*CLI> [0K    -- Locally bridging SIP/01-00000282 and SIP/ipauthZHZhccXZ-00000283
+[Ksip*CLI> [0K[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_various.c[0m:[1;37m1049[0m [1;37mmor_handle_call_end[0m: Real Duration: 24.489000, Real Billsec: 4.659000, Duration: 25, Billsec: 5
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor.c[0m:[1;37m1078[0m [1;37mmor_exec[0m: Res after dialing '-1', hangup cause: ANSWERED
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m205[0m [1;37mmor_acct_stop[0m: Seconds to bill: 5
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m240[0m [1;37mmor_acct_stop[0m: Seconds to bill after FlatRates: 0 (5 seconds used by FlatRates)
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_flatrates.c[0m:[1;37m21[0m [1;37mmor_flatrates_get_data[0m: Checking FlatRate plan...
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_flatrates.c[0m:[1;37m75[0m [1;37mmor_flatrates_get_data[0m: FlatRate plan seconds: 3000, used: 3, available: 2997, data_id: 9, subscription_id: 15
+[Ksip*CLI> [0K[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m301[0m [1;37mmor_acct_stop[0m: DID billsec: 0, duration: 25
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m308[0m [1;37mmor_acct_stop[0m: LegA: ANSWERED, LegB: ANSWERED
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m523[0m [1;37mmor_acct_stop[0m: Grace time is ignored because min time (0) is higher then grace time (0)
+[Ksip*CLI> [0K[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m531[0m [1;37mmor_acct_stop[0m: User's grace time: 0, user billsec after grace time: 0
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m542[0m [1;37mmor_acct_stop[0m: DID's grace time: 0, user billsec after grace time: 0
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m593[0m [1;37mmor_acct_stop[0m: Provider's grace time: 0, provider's billsec after grace time: 5
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m625[0m [1;37mmor_acct_stop[0m: Provider billsec: 5, price: 3.500000, rate: 42.000000, dd_index: 0
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m1172[0m [1;37mmor_update_provider_balance[0m: Updating provider's (ID: 55) balance by: 3.500000
+[Ksip*CLI> [0K[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m647[0m [1;37mmor_acct_stop[0m: User billsec: 0, price: 0.000000, rate: 0.000000
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m898[0m [1;37mmor_acct_stop[0m: Prices after convert to default currency: prov_rate: 42.000000, prov_price: 3.500000, user_rate: 0.000000, user_price: 0.000000
+[Ksip*CLI> [0K[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m994[0m [1;37mmor_acct_stop[0m: Reseller's balance will be deducted by: 0.000000, and frozen balance by: 0.000000.
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor_accounting.c[0m:[1;37m1052[0m [1;37mmor_acct_stop[0m: User's balance will be deducted by: 0.000000, and frozen balance by: 1946.750000.
+[Ksip*CLI> [0K[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor.c[0m:[1;37m1271[0m [1;37mmor_exec[0m: Hangupcause: ANSWERED, chan->hangupcause: 16, mor hangupcause: 16, hangupcause to DB: 16, [186.119.121.188]
+[2015-05-02 11:20:19] [1;33mNOTICE[0m[11522]: [1;37mapp_mor.c[0m:[1;37m1296[0m [1;37mmor_exec[0m: Application mor started and ended succesfully, with end code: 0!
+    -- Executing [h@mor:1] [1;36mSet[0m("[1;35mSIP/01-00000282[0m", "[1;35mMOR_DIALSTATUS=ANSWER[0m") in new stack
+    -- Executing [h@mor:2] [1;36mSet[0m("[1;35mSIP/01-00000282[0m", "[1;35mMOR_RDURATION=0.016593[0m") in new stack
+    -- Executing [h@mor:3] [1;36mSet[0m("[1;35mSIP/01-00000282[0m", "[1;35mMOR_RBILLSEC=0.000000[0m") in new stack
+    -- Executing [h@mor:4] [1;36mSet[0m("[1;35mSIP/01-00000282[0m", "[1;35mMOR_CLID="01-VentasFututel" <5713811667>[0m") in new stack
+    -- Executing [h@mor:5] [1;36mSet[0m("[1;35mSIP/01-00000282[0m", "[1;35mMOR_CHANNEL=SIP/01-00000282[0m") in new stack
+[Ksip*CLI> [0K    -- Executing [h@mor:6] [1;36mSet[0m("[1;35mSIP/01-00000282[0m", "[1;35mMOR_PDD=-22.875033[0m") in new stack
+    -- Executing [h@mor:7] [1;36mNoOp[0m("[1;35mSIP/01-00000282[0m", "[1;35mHANGUP CAUSE: 16[0m") in new stack
+[Ksip*CLI> 
+Disconnected from Asterisk server
+Executing last minute cleanups

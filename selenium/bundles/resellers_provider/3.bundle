@@ -1,0 +1,7 @@
+# 
+# ----
+# create tariff
+tariff/provider_12301/create.sql
+# create simple provider
+provider/sip_3304/create.sql
+# bundle loaded

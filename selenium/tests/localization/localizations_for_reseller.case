@@ -1,0 +1,1363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>Loc1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>Loc2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rule_1</td>
+	<td>(1)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=view_1</td>
+	<td>(44)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rule_2</td>
+	<td>(0)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=view_2</td>
+	<td>(0)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rule_3</td>
+	<td>(0)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=view_3</td>
+	<td>(0)</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#delete_link_3 &gt; img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rules/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>spec</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cut</td>
+	<td>88</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>add</td>
+	<td>976</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>minlen</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>maxlen</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>lcr</td>
+	<td>label=Primary</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>add_location_rule</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>retail_reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>retail_reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rules/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name</td>
+	<td>Rule1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=tariff</td>
+	<td>label=Wholesale_rres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>lcr</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cut</td>
+	<td>37</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>add</td>
+	<td>336</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>minlen</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>maxlen</td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>add_location_rule</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cut</td>
+	<td>370</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>add</td>
+	<td>576</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>minlen</td>
+	<td>12</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>maxlen</td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=tariff</td>
+	<td>label=Wholesale_rres_user_tariff</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rule updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>commit</td>
+	<td>Create same locations as Admin's locations</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_4</td>
+	<td>Default location</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Global</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>rule_4</td>
+	<td>(2)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>view_4</td>
+	<td>(4)</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>These Admin's locations will replace all your locations! All your old locations and rules will be deleted.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_2</td>
+	<td>Loc1</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Global</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>rule_2</td>
+	<td>(0)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_3</td>
+	<td>Loc2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>rule_3</td>
+	<td>(1)</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//img[@alt='Edit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/admins_location_rules/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Default location</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Global</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_1</td>
+	<td>Int. prefix</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>cut_1</td>
+	<td>00</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>minlen_1</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>maxlen_1</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//img[@alt='Edit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>These Admin's locations will replace all your locations! All your old locations and rules will be deleted.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_1</td>
+	<td>Default location</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>rule_1</td>
+	<td>(1)</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>commit</td>
+	<td>Replace all locations with Admin's locations</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Old Locations deleted and new Locations added!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_5</td>
+	<td>Default location</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>rule_5</td>
+	<td>(1)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>view_5</td>
+	<td>(4)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_6</td>
+	<td>Loc1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>rule_6</td>
+	<td>(0)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>view_6</td>
+	<td>(0)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_7</td>
+	<td>Loc2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>rule_7</td>
+	<td>(1)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>view_7</td>
+	<td>(0)</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>user_admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>user_admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_destroy/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rules/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_edit/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_destroy/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/import_admins_locations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Create same locations as Admin's locations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>accountant</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>accountant1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_destroy/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rules/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_edit/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_destroy/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/import_admins_locations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Create same locations as Admin's locations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_destroy/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rules/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_edit/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_destroy/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/import_admins_locations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Create same locations as Admin's locations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/resellers/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=disallow_coppy_localization_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=disallow_coppy_localization_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=disallow_coppy_localization_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=disallow_coppy_localization_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=disallow_coppy_localization_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=disallow_coppy_localization_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>retail_reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>retail_reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>name=commit</td>
+	<td>Create same locations as Admin's locations</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/import_admins_locations</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=14</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_device_type_IAX2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rules/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>goodres</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cut</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=add</td>
+	<td>370</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_user</td>
+	<td>label=Test Retail rres User</td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=device_id_14</td>
+	<td>label=IAX2/1019</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=add_location_rule</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=s_device</td>
+	<td>IAX2/1019</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_device</td>
+	<td>label=IAX2/1034</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rule updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rule_edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=s_device</td>
+	<td>IAX2/1034</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>wholesale_rspro</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>wholesale_rspro1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/lcrs/providers_list/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=select_prov</td>
+	<td>label=WRSPRO_provider - SIP/0.0.0.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/location_rules/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>Rule2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cut</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=add</td>
+	<td>370</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=minlen</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=maxlen</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=tariff</td>
+	<td>label=Retail_wrspro_user_tariff</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=lcr</td>
+	<td>label=wrspro_primary_LCR</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_user</td>
+	<td>label=Test Retail wrspro User</td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=device_id_21</td>
+	<td>label=IAX2/1031</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=add_location_rule</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rule added</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/call_tracing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user</td>
+	<td>label=Test Wholesale wrspro User (20)</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>destination</td>
+	<td>860017219</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=price</td>
+	<td>0.047200</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=price_6</td>
+	<td>0.199000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=location</td>
+	<td>Default location</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=applied_rule</td>
+	<td>Rule2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=cut</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=add</td>
+	<td>370</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=localized_destination</td>
+	<td>37060017219</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=direction</td>
+	<td>Lithuania</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=direction_group</td>
+	<td>Lithuania</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>LCR changed from wrspro_primary_LCR to:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=lcr_changed_from_to</td>
+	<td>wrspro_primary_LCR</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff changed from Wholesale_wrspro_user_tariff to:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=tariff_changed_from</td>
+	<td>Retail_wrspro_user_tariff</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device changed from SIP/1032 to:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=device_changed_from</td>
+	<td>IAX2 /1031</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Retail_wrspro_user_tariff</td>
+	<td>Retail_wrspro_user_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=currency_20</td>
+	<td>USD (1.0000)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=prefix_20</td>
+	<td>370600</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=destination_group_20</td>
+	<td>Lithuania MOB</td>
+</tr>
+<!--testuojama su rspro-->
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>locRSPRO</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Location added</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=img[alt=&quot;Edit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Edit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=page_title</td>
+	<td>Location edit: locRSPRO</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=label</td>
+	<td>Location name</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=location_name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=commit</td>
+	<td>Save changes</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Back</td>
+	<td>Back</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location_name</td>
+	<td>locRSPRO edited</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Localization updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_9</td>
+	<td>locRSPRO edited</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Edit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=location_name</td>
+	<td>locRSPRO edited</td>
+</tr>
+<!--testuojama su rs-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/locations/localization</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>locRS</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Location added</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=img[alt=&quot;Edit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Edit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=page_title</td>
+	<td>Location edit: locRS</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=label</td>
+	<td>Location name</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=location_name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=commit</td>
+	<td>Save changes</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=Back</td>
+	<td>Back</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=location_name</td>
+	<td>locRS edited</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Localization updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_11</td>
+	<td>locRS edited</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Edit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=location_name</td>
+	<td>locRS edited</td>
+</tr>
+</tbody></table>
+</body>
+</html>

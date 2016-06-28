@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>ccshop_speedials</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ccshop_speedials</td></tr>
+</thead><tbody>
+<!--create speed dial for card 1-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=cardgroup[tariff_id]</td>
+	<td>label=Retail_user_tariff</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_num</td>
+	<td>1111111000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_pin</td>
+	<td>7856</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/speeddials</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>test1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=number</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=speeddial</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=number</td>
+	<td>123123123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=speeddial_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Added</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_1</td>
+	<td>test1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_1</td>
+	<td>123123123</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=speeddial_1</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=number</td>
+	<td>12355555</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=speeddial</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=speeddial_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Speed dial was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Speed dial must be unique</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[2]/td[4]</td>
+	<td>0.4023</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[3]/td[4]</td>
+	<td>0.4023</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[4]/td[4]</td>
+	<td>0.4023</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[5]/td[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[17]/td[4]</td>
+	<td></td>
+</tr>
+<!--#7338  sustabdžius šioje vietoje ir pasižiūrėjus tarifo, priskirto cc group kuriam priklauso card, rates matoma klaida. Panašu kad imamas ne tas tarifas kuris priskirtas cc group o tiesiog pirmas retail tarifų liste-->
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates/10?st=L</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[20]/td[4]</td>
+	<td>0.0400</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[21]/td[4]</td>
+	<td>0.0400</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[22]/td[4]</td>
+	<td>0.0400</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[24]/td[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=cardgroup[tariff_id]</td>
+	<td>label=Wholesale_user_tariff</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<!--check card 2-->
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_num</td>
+	<td>1111111001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_pin</td>
+	<td>9812</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/speeddials</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>test3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=number</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=speeddial</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=speeddial_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Added</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=name_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_2</td>
+	<td>1234567890</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=speeddial_2</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>test4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=number</td>
+	<td>234562345</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=speeddial</td>
+	<td>123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=speeddial_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Speed dial was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Speed dial must be unique</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//td[5]</td>
+	<td>0.5000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[3]/td[5]</td>
+	<td>0.7210</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[4]/td[5]</td>
+	<td>0.0000</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//tr[5]/td[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates/10?st=L</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//td[5]</td>
+	<td>0.0800</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[3]/td[5]</td>
+	<td>0.0877</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//tr[4]/td[5]</td>
+	<td>0.0743</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//tr[5]/td[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rate (USD)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rate with TAX (USD)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Connection Fee (USD)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Connection fee with TAX (USD)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=cardgroup[tariff_id]</td>
+	<td>label=Retail_user_tariff</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate1</td>
+	<td>0.132</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate2</td>
+	<td>0.658</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate473</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_num</td>
+	<td>1111111001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_pin</td>
+	<td>9812</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates</td>
+	<td></td>
+</tr>
+<!--priskyrus retail tarifa be taxu, rates turi atvaizduoti vienodai. -->
+<tr>
+	<td>assertText</td>
+	<td>id=rate_1</td>
+	<td>0.1320</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rate_tax_1</td>
+	<td>0.1320</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=tax2_name</td>
+	<td>1st tax</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=tax3_name</td>
+	<td>2nd tax</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tax3_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tax2_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=tax1_value</td>
+	<td>5.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=tax2_value</td>
+	<td>3.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=tax3_value</td>
+	<td>8.0</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tax2_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tax3_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tax2_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tax3_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=compound_tax</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_num</td>
+	<td>1111111001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_pin</td>
+	<td>9812</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<!--tikrinama, ar gerai skaičiuoja taxus po pakeitimų-->
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rate_1</td>
+	<td>0.1320</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rate_tax_1</td>
+	<td>0.1542</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=compound_tax</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_num</td>
+	<td>1111111001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_pin</td>
+	<td>9812</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<!--tikrinama, ar gerai skaičiuoja compund taxus po pakeitimų-->
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rate_1</td>
+	<td>0.1320</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rate_tax_1</td>
+	<td>0.1531</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--tikrinama, ar enablinus paypal nėra apsipirkimo elementų. -->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings_payments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_1']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>paypal_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>paypal_email</td>
+	<td>tetstt@testew.ocr</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>login_num</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_num</td>
+	<td>1111111000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_pin</td>
+	<td>7856</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/index</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//img[@alt='Example']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>Test_cardgroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>10.0840 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>cards_amount</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=Show my cart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>Shop</td>
+	<td></td>
+</tr>
+<!--tikrinama, ar disablinus paypal nėra apsipirkimo elementų. -->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings_payments</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_1']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>paypal_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>paypal_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>login_num</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_num</td>
+	<td>1111111000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_pin</td>
+	<td>7856</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/index</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//img[@alt='Example']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>Test_cardgroup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>10.0840 USD</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>cards_amount</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>link=Show my cart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>Shop</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=tariff_name</td>
+	<td>tariff to test rates</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tariff_purpose_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff successfully created</td>
+	<td></td>
+</tr>
+<!--provider ir user rates jau nustatyti-->
+<!--nustatomi custom rates-->
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/user_rates_list/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate1</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate2</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rate473</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=th &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Rates updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/custom_rates/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/user_acustrates/1?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>12.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Custom rate updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/user_acustrates/2?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>12.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Custom rate updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/user_acustrates/3?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>12.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Custom rate updated</td>
+	<td></td>
+</tr>
+<!--cc naudoja visai kita tarifa, kuris nesusijes su provaiderio, userio tarifais ir custom rates.-->
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_name</td>
+	<td>cc group</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=price_with_vat</td>
+	<td>10.0000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=cardgroup[tariff_id]</td>
+	<td>label=tariff to test rates</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card Group successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>1111111111</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>1111111112</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Cards created: 2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/ccpanel/rates</td>
+	<td></td>
+</tr>
+<!--neturi buti custom rates, provider tarif kainu ir userio tarifo kainu - tik cc tarifo kainos. -->
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>12.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0.3100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0.4500</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rate_1</td>
+	<td>0.1320</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=rate_2</td>
+	<td>0.6580</td>
+</tr>
+</tbody></table>
+</body>
+</html>

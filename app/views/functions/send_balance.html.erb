@@ -1,0 +1,36 @@
+
+<% if @user.send_balance_to_others? %>
+    <br/>
+    <%= _('Enter_details_for_sending_balance') %>:
+    <br/>
+    <br/>
+    <table class="maintable" width="50%">
+      <%= form_tag :action => 'send_balance_to' do %>
+		  <tr class="row1">
+            <th align="left">  <%= _('Amount') %>:</th>
+            <td align="center">  <%= text_field_tag 'amount', "", "class" => "input", :size => "10", :maxlength => "10" %><%= @user.currency.name %>*  </td>
+          </tr>
+		  
+          <tr class="row1">
+            <th align="left">  <%= _('Receiver_type') %>:</th>
+            <td align="center"> <%= radio_button_tag('receiver_type', '0', true, {:id => "receiver_type_1"}) %> <%= _('User') %>**
+			<%= radio_button_tag('receiver_type', '1', false, {:id => "receiver_type_2"}) %> <%= _('Device') %>***	</td>
+          </tr>
+		  
+		  <tr class="row1">
+            <th align="left">  <%= _('Receiver_name') %>:</th>
+            <td align="center">  <%= text_field_tag 'receiver_name', "", "class" => "input", :size => "30", :maxlength => "50" %>  </td>
+          </tr>		  	  
+          <tr>
+            <th align="right" colspan=2>  <%= submit_tag _('Send_balance'), :disable_with => _('Processing..') %>  </th>
+          </tr>
+		  
+     <% end %>
+    </table>
+	<br />
+	*<%= _('Send_balance_minimal_transference') %> = <%= @minimal_amount_to_transfer.to_d  %>
+	<br/><br/>
+	**<%= _('Send_balance_user_notice') %>
+    <br/><br/>
+    ***<%= _('Send_balance_device_notice') %>
+<% end %>

@@ -1,0 +1,173 @@
+<%= b_info + _('cid_fallback_info') %>
+<%= form_tag :action => 'callback_settings_update' do %>
+    <br/>
+    <br/>
+    <table class="simple" width="100%">
+      <tr>
+        <td width="30"></td>
+        <td><b><%= _('Active_for_users') %>?</b></td>
+        <td><%= check_box_tag 'cb_active', value = "1", Confline.get_value("CB_Active").to_i == 1 %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b><%= _('MaxRetries') %>:</b></td>
+        <td><%= text_field_tag('cb_maxretries', Confline.get_value("CB_MaxRetries"), "class" => "input", :size => "35", :maxlength => "50") %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b><%= _('RetryTime') %>:</b></td>
+        <td><%= text_field_tag('cb_retrytime', Confline.get_value("CB_RetryTime"), "class" => "input", :size => "35", :maxlength => "50") %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b><%= _('WaitTime') %>:</b></td>
+        <td><%= text_field_tag('cb_waittime', Confline.get_value("CB_WaitTime"), "class" => "input", :size => "35", :maxlength => "50") %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b><%= _('Web_Callback_Server') %>:</b></td>
+        <td><select name="web_callback_server">
+          <% for serv in @servers %>
+              <option value="<%= serv.server_id %>" <%= "selected" if serv.server_id.to_i == Confline.get_value("Web_Callback_Server").to_i %>><%= serv.server_id.to_s + " - " + serv.server_ip %></option>
+          <% end %>
+        </select>
+        </td>
+      </tr>
+      <% if Confline.get_value('hidden_functionality').to_i == 1 %>
+        <tr>
+        <td></td>
+        <td><b><%= _('Busy_IVR') %></b></td>
+          <td>
+            <select name='busy_ivr'>
+              <option value="0"><%= _('None') %></option>
+              <% @ivrs.each do |busy_ivr| %>
+                <option value="<%= busy_ivr.id %>" <%= 'selected' if busy_ivr.id == Confline.get_value('Busy_IVR').to_i %>>
+                  <%= busy_ivr.name.to_s %>
+                </option>
+              <% end %>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b><%= _('Failed_IVR') %></b></td>
+          <td>
+            <select name='failed_ivr'>
+              <option value="0"><%= _('None') %></option>
+              <% @ivrs.each do |failed_ivr| %>
+                  <option value="<%= failed_ivr.id %>" <%= 'selected' if failed_ivr.id == Confline.get_value('Failed_IVR').to_i %>>
+                    <%= failed_ivr.name.to_s %>
+                  </option>
+              <% end %>
+            </select>
+          </td>
+        </tr>
+      <% end %>
+      <tr>
+        <td></td>
+        <td class="bottom_border" colspan=1 <%=raw tooltip('CID for legA', _('legA_info')) %>><br/><big><b>CID for legA</b></big> <%= b_info %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><br/></td>
+        <td><br/></td>
+        <td><br/></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b><%= _('Send_Device_CID') %>:</b></td>
+        <td><%= radio_button 'CID', 'legA', 'device', :checked => (Confline.get_value("Callback_legA_CID") == "device") %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b><%= _('Send_Source_As_CID') %>:</b></td>
+        <td><%= radio_button 'CID', 'legA', 'src', :checked => (Confline.get_value("Callback_legA_CID") == "src") %></td>
+      </tr>
+      <tr id="web_callback_cid_row">
+        <td></td>
+        <td><b><%= _('WEB_Callback_CID') %>:</b></td>
+        <td>
+            <%= radio_button 'CID', 'legA', 'custom', :checked => (Confline.get_value("Callback_legA_CID") == "custom") %>
+            <%= text_field_tag('legA_send_custom', Confline.get_value2("Callback_legA_CID"), "class" => "input", :size => "35", :maxlength => "50") %>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="bottom_border" colspan=1 <%=raw tooltip('CID for legB', _('legB_info')) %>><br/><big><b>CID for legB</b></big> <%= b_info %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><br/></td>
+        <td><br/></td>
+        <td><br/></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b><%= _('Send_Device_CID') %>:</b></td>
+        <td><%= radio_button 'CID', 'legB', 'device', :checked => (Confline.get_value("Callback_legB_CID") == "device") %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b><%= _('Send_Source_As_CID') %>:</b></td>
+        <td><%= radio_button 'CID', 'legB', 'src', :checked => (Confline.get_value("Callback_legB_CID") == "src") %></td>
+      </tr>
+      <tr id="web_callback_cid_row">
+        <td></td>
+        <td><b><%= _('WEB_Callback_CID') %>:</b></td>
+        <td>
+            <%= radio_button 'CID', 'legB', 'custom', :checked => (Confline.get_value("Callback_legB_CID") == "custom") %>
+            <%= text_field_tag('legB_send_custom', Confline.get_value2("Callback_legB_CID"), "class" => "input", :size => "35", :maxlength => "50") %>
+        </td>
+      </tr>
+
+      <!--
+                                      <tr>
+                                        <td></td>
+                  <td><b><%#= _('Email_Callback_Pop3_Server')%>:</b>                 </td>
+                  <td><%#= text_field_tag('email_callback_pop3_server', Confline.get_value("Email_Callback_Pop3_Server") , "class" => "input", :size => "35", :maxlength => "50" )%></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><b><%#= _('Email_Callback_Login')%>:</b>                 </td>
+                    <td><%#= text_field_tag('email_callback_login', Confline.get_value("Email_Callback_Login") , "class" => "input", :size => "35", :maxlength => "50" )%></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><b><%#= _('Email_Callback_Password')%>:</b>                 </td>
+                    <td><%#= text_field_tag('email_callback_password', Confline.get_value("Email_Callback_Password") , "class" => "input", :size => "35", :maxlength => "50" )%></td>
+                  </tr>
+    -->
+      <tr>
+        <td></td>
+        <td colspan='2'>
+          <br />
+          <br />
+          <%= submit_tag _('Save_changes'), :disable_with=>_('Processing..')%>
+        </td>
+      </tr>
+    </table>
+<% end %>
+
+
+<script type="text/javascript">
+  //<![CDATA[
+  Event.observe(window, 'load', function() {
+      if($('web_callback_send_source').checked){
+          $('web_callback_cid_row').hide();
+      }else{
+          $('web_callback_cid_row').show();
+      }
+  });
+
+  Event.observe($('web_callback_send_source'), 'click', function() {
+              if($('web_callback_send_source').checked){
+                  $('web_callback_cid_row').hide();
+              }else{
+                  $('web_callback_cid_row').show();
+              }
+          }
+  );
+
+
+    //]]>
+</script>

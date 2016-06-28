@@ -1,0 +1,55 @@
+<% if @allow_read %>
+    <% if session[:acc_user_manage].to_i > 0 or !accountant? %>
+        <div class="nb"><%= b_user + _('user') %>: <%= link_nice_user(@user) %> </div>
+    <% else %>
+        <div class="nb"><%= b_user + _('user') %>: <%= nice_user(@user) %> </div>
+    <% end %>
+    <br>
+    
+    <% if @allow_edit %>
+      <%= link_to(b_add + _('New_subscription'), {:action => 'subscription_new', :id => @user.id}, :id => "add_subscription") %>
+      <br><br>
+    <% end %>
+    
+    <%= b_info %> <%= _('Activation_start') + " and " + _('Activation_end') + " " + _('values_in_system_time_zone') %>: <%= nice_system_time_string %>
+    <br><br>
+    
+    <table width="100%" class="maintable">
+      <tr>
+        <th align="left"><%= _('Service') %></th>
+        <% if can_see_finances? %>
+            <th align="right"><%= _('Price') %> (<%= current_user.currency.name %>)</th>
+        <% end %>
+        <th align="left"><%= _('Memo') %></th>
+        <th align="center"><%= _('Added') %></th>
+        <th align="center"><%= _('Activation_start') %></th>
+        <th align="center"><%= _('Activation_end') %></th>
+        <th align="center"><%= _('Time_left') %></th>
+        <% if @allow_edit %>
+            <th></th>
+            <th></th>
+        <% end %>
+      </tr>
+      <% @subs.each_with_index { |sub, i| %>
+          <tr id="line_<%= sub.id %>" class="row<%= (i % 2 + 1).to_s %>">
+            <% if session[:acc_services_manage].to_i > 0 or session[:usertype] != 'accountant' %>
+                <td id="service_name_<%= sub.id %>" align="left"><%= link_to(sub.service.name, {:action => "list"}, :id => "service_name_link_"+ sub.id.to_s) %></td>
+            <% else %>
+                <td id="service_name_<%= sub.id %>" align="left"><%= sub.service.name %></td>
+            <% end %>
+            <% if can_see_finances? %>
+                <td id="service_price_<%= sub.id %>" align="right"> <%= nice_number sub.service.price %> </td>
+            <% end %>
+            <td id="memo_<%= sub.id %>" align="left"> <%= sub.memo[0..50] if sub.memo %> </td>
+            <td id="added_<%= sub.id %>" align="center"> <%= nice_date_time sub.added %> </td>
+            <td id="activation_start_<%= sub.id %>" align="center"> <%= nice_date_time(sub.activation_start, 0) %> </td>
+            <td id="activation_end_<%= sub.id %>" align="center"> <%= nice_date_time(sub.activation_end, 0) unless (sub.service and sub.service.type == 'one_time_fee') %> </td>
+            <td id="time_left_<%= sub.id %>" align="center"> <%= nice_time sub.time_left if sub.service.servicetype == "flat_rate" %></td>
+            <% if @allow_edit %>
+                <td id="edit_<%= sub.id %>" align="center"><%= link_to(b_edit, {:action => 'subscription_edit', :id => sub}, :id => "edit_link_" + sub.id.to_s) %></td>
+                <td id="destroy_<%= sub.id %>" align="center"><%= link_to(b_delete, {:action => 'subscription_confirm_destroy', :id => sub}, :id => "destroy_link_" + sub.id.to_s) %></td>
+            <% end %>
+          </tr>
+      <% } %>
+    </table>
+<% end %>

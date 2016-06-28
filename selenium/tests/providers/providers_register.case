@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>providers_register</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">providers_register</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>provider_login</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>provider_password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_dynamic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_login</td>
+	<td>testinis</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=provider_login</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_password</td>
+	<td>testinis</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//tr[@id='reg_extension_row']/td[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//tr[@id='reg_line_row']/td[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>provider_reg_extension</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>reg_extension</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>provider_reg_extension</td>
+	<td>aaaaaaaaaaaaaaaaa</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>provider_reg_extension</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>reg_register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_ip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>register =&gt; testinis:testinis@22.33.44.55:4569/aaaaaaaaaaaaaaaaa</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=add_to_servers_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>provider_login</td>
+	<td>testinis</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>provider_password</td>
+	<td>testinis</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>register =&gt; testinis:testinis@22.33.44.55:4569/aaaaaaaaaaaaaaaaa</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>reg_line</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>provider_reg_line</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>provider_reg_line</td>
+	<td>bbbbbbbbbbbbbbbbbbbb</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>provider_reg_line</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>reg_line</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>register =&gt; bbbbbbbbbbbbbbbbbbbb</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>provider_reg_line</td>
+	<td>bbbbbbbbbbbbbbbbbbbb</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>reg_line</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>register =&gt; bbbbbbbbbbbbbbbbbbbb</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>provider_reg_line</td>
+	<td>1234$&amp;^%#$#@~@$#</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>provider_reg_line</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>provider_reg_line</td>
+	<td>1234$&amp;^%#$#@~@$#</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>register =&gt; 1234$&amp;^%#$#@~@$#</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>reg_extension</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>provider_reg_extension</td>
+	<td>#@$%^&amp;#565412</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>provider_reg_extension</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>reg_register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>provider_reg_extension</td>
+	<td>#@$%^&amp;#565412</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=reg_extension</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>register =&gt; testinis:testinis@22.33.44.55:4569/#@$%^򊂤</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_dynamic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_ip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_server_ip</td>
+	<td>127.0.0.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_ipaddr</td>
+	<td>127.0.0.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_port</td>
+	<td>1056</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=status</td>
+	<td>Provider successfully updated</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_hostname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_name</td>
+	<td>iax2 provider</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=provider_tech_IAX2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=add_to_servers_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_hostname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/sqls/user/reseller_3/make_rspro</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/sqls/tariff/provider_12301/create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/sqls/provider/sip_3304/create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3304</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>provider_reg_extension</td>
+	<td>#@$%^&amp;#565412</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3304</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_dynamic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3304</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_ip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_server_ip</td>
+	<td>127.0.0.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_ipaddr</td>
+	<td>127.0.0.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_port</td>
+	<td>1056</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=status</td>
+	<td>Provider successfully updated</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3304</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3304</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_hostname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3304</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3304</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_name</td>
+	<td>iax2 provider 2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=provider_tech_IAX2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3305</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3305</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hostname_ip_hostname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3305</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=register</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/providers/edit/3305</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=register</td>
+	<td>off</td>
+</tr>
+</tbody></table>
+</body>
+</html>

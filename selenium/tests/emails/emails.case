@@ -1,0 +1,2592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>emails</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">emails</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/acc_groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>address_email</td>
+	<td>test@kolmisoft.com</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Personal details changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_sending_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_smtp_server</td>
+	<td>localhost</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_port</td>
+	<td>587</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_from</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_batch_size</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tabTabdhtmlgoodies_tabView1_3 &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_smtp_server</td>
+	<td>localhost</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_port</td>
+	<td>587</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_batch_size</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_from</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Test email will be sent to: test@kolmisoft.com</td>
+	<td></td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>email_test_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>notice</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+-->
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_admin</td>
+	<td>registration_confirmation_for_admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_cyberplat_announce</td>
+	<td>cyberplat_announce</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_invoices</td>
+	<td>invoices</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_calling_cards_data_to_paypal</td>
+	<td>calling_cards_data_to_paypal</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_warning_balance_email</td>
+	<td>warning_balance_email</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_recording_new</td>
+	<td>recording_new</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_recording_delete</td>
+	<td>recording_delete</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_registration_confirmation_for_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_registration_confirmation_for_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_cyberplat_announce</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_calling_cards_data_to_paypal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_warning_balance_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_recording_new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_recording_delete</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_registration_confirmation_for_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_registration_confirmation_for_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_cyberplat_announce</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_calling_cards_data_to_paypal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_warning_balance_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_recording_new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_recording_delete</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Edit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>registration_confirmation_for_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>ADMIN</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_plain</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_registration_confirmation_for_user</td>
+	<td>ADMIN</td>
+</tr>
+<!--
+<tr>
+	<td>assertText</td>
+	<td>emails_registration_confirmation_for_user</td>
+	<td>1</td>
+</tr>
+-->
+<tr>
+	<td>assertText</td>
+	<td>format_registration_confirmation_for_user</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='show_registration_confirmation_for_user']/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_registration_confirmation_for_user</td>
+	<td>ADMIN</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>body_registration_confirmation_for_user</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_registration_confirmation_for_user</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add new email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_name</td>
+	<td>test_admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>test_admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>test_admin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_plain</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_test_admin</td>
+	<td>test_admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_test_admin</td>
+	<td>test_admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>emails_test_admin</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_test_admin</td>
+	<td>html</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>show_test_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_test_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>edit_test_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_test_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='edit_test_admin']/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_name</td>
+	<td>test_admin2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>test_admin2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>test_admin2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_plain</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_test_admin2</td>
+	<td>test_admin2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_test_admin2</td>
+	<td>test_admin2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>emails_test_admin2</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_test_admin2</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>show_test_admin2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_test_admin2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>edit_test_admin2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_test_admin2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='show_test_admin2']/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_test_admin2</td>
+	<td>test_admin2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_test_admin2</td>
+	<td>test_admin2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>body_test_admin2</td>
+	<td>test_admin2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_test_admin2</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Email_go']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>to_be_sent_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>username_0</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>usertype_0</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>firstname_0</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_0</td>
+	<td>test@kolmisoft.com</td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>emails_test_admin2</td>
+	<td>1</td>
+</tr>
+-->
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add new email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_name</td>
+	<td>test_admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>test_admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>test_admin</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user_username</td>
+	<td>resellers_email</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password_password</td>
+	<td>resellers1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user_usertype</td>
+	<td>label=reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>address_email</td>
+	<td>test2@kolmisoft.com</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>resellers_email</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>resellers1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/reseller_settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#tabTabdhtmlgoodies_tabView1_4 &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_smtp_server</td>
+	<td>localhost</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_port</td>
+	<td>587</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_batch_size</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_from</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Test email will be sent to: test2@kolmisoft.com</td>
+	<td></td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>email_test_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+-->
+<tr>
+	<td>type</td>
+	<td>email_smtp_server</td>
+	<td>localhost</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_port</td>
+	<td>25</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_login</td>
+	<td>komitest2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_password</td>
+	<td>kolmitest992</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_from</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Test email will be sent to: test2@kolmisoft.com</td>
+	<td></td>
+</tr>
+<!--<tr> 	<td>setTimeout</td> 	<td>60000</td> 	<td></td> </tr> <tr> 	<td>clickAndWait</td> 	<td>email_test_link</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Email was not sent. Press here for more info</td> 	<td></td> </tr> <tr> 	<td>assertText</td> 	<td>css=img[alt=&quot;Help&quot;]</td> 	<td></td> </tr> <tr> 	<td>setTimeout</td> 	<td>10000</td> 	<td></td> </tr>-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/reseller_settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_smtp_server</td>
+	<td>smtp.gmail.com2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_port</td>
+	<td>252</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_batch_size</td>
+	<td>502</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_smtp_server</td>
+	<td>smtp.gmail.com2</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_port</td>
+	<td>252</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_login</td>
+	<td>komitest2</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_password</td>
+	<td>kolmitest992</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_batch_size</td>
+	<td>502</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_from</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_smtp_server</td>
+	<td>smtp.gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_port</td>
+	<td>25</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_login</td>
+	<td>kolmitest</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_password</td>
+	<td>kolmitest99</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_batch_size</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Test email will be sent to: test2@kolmisoft.com</td>
+	<td></td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>email_test_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+-->
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_admin</td>
+	<td>registration_confirmation_for_admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_cyberplat_announce</td>
+	<td>cyberplat_announce</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_invoices</td>
+	<td>invoices</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_calling_cards_data_to_paypal</td>
+	<td>calling_cards_data_to_paypal</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_warning_balance_email</td>
+	<td>warning_balance_email</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_registration_confirmation_for_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_registration_confirmation_for_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_cyberplat_announce</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_calling_cards_data_to_paypal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_warning_balance_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_registration_confirmation_for_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_registration_confirmation_for_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_cyberplat_announce</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_calling_cards_data_to_paypal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_warning_balance_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Edit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_subject</td>
+	<td>ADMIN</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>RESELLER</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_body</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>Reseller</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_plain</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_registration_confirmation_for_user</td>
+	<td>RESELLER</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_registration_confirmation_for_user</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='show_registration_confirmation_for_user']/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_registration_confirmation_for_user</td>
+	<td>RESELLER</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>body_registration_confirmation_for_user</td>
+	<td>Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_registration_confirmation_for_user</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add new email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_name</td>
+	<td>test_reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>test_reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>test_reseller</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_plain</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_test_reseller</td>
+	<td>test_reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_test_reseller</td>
+	<td>test_reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>emails_test_reseller</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_test_reseller</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>show_test_reseller</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_test_reseller</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>edit_test_reseller</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_test_reseller</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='edit_test_reseller']/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_name</td>
+	<td>test_reseller2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>test_reseller2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>test_reseller2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_test_reseller2</td>
+	<td>test_reseller2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_test_reseller2</td>
+	<td>test_reseller2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>emails_test_reseller2</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_test_reseller2</td>
+	<td>html</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>show_test_reseller2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_test_reseller2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>edit_test_reseller2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_test_reseller2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='show_test_reseller2']/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_test_reseller2</td>
+	<td>test_reseller2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_test_reseller2</td>
+	<td>test_reseller2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>body_test_reseller2</td>
+	<td>test_reseller2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_test_reseller2</td>
+	<td>html</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add new email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_name</td>
+	<td>test1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>test1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>tes1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='destroy_test1']/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=New tariff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tariff_name</td>
+	<td>test1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=New tariff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>tariff_name</td>
+	<td>test2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>tariff_purpose_user_wholesale</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user_username</td>
+	<td>reseller_user</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password_password</td>
+	<td>reseller_user1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>address_email</td>
+	<td>test@email.test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Email_go']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>username_7</td>
+	<td>reseller_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>usertype_7</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_7</td>
+	<td>test@email.test</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>tobesent_7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>to_be_sent_7</td>
+	<td></td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>emails_test_reseller2</td>
+	<td>1</td>
+</tr>
+-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_3']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_smtp_server</td>
+	<td>localhost</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_port</td>
+	<td>587</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_batch_size</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_from</td>
+	<td>test@test.com</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Test email will be sent to: test@kolmisoft.com</td>
+	<td></td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>email_test_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+-->
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_registration_confirmation_for_user</td>
+	<td>ADMIN</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>address[email]</td>
+	<td>test@kolmisoft.com</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/reseller_settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_from</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_smtp_server</td>
+	<td>localhost</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_port</td>
+	<td>587</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_batch_size</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_from</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Test email will be sent to: test_reseller@email.test</td>
+	<td></td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>email_test_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_smtp_server</td>
+	<td>smtp.gmail.com2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_port</td>
+	<td>252</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_login</td>
+	<td>kolmitest2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_password</td>
+	<td>kolmitest992</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_batch_size</td>
+	<td>502</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_from</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_smtp_server</td>
+	<td>smtp.gmail.com2</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_port</td>
+	<td>252</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_login</td>
+	<td>kolmitest2</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_password</td>
+	<td>kolmitest992</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_password</td>
+	<td>kolmitest992</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_batch_size</td>
+	<td>502</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_from</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_smtp_server</td>
+	<td>smtp.gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_port</td>
+	<td>25</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_batch_size</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--<tr> 	<td>setTimeout</td> 	<td>60000</td> 	<td></td> </tr> <tr> 	<td>clickAndWait</td> 	<td>//img[@alt='Email_go']</td> 	<td></td> </tr> <tr> 	<td>assertText</td> 	<td>id=notice</td> 	<td>Email was not sent. Press here for more info</td> </tr> <tr> 	<td>assertText</td> 	<td>css=img[alt=&quot;Help&quot;]</td> 	<td></td> </tr> <tr> 	<td>setTimeout</td> 	<td>10000</td> 	<td></td> </tr>-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/reseller_settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_smtp_server</td>
+	<td>localhost</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_port</td>
+	<td>25</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_batch_size</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_from</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_4']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Test email will be sent to: test_reseller@email.test</td>
+	<td></td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>email_test_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+-->
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_admin</td>
+	<td>registration_confirmation_for_admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_cyberplat_announce</td>
+	<td>cyberplat_announce</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_invoices</td>
+	<td>invoices</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_calling_cards_data_to_paypal</td>
+	<td>calling_cards_data_to_paypal</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_warning_balance_email</td>
+	<td>warning_balance_email</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>block_when_no_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_registration_confirmation_for_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_registration_confirmation_for_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_cyberplat_announce</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_calling_cards_data_to_paypal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_warning_balance_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_registration_confirmation_for_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_registration_confirmation_for_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_cyberplat_announce</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_c2c_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_invoices</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_calling_cards_data_to_paypal</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_warning_balance_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Edit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_subject</td>
+	<td>ADMIN</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_body</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>reseller2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>reseller2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_plain</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//td[@id='show_registration_confirmation_for_user']/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_registration_confirmation_for_user</td>
+	<td>registration_confirmation_for_user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_registration_confirmation_for_user</td>
+	<td>reseller2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>body_registration_confirmation_for_user</td>
+	<td>reseller2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_registration_confirmation_for_user</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add new email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_name</td>
+	<td>tes3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_subject</td>
+	<td>test3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_name</td>
+	<td>test3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_body</td>
+	<td>test3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>email_format_plain</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name_test3</td>
+	<td>test3</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>subject_test3</td>
+	<td>test3</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>emails_test3</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>format_test3</td>
+	<td>plain</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>show_test3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_send_test3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>edit_test3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>destroy_test3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Edit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>address_email</td>
+	<td>test3@kolmisoft.com</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='confirm_without_message']/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>User's settings successfully changed: User Resellers</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Email_go']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>username_5</td>
+	<td>user_reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>usertype_5</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>firstname_5</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_5</td>
+	<td>test3@kolmisoft.com</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>tobesent_5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>to_be_sent_5</td>
+	<td></td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>emails_test3</td>
+	<td>1</td>
+</tr>
+-->
+<!--<tr> 	<td>open</td> 	<td>/billing/emails/list_users/31</td> 	<td></td> </tr>-->
+<!--
+<tr>
+	<td>assertText</td>
+	<td>niceuser_23</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>username_23</td>
+	<td>user_reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>usertype_23</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>email_23</td>
+	<td>test@kolmisoft.com</td>
+</tr>
+-->
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Email deleted</td>
+	<td></td>
+</tr>
+<!--checking security-->
+<tr>
+	<td>open</td>
+	<td>/billing/emails/show_emails/9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/show_emails/15</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/edit/9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/edit/15</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/send_emails/9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/send_emails/15</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/destroy/9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/destroy/15</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<!--Disable email sending and check if message is displayed.-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>email_sending_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>email_sending_enabled</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>icon_cross_test_admin_disabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>icon_cross_test_admin_disabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>WzBoDyI</td>
+	<td>Email sending is disabled</td>
+</tr>
+<tr>
+	<td>mouseOut</td>
+	<td>icon_cross_test_admin_disabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>WzBoDyI</td>
+	<td></td>
+</tr>
+<!--actions for not exist user-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>email_sending_enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_smtp_server</td>
+	<td>localhost</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=here</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>username</td>
+	<td>email_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>email_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password2</td>
+	<td>email_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>first_name</td>
+	<td>email_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>last_name</td>
+	<td>email_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>test@kolmisoft.com</td>
+</tr>
+<!--
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/send_emails/17</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=to_be_sent_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=to_be_sent_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=to_be_sent_6</td>
+	<td></td>
+</tr>
+<!--<tr>
+	<td>setTimeout</td>
+	<td>30000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Email sent</td>
+	<td></td>
+</tr>-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=items_per_page</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/emails/list_users/17</td>
+	<td></td>
+</tr>
+<!--<tr> 	<td>assertTextPresent</td> 	<td>1 2 3</td> 	<td></td> </tr>-->
+</tbody></table>
+</body>
+</html>

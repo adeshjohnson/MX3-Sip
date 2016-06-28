@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>api_login</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">api_login</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Not Found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/update_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Not Found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='tabTabdhtmlgoodies_tabView1_9']/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>api_allow_registration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>allow_api</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>allow_get_api</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>xml_api_extension</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>api_secret_key</td>
+	<td>123450</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>wholesale_reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>wholesale_reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/reseller_settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=api_secret_key</td>
+	<td>123450</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>wholesale_rspro</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>wholesale_rspro1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/reseller_settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=api_secret_key</td>
+	<td>123450</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--hash-->
+<!--#1 hash-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?u=admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash1</td>
+</tr>
+<!--#2 hash-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?u=admin&amp;tariff_id=22</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash2</td>
+</tr>
+<!--#3 hash-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?u=admin&amp;tariff_id=22222</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash3</td>
+</tr>
+<!--#4 hash-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?u=admin&amp;tariff_id=14</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash4</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<!--#1 hash-->
+<!--own tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;test=1&amp;hash=${hash1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Retail_admin_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>EGP</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=duration</td>
+	<td>Infinity</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=round_by</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.567</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=start_time</td>
+	<td>00:00:00</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=end_time</td>
+	<td>23:59:59</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=from</td>
+	<td>1</td>
+</tr>
+<!--#2 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;tariff_id=22&amp;test=1&amp;hash=${hash2}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=pagename</td>
+	<td>Tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>CRC</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=direction</td>
+	<td>Afghanistan</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan proper</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan Kandahar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>93 FIX AFG 0.4832 0.0000 1 0 00:00:00 23:59:59</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=from</td>
+	<td></td>
+</tr>
+<!--#4 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_reseller&amp;tariff_id=14&amp;test=1&amp;hash=${hash4}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>No tariff found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Retail_admin_tariff</td>
+	<td></td>
+</tr>
+<!--#2 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_reseller&amp;tariff_id=22&amp;test=1&amp;hash=${hash2}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=pagename</td>
+	<td>Tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>CRC</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan proper 93 FIX AFG 0.4832 0.0000 1 0 00:00:00 23:59:59</td>
+	<td></td>
+</tr>
+<!--#1 hash-->
+<!--own tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_reseller&amp;test=1&amp;hash=${hash1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=pagename</td>
+	<td>Tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_res_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>BHD</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=direction</td>
+	<td>Afghanistan</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan Afghanistan proper 93 FIX AFG 0.7120 0.0000 1 0 00:00:00 23:59:59</td>
+	<td></td>
+</tr>
+<!--#1 hash-->
+<!--own tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=retail_accountant&amp;test=1&amp;hash=${hash1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=pagename</td>
+	<td>Tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Retail_acc_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>CRC</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.533</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=from</td>
+	<td>1</td>
+</tr>
+<!--#1 hash-->
+<!--own tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_wrspro_user&amp;test=1&amp;hash=${hash1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wrspro_user_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=direction</td>
+	<td>Afghanistan</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan proper 93 FIX AFG 0.4733 0.0000 1 0 00:00:00 23:59:59</td>
+	<td></td>
+</tr>
+<!--#1 hash-->
+<!--own tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=retail_user&amp;test=1&amp;hash=${hash1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Retail_user_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.4023</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=duration</td>
+	<td>Infinity</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=from</td>
+	<td>1</td>
+</tr>
+<!--#1 hash-->
+<!--own tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_accountant&amp;test=1&amp;hash=${hash1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_acc_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>CRC</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan proper 93 FIX AFG 0.6890 0.0000</td>
+	<td></td>
+</tr>
+<!--#2 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=retail_accountant&amp;tariff_id=22&amp;test=1&amp;hash=a98ed7ee09b9ef1149fd2b40485041f4e192e514</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=pagename</td>
+	<td>Tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Retail_acc_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>CRC</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.533</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=prefix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=subcode</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0.4832</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=from</td>
+	<td>1</td>
+</tr>
+<!--#2 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_wrspro_user&amp;tariff_id=22&amp;test=1&amp;hash=a98ed7ee09b9ef1149fd2b40485041f4e192e514</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wrspro_user_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>USD</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan proper 93 FIX AFG 0.4733 0.0000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0.4832</td>
+	<td></td>
+</tr>
+<!--#2 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=retail_user&amp;tariff_id=22&amp;test=1&amp;hash=a98ed7ee09b9ef1149fd2b40485041f4e192e514</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Retail_user_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>BHD</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>MOB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=type</td>
+	<td>minute</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.4023</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=prefix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=subcode</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0.4832</td>
+	<td></td>
+</tr>
+<!--#2 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_accountant&amp;tariff_id=22&amp;test=1&amp;hash=a98ed7ee09b9ef1149fd2b40485041f4e192e514</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_acc_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=direction</td>
+	<td>Afghanistan</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=con_fee</td>
+	<td>0.0000</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan proper 93 FIX AFG 0.6890 0.0000 1 0 00:00:00 23:59:59</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0.4832</td>
+	<td></td>
+</tr>
+<!--incorrect hash-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_reseller&amp;test=1&amp;hash=5b1d5b1569de26f6srydtuea5af4e3d</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Incorrect hash</td>
+	<td></td>
+</tr>
+<!--bad login-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_rrrrreseller&amp;test=1&amp;hash=5b1d5b1569de26f631ba3edf0d89f65be5af4e3d</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad login</td>
+	<td></td>
+</tr>
+<!--#3 hash-->
+<!--no tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_reseller&amp;tariff_id=22222&amp;test=1&amp;hash=10c7329056bda7077ba354de6781c5ea1c4e9a2b</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>No tariff found</td>
+	<td></td>
+</tr>
+<!--<tr> 	<td>open</td> 	<td>/billing/callc/logout</td> 	<td></td> </tr> <tr> 	<td>type</td> 	<td>login_username</td> 	<td>admin</td> </tr> <tr> 	<td>type</td> 	<td>login_psw</td> 	<td>admin1</td> </tr> <tr> 	<td>clickAndWait</td> 	<td>commit</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Successfully logged in</td> 	<td></td> </tr> <tr> 	<td>open</td> 	<td>/billing/tariffs/import_csv2/15</td> 	<td></td> </tr> <tr> 	<td>type</td> 	<td>id=file</td> 	<td>/home/mor/selenium/files/csv/very_big.csv</td> </tr> <tr> 	<td>clickAndWait</td> 	<td>name=commit</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>File uploaded</td> 	<td></td> </tr> <tr> 	<td>select</td> 	<td>name=prefix_id</td> 	<td>label=Prefix</td> </tr> <tr> 	<td>select</td> 	<td>name=rate_id</td> 	<td>label=Rate/min</td> </tr> <tr> 	<td>select</td> 	<td>name=connection_fee_id</td> 	<td>label=Connection Unit</td> </tr> <tr> 	<td>select</td> 	<td>name=increment_id</td> 	<td>label=Effective Date</td> </tr> <tr> 	<td>select</td> 	<td>name=min_time_id</td> 	<td>label=Effective Time</td> </tr> <tr> 	<td>clickAndWait</td> 	<td>name=commit</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Columns assigned</td> 	<td></td> </tr> <tr> 	<td>clickAndWait</td> 	<td>xpath=(//input[@name='commit'])[2]</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Analysis completed</td> 	<td></td> </tr> <tr> 	<td>clickAndWait</td> 	<td>name=commit</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Created destinations: 45074</td> 	<td></td> </tr> <tr> 	<td>clickAndWait</td> 	<td>name=commit</td> 	<td></td> </tr> <tr> 	<td>assertText</td> 	<td>id=status</td> 	<td>Rates updated: 3</td> </tr> <tr> 	<td>clickAndWait</td> 	<td>name=commit</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>New rates created: 52750</td> 	<td></td> </tr> <tr> 	<td>clickAndWait</td> 	<td>link=Fix</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Destinations not assigned to Destination Groups</td> 	<td></td> </tr> <tr> 	<td>click</td> 	<td>css=input[type=&quot;submit&quot;]</td> 	<td></td> </tr> <tr> 	<td>assertConfirmation</td> 	<td>Are you sure?</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>This step is dangerous! Make sure you know what you are doing.</td> 	<td></td> </tr> <tr> 	<td>click</td> 	<td>css=input[type=&quot;submit&quot;]</td> 	<td></td> </tr> <tr> 	<td>assertConfirmation</td> 	<td>Are you sure?</td> 	<td></td> </tr> <tr> 	<td>assertTextPresent</td> 	<td>Destinations assigned</td> 	<td></td> </tr> <!--#5 hash-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?u=admin&amp;tariff_id=15</td>
+	<td></td>
+</tr>
+<!--<tr> 	<td>assertTextPresent</td> 	<td>784a244b4a33fed28b40d40b38b4484fd81f32ab</td> 	<td></td> </tr>-->
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;tariff_id=15&amp;test=1&amp;hash=784a244b4a33fed28b40d40b38b4484fd81f32ab</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_admin_tariff</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=api_disable_hash_checking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<!--own tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Retail_admin_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>EGP</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=duration</td>
+	<td>Infinity</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=round_by</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.567</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=start_time</td>
+	<td>00:00:00</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=end_time</td>
+	<td>23:59:59</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=from</td>
+	<td>1</td>
+</tr>
+<!--#2 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;tariff_id=22&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=pagename</td>
+	<td>Tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>CRC</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=direction</td>
+	<td>Afghanistan</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan proper</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan Kandahar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>93 FIX AFG 0.4832 0.0000 1 0 00:00:00 23:59:59</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=from</td>
+	<td></td>
+</tr>
+<!--#1 hash-->
+<!--own tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=wholesale_accountant&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_acc_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>CRC</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan proper 93 FIX AFG 0.6890 0.0000</td>
+	<td></td>
+</tr>
+<!--#2 hash-->
+<!--user_reseller tariff-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=retail_accountant&amp;tariff_id=22&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=pagename</td>
+	<td>Tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_name</td>
+	<td>Retail_acc_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=purpose</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=currency</td>
+	<td>CRC</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Afghanistan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.533</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>css=tariff_name</td>
+	<td>Wholesale_wres_user_tariff</td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>css=purpose</td>
+	<td>user_wholesale</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=prefix</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>css=subcode</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>0.4832</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=from</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--Nustatomas useriui custom rate-->
+<tr>
+	<td>open</td>
+	<td>/billing/users/custom_rates/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=dg_new</td>
+	<td>label=Albania FIX</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/user_acustrates/1?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>898.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Custom rate updated</td>
+	<td></td>
+</tr>
+<!--naudojant user_id turi paimti userio custom rates ir tarifus-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;user_id=8&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Custom Rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_rate</td>
+	<td>898.0</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Retail_user_tariff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.4023</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.04</td>
+	<td></td>
+</tr>
+<!--tariff_id turi ignoruoti, kada yra user_id-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;user_id=8&amp;tariff_id=10&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Custom Rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_rate</td>
+	<td>898.0</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.4023</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Retail_user_tariff</td>
+	<td></td>
+</tr>
+<!--tariff_id turi ignoruoti, kada yra user_id-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;user_id=8&amp;tariff_id=14&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Custom Rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_rate</td>
+	<td>898.0</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.4023</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Retail_user_tariff</td>
+	<td></td>
+</tr>
+<!--nenaudojant user_id, tariff_id pateikiama tik prisijungusiam useriui priskirto tariff rate ir custom rates-->
+<!--jei custom rates nėra, tai imami userio tarifai-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Tariff Custom Rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Retail_admin_tariff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_rate</td>
+	<td>0.567</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/custom_rates/0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/user_acustrates/2?dt=&amp;st=00%3A00%3A00</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=price</td>
+	<td>2.6897</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Custom Rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_rate</td>
+	<td>2.6897</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Retail_admin_tariff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=retail_user&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Custom Rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_rate</td>
+	<td>898.0</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Retail_user_tariff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.4023</td>
+	<td></td>
+</tr>
+<!--su slaptazodziu-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/get_tariff?u=admin&amp;p=admin1&amp;user_id=8&amp;tariff_id=10&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Custom Rates</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=tariff_rate</td>
+	<td>898.0</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0.4023</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff Retail_user_tariff</td>
+	<td></td>
+</tr>
+-->
+</tbody></table>
+</body>
+</html>

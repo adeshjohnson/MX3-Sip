@@ -1,0 +1,121 @@
+<tr>
+  <th class="bottom_border" align="left" colspan=2 nowrap="true"> <%= _('This_month') %>:</th>
+</tr>
+<tr>
+  <td nowrap="true"><%= _('Calls') %>:</td>
+  <td id="month_calls" nowrap="true"><%= @quick_stats[0] %> </td>
+</tr>
+<tr>
+  <td nowrap="true"><%= _('Duration') %>:</td>
+  <td id="month_duration" nowrap="true"><%= nice_time @quick_stats[1] %> </td>
+</tr>
+<% if current_user.is_admin? or current_user.is_reseller? %>
+    <tr>
+      <td nowrap="true"><%= _('Selfcost') %>:</td>
+      <td id="month_selfcost" nowrap="true"><%= nice_number(@quick_stats[2].to_d * @ex) %></td>
+    </tr>
+    <tr>
+      <td nowrap="true"><%= _('Revenue') %>:</td>
+      <td id="month_cost" nowrap="true"><%= nice_number(@quick_stats[3].to_d * @ex) %></td>
+    </tr>
+    <tr>
+      <td nowrap="true"><%= _('Profit') %>:</td>
+      <td id="month_profit" nowrap="true"><%= nice_number((@quick_stats[3].to_d - @quick_stats[2].to_d) * @ex) %></td>
+    </tr>
+    <% if current_user.is_admin? %>
+      <tr>
+        <td nowrap="true"><%= _('Did_owner_cost') %>:</td>
+        <td id="month_did_owner_cost" nowrap="true"><%= nice_number(@quick_stats[4].to_d * @ex) %></td>
+      </tr>
+    <% end %>
+<% end %>
+<tr>
+  <td style="height: 10px"></td>
+</tr>
+<tr>
+  <th class="bottom_border" align="left" colspan=2 nowrap="true">                     <%= _('This_day') %>:</th>
+</tr>
+<tr>
+  <td nowrap="true"><%= _('Calls') %>:</td>
+  <td id="day_calls" nowrap="true"><%= @quick_stats[5] %> </td>
+</tr>
+<tr>
+  <td nowrap="true"><%= _('Duration') %>:</td>
+  <td id="day_duration" nowrap="true"><%= nice_time @quick_stats[6] %> </td>
+</tr>
+<% if current_user.is_admin? or current_user.is_reseller? %>
+    <tr>
+      <td nowrap="true"><%= _('Selfcost') %>:</td>
+      <td id="day_selfcost" nowrap="true"><%= nice_number(@quick_stats[7].to_d * @ex) %></td>
+    </tr>
+    <tr>
+      <td nowrap="true"><%= _('Revenue') %>:</td>
+      <td id="day_cost" nowrap="true"><%= nice_number(@quick_stats[8].to_d * @ex) %></td>
+    </tr>
+    <tr>
+      <td nowrap="true"><%= _('Profit') %>:</td>
+      <td id="day_profit" nowrap="true"><%= nice_number((@quick_stats[8].to_d - @quick_stats[7].to_d) * @ex) %></td>
+    </tr>
+    <% if current_user.is_admin? %>
+      <tr>
+        <td nowrap="true"><%= _('Did_owner_cost') %>:</td>
+        <td id="day_did_owner_cost" nowrap="true"><%= nice_number(@quick_stats[9].to_d * @ex) %></td>
+      </tr>
+    <% end %>
+<% end %>
+
+<% if not current_user.is_admin? %>
+    <tr>
+      <td style="height: 10px"></td>
+    </tr>
+    <tr>
+      <th class="bottom_border" align="left" colspan=2 nowrap="true"> <%= _('Finances') %>:</th>
+    </tr>
+    <tr>
+      <td nowrap="true"><%= _('Account') %>:</td>
+      <td nowrap="true">
+        <% if @user.postpaid? %>
+            <%= _('Postpaid') %>
+        <% else %>
+            <%= _('Prepaid') %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap="true"><%= _('Balance') %>:</td>
+      <td nowrap="true"><%= nice_number(@user.balance.to_f  * Currency.count_exchange_rate(@user.currency.name, session[:show_currency])) %> <%= session[:show_currency] %> <%= "(" + (nice_number(@user.get_tax.apply_tax(@user.balance.to_f) * Currency.count_exchange_rate(@user.currency.name, session[:show_currency]))) + " " + session[:show_currency] + " "+ _('With_TAX') + ")" if @user.get_tax.sum_tax.to_f != 0.to_f %></td>
+    </tr>
+    <% if @user.postpaid? %>
+        <tr>
+          <td nowrap="true"><%= _('Credit') %>:</td>
+          <td nowrap="true"><%= nice_credit(@user, session[:show_currency]) %>
+            <% if not @user.credit_unlimited? %>
+                <%= session[:show_currency] %>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+<% end %>
+
+<% if allow_manage_providers? %>
+    <tr>
+      <td style="height: 10px"></td>
+    </tr>
+    <tr>
+      <th class="bottom_border" align="left" colspan=2 nowrap="true"> <%= _('Now') %>:</th>
+    </tr>
+    <tr>
+      <td nowrap="true"><%= _('Active_Calls') %>:</td>
+      <td nowrap="true">
+        <div id="active_calls_count" nowrap="true"><%= link_to(Activecall.count_for_user(current_user), {:controller => "stats", :action => "active_calls"}, {:id => "active_calls_link"}) %></div>
+      </td>
+    </tr>
+<% end %>
+            <% if allow_manage_providers? %>
+                <%= periodically_call_remote(:update => 'active_calls_count',
+                                             :url => {:controller => "stats", :action => "active_calls_count"},
+                                             :frequency => session[:active_calls_refresh_interval],
+                                             :loading => "Element.show('spinner');",
+                                             :complete => "Element.hide('spinner');") %>
+            <% end %>
+

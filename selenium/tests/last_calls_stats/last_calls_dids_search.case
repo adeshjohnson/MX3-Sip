@@ -1,0 +1,1256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>search_dids</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">search_dids</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/various_calls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/last_calls_stats/calls_for_profit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_username</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password_password</td>
+	<td>reseller11</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_usertype</td>
+	<td>label=reseller</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_username</td>
+	<td>reseller2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password_password</td>
+	<td>reseller21</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_usertype</td>
+	<td>label=reseller</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_username</td>
+	<td>reseller3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password_password</td>
+	<td>reseller31</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_usertype</td>
+	<td>label=reseller</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/last_calls_stats?date_from[year]=2008&amp;search_on=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_16</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>s_did_pattern</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=s_did_pattern</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Manual</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_14</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_15</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_16</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_13</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_17</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_18</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_19</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_20</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_user</td>
+	<td>label=Test User #1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Manual</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_14</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_15</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_16</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_user</td>
+	<td>label=All</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>s_did_pattern</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37063042438</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>id=s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Manual</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_14</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_15</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_16</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_17</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_18</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_19</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_20</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>src_13</td>
+	<td>37046246362</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>s_did_pattern</td>
+	<td>37063042438&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>id=s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Manual</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_14</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_15</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_16</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_17</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_18</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_19</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_20</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_13</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>s_did_pattern</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37063042438&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>id=s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Manual</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_14</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_15</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_16</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_17</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_18</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_19</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_20</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_13</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>s_did_pattern</td>
+	<td>%4243%</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>id=s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Manual</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_14</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_15</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_16</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_17</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_18</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_19</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>src_20</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>dst_13</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=reseller3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/28</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=reseller2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/20</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID made available</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/23</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID made available</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=reseller2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/28</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=reseller3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/30</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID closed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID made available</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/14</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID closed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID made available</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=reseller2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/15</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/16</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/last_calls_stats</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_year</td>
+	<td>label=2011</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_year</td>
+	<td>label=2011</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_day</td>
+	<td>label=31</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Total calls: 21</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_217</td>
+	<td>37060011221 (37060011221)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_240</td>
+	<td>37060011238 (37060011238)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Total calls: 8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_237</td>
+	<td>37060011233 (37060011233)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_247</td>
+	<td>37060011224 (37060011224)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_275</td>
+	<td>37060011233 (37060011233)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Total calls: 18</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_pattern</td>
+	<td> 	 	 	37060011225</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_248</td>
+	<td>37060011225 (37060011225)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_253</td>
+	<td>37060011225 (37060011225)</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_218</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_230</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_229</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>No calls...</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=All</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_248</td>
+	<td>37060011225 (37060011225)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_253</td>
+	<td>37060011225 (37060011225)</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_218</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_230</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_229</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Total calls: 21</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_246</td>
+	<td>37060011221 (37060011221)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_269</td>
+	<td>37060011238 (37060011238)</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/permissions/edit/2?group_type=accountant</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=see_financial_data_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=manage_dids_opt_1_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>accountant</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>accountant1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/last_calls_stats</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_year</td>
+	<td>label=2011</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_year</td>
+	<td>label=2011</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_day</td>
+	<td>label=31</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Total calls: 21</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_217</td>
+	<td>37060011221 (37060011221)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_240</td>
+	<td>37060011238 (37060011238)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Total calls: 8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_237</td>
+	<td>37060011233 (37060011233)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_247</td>
+	<td>37060011224 (37060011224)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_275</td>
+	<td>37060011233 (37060011233)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Total calls: 18</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_pattern</td>
+	<td> 	 	 	37060011225</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_248</td>
+	<td>37060011225 (37060011225)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_253</td>
+	<td>37060011225 (37060011225)</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_218</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_230</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_229</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>No calls...</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=All</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_248</td>
+	<td>37060011225 (37060011225)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_253</td>
+	<td>37060011225 (37060011225)</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_218</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_230</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=src_229</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_pattern</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_reseller_did</td>
+	<td>label=reseller3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Total calls: 21</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_246</td>
+	<td>37060011221 (37060011221)</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=src_269</td>
+	<td>37060011238 (37060011238)</td>
+</tr>
+</tbody></table>
+</body>
+</html>

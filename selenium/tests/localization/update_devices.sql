@@ -1,0 +1,10 @@
+update devices set location_id = 1 where id=7;
+update devices set location_id = 1 where id=8;
+update devices set location_id = 1 where user_id=14;
+update devices set location_id = 1 where user_id=15;
+update devices set location_id = 1 where user_id=16;
+update devices set location_id = 1 where user_id=17;
+update devices set location_id = 1 where user_id=18;
+update devices set location_id = 1 where user_id=19;
+update devices set location_id = 1 where user_id=20;
+update devices set location_id = 1 where user_id=21;

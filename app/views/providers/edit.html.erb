@@ -1,0 +1,19 @@
+<table width="100%" class="maintable">
+  <tr>
+    <th align="left" style="white-space:nowrap; width: 10%"><%= link_to b_rules + _('Rules'), :action => 'provider_rules', :id => @provider %></th>
+    <th align="left" style="white-space:nowrap; width: 10%"><%= link_to b_call + _('Calls'), :controller => "stats", :action => 'last_calls_stats', :s_provider => @provider %></th>
+    <th style="width: 100%"></th>
+  </tr>
+</table>
+<br/>
+
+<%= form_tag(:action => 'update', :id => @provider) do %>
+    <% unless @provider.is_dahdi? %>
+        <%= render :partial => 'form' %>
+    <% else %>
+        <%= render :partial => 'form_zap' %>
+    <% end %>
+    <%= submit_tag _('Save_changes') %>
+    <%#, :disable_with=>_('Processing..')%>
+<% end %>
+<br/>

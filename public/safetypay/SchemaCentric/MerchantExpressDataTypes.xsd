@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns="urn:safetypay:schema:mws:api" targetNamespace="urn:safetypay:schema:mws:api"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:complexType name="RefundType">
+    <xs:sequence>
+      <xs:element name="OperationID" type="xs:string"/>		
+      <xs:element name="CreationDateTime" type="xs:string"/>
+      <xs:element name="SalesOperationID" type="xs:string"/>
+      <xs:element name="AmountToRefund" type="xs:decimal"/>
+      <xs:element name="CurrencyIDToRefund" type="xs:string"/>
+      <xs:element name="TotalPartial" type="xs:integer"/>
+      <xs:element name="Reason" type="xs:integer"/>
+      <xs:element name="Comments" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorManagerType">
+    <xs:sequence>
+      <xs:element name="ErrorNumber" type="xs:integer"/>
+      <xs:element name="Description" type="xs:string"/>
+      <xs:element name="Severity" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ShippingDetailType">
+    <xs:sequence>
+      <xs:element name="SalesOperationID" type="xs:string"/>
+      <xs:element name="InvoiceDate" type="xs:string"/>
+      <xs:element name="InvoiceNo" type="xs:string"/>
+      <xs:element name="ShipDate" type="xs:string"/>
+      <xs:element name="ShipMethod" type="xs:string"/>
+      <xs:element name="DeliveryCompanyName" type="xs:string"/>
+      <xs:element name="TrackingNumber" type="xs:string"/>
+      <xs:element name="RecipientName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperationType">
+    <xs:sequence>
+      <xs:element name="CreationDateTime" type="xs:string"/>
+      <xs:element name="OperationID" type="xs:string"/>
+      <xs:element name="MerchantSalesID" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="MerchantOrderID" type="xs:string"/>
+      <xs:element name="Amount" type="xs:decimal"/>
+      <xs:element name="CurrencyID" type="xs:string"/>
+      <xs:element name="ShopperAmount" type="xs:decimal"/>
+      <xs:element name="ShopperCurrencyID" type="xs:string"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>AuthorizationCode + ExpiredDateCode + Random</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="OperationActivities"
+        type="ListOfOperationActivitiesType"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="PaymentReferenceNo" type="xs:string">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOfOperationsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operation" type="OperationType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperationActivityType">
+    <xs:sequence>
+      <xs:element name="CreationDateTime" type="xs:string"/>
+      <xs:element name="Status" type="StatusType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOfOperationActivitiesType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationActivity"
+        type="OperationActivityType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatusType">
+    <xs:sequence>
+      <xs:element name="StatusCode" type="xs:string"/>
+      <xs:element name="Description" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperationActivityNotifiedType">
+    <xs:sequence>
+      <xs:element name="CreationDateTime" type="xs:string"/>
+      <xs:element name="OperationID" type="xs:string"/>
+      <xs:element name="MerchantSalesID" type="xs:string"/>
+      <xs:element name="MerchantOrderID" type="xs:string"/>
+      <xs:element name="OperationStatus" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListOfOperationsActivityNotifiedType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConfirmOperation"
+        type="OperationActivityNotifiedType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="LanguageCodeType">
+    <xs:annotation>
+      <xs:documentation>
+        standard 2-letter (capital letter).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="EN"/>
+      <xs:enumeration value="ES"/>
+      <xs:enumeration value="DE"/>
+      <xs:enumeration value="PT"/>
+      <xs:enumeration value="FR"/>
+      <xs:enumeration value="ZH"/>
+      <xs:enumeration value="JA"/>
+      <xs:enumeration value="IT"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Language" type="LanguageCodeType"/>
+</xs:schema>

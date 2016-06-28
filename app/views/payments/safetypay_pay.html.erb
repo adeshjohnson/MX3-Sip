@@ -1,0 +1,18 @@
+<% if @enabled == 1 %>
+
+    <div align="right"><%= image_tag("/images/logo/safetypay-pse.jpg", :style => 'border-style:none', :title => "SafetyPay-PSE") %></div>
+
+    <%= form_tag(@safetypay_token_url) do %>
+        <%= _('Please_press_here_to_pay') %>* <%= nice_number @amount %> <%= @currency %>
+        <br/>
+        <br/>
+        <%= submit_tag _('Pay'), :disable_with => _('Processing..') %>
+    <% end %>
+    <br/>
+    <div class="simple">
+      *<%= _('Your_VAT') %>: <%= @vat %>%. <%= _('Total_amount_to_pay') %>
+      : <%= nice_number @amount_with_vat %> <%= @currency %>
+    </div>
+<% else %>
+    <%= _('SafetyPay_disabled') %>
+<% end %>

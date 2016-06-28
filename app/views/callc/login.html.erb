@@ -1,0 +1,175 @@
+<div style="background-image: url('https://fututel.com/images/supervoz/City-lights-tokyo_1280.jpg'); height: 700px;">
+<div id="spinner3" style="display: none;" xmlns="http://www.w3.org/1999/html">
+  <b><span><%= image_tag "290.gif", :style => "padding-left: 40%; padding-top: 10%;margin-bottom: -22px; padding-right:10px;" %>   </span>
+    <span><%= _('Please_wait') %> <span id='javascript_countdown_time'></span>  <span id='javascript_countdown_seconds'></span> <%= _('before_trying_to_login') %> </span>
+  </b>
+</div>
+
+<%if @show_login.to_i == 1%>
+    <script type='text/javascript'>
+
+
+        var javascript_countdown = function () {
+            var time_left = 10; //number of seconds for countdown
+            var output_element_id = 'javascript_countdown_time';
+            var output_seconds_element_id = 'javascript_countdown_seconds';
+            var keep_counting = 1;
+            var no_time_left_message = 0;
+
+            function countdown() {
+                if(time_left < 2) {
+                    keep_counting = 0;
+                }
+
+                time_left = time_left - 1;
+            }
+            function format_output() {
+                var  seconds;
+                seconds = time_left % 60;
+                return seconds;
+            }
+
+            function show_time_left() {
+                document.getElementById(output_element_id).innerHTML = format_output();//time_left;
+            }
+
+            function show_seconds() {
+                var s, seconds;
+                seconds = time_left % 60;
+                if  (seconds < 2){
+                    s = '<%=_('second') %>' ;
+                }   else{
+                    s = '<%=_('seconds') %>' ;
+                }
+                document.getElementById(output_seconds_element_id).innerHTML = s;//time_left;
+            }
+
+            function no_time_left() {
+                document.getElementById(output_element_id).innerHTML = no_time_left_message;
+
+            }
+
+            return {
+                count: function () {
+                    countdown();
+                    show_time_left();
+                    show_seconds();
+                },
+                timer: function () {
+                    javascript_countdown.count();
+
+                    if(keep_counting) {
+                        setTimeout("javascript_countdown.timer();", 1000);
+                        $('login_info').style.display= 'none';
+                        $('spinner3').style.display= '';
+
+                    } else {
+                        no_time_left();
+                        $('login_info').style.display= '';
+                        $('spinner3').style.display= 'none';
+                        $('login_username').value= '<%= @u %>';
+
+                    }
+                },
+
+                setTimeLeft: function (t) {
+                    time_left = t;
+                    if(keep_counting == 0) {
+                        javascript_countdown.timer();
+                    }
+                },
+                init: function (t, element_id) {
+                    time_left = t;
+                    output_element_id = element_id;
+                    javascript_countdown.timer();
+                }
+            };
+        }();
+
+        javascript_countdown.init(10, 'javascript_countdown_time');
+    </script>
+<%end%>
+
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById('login_username').focus();
+    }
+</script>
+
+<center style="height:500px" id='login_info'>
+  <table class="simple" style="font-size:15px; color:white; background-color: rgb(31, 24, 92);">
+    <tr>
+      <td height="25"></td>
+    </tr>
+    <tr>
+      <td>
+        <b><%= _('enter_username_and_psw') %>: </b>
+        <br/>
+        <br/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <%= form_tag(:action => 'try_to_login') do %>
+            <%= text_field 'login', 'username', "size" => 25, :style => "font-size:15px; text-align: center;", :placeholder =>_('Login_Placeholder'), :class => "input", :tabindex => "1" %>
+            <br/>
+            <%= password_field 'login', 'psw', "size" => 25, :style => "font-size:15px; text-align: center;", :placeholder =>_('Password'), :class => "input", :tabindex => "2" %>
+            <br/><br/>
+            <% if request.env["HTTP_USER_AGENT"] and (request.env["HTTP_USER_AGENT"].match("iPhone") or request.env["HTTP_USER_AGENT"].match("iPod")) %>
+                <select name="layout_t" tabindex="3">
+                  <option value="full"><%= _('full') %></option>
+                  <option value="mini"><%= _('mini') %></option>
+                </select>
+            <% end %>
+            <%= submit_tag _('login'), :style => "font-size:15px", :tabindex => "4", :disable_with => _('Processing..') %>
+        <% end %>
+        <% if can_view_forgot_password? %>
+            <div id="forgot_pass" style="display: '';">
+              <br/>
+              <%= link_to_function(_('Forgot_Password'), "Element.toggle('email_result');Element.toggle('forgot_pass');", :style => "color:white; font-size: 14px;" ) %>
+            </div>
+            <br/>
+
+            <div id="email_result" style="display: none;">
+              <%= _('Email') + ":" %>
+              <%= text_field('email', '', "class" => "input", "size" => "25", 'id' => 'email_c') %>
+              <%= submit_tag _('Check_email'), :type => 'button', :onclick => "update_value();", :id => 'click_commit' %>
+            </div>
+            <script type="text/javascript">
+                // <![CDATA[
+                function update_value() {
+                    new Ajax.Updater('email_result', '<%=Web_Dir%>/callc/forgot_password?email=' + $('email_c').value, {
+                        method:'post',
+                        asynchronous:true,
+                        evalScripts:true,
+                        onComplete:function (request) {
+                            Element.hide('spinner');
+                            $('clock_commit').disabled = false
+                        },
+                        onLoading:function (request) {
+                            Element.show('spinner');
+                            $('clock_commit').disabled = true
+                        }});
+                }
+                // ]]>
+            </script>
+        <% end %>
+      </td>
+    </tr>
+    <% if request.env["HTTP_USER_AGENT"] %>
+        <% if !(request.env["HTTP_USER_AGENT"].match("iPhone") or request.env["HTTP_USER_AGENT"].match("iPod")) %>
+            <% if Confline.get_value("Registration_enabled", @owner_id).to_i == 1 and Confline.get_value("Hide_registration_link", @owner_id).to_i == 0 %>
+                <tr>
+                  <td align="center" height="50">
+                    <% unless @defaulthash.blank? %>
+                       <%= _('If_you_are_new_user_you_can_sign_up') %> <%= link_to _('here'), {:action => "signup_start", :id => @defaulthash}, :tabindex => "5", :style => "font-size:18px; color:rgb(19, 176, 226);" %>
+                    <% end %>
+                  </td>
+                </tr>
+            <% end %>
+        <% end %>
+    <% end %>
+  </table>
+  <%= raw Confline.get_value2("Login_page_Text", 0).to_s.html_safe %>
+</center>
+</div>

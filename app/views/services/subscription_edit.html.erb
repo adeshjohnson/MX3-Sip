@@ -1,0 +1,60 @@
+<div class="nb"><%= b_user + _('user') %>: <%= link_nice_user(@user) %> </div>
+</br>
+
+<%= form_tag :action => 'subscription_update', :id => @sub, :s_memo => @search_memo, :s_service => @search_service, :s_user => @search_user, :s_device => @search_device, :s_date_from => @search_date_from, :s_date_till => @search_date_till, :page => @page, :back => @back do %>
+
+
+    <table width="100%" class="simple">
+
+      <tr>
+        <td> <%= _('Service') %>   </td>
+        <td> <%= @sub.service.name if @sub.service %>   </td>
+      </tr>
+      <% if not current_user.is_accountant? or (current_user.is_accountant? and current_user.accountant_allow_read('see_financial_data')) %>
+      <tr>
+        <td> <%= _('Price') %>   </td>
+        <td> <%= nice_number @sub.service.price %> <%= current_user.currency.name %>  </td>
+      </tr>
+      <% end %>
+      <tr>
+        <td> <%= _('Memo') %>:</td>
+        <td> <%= text_field_tag 'memo', @sub.memo, "class" => "input", :size => "50", :maxlength => "150" %>   </td>
+      </tr>
+      <tr>
+        <td> <%= _('Added') %>   </td>
+        <td> <%= nice_date_time @sub.added %>   </td>
+      </tr>
+      <tr>
+        <td colspan= "2"> <%= b_info %> <%= _('Activation_start') + " and " + _('Activation_end') + " " + _('values_in_system_time_zone') %>: <%= nice_system_time_string %> </td>
+      </tr>
+      <tr>
+        <td> <%= _('Activation_start') %>   </td>
+        <td> <%= select_datetime(@sub.activation_start, :start_year => Time.zone.now.year-1, :end_year => Time.zone.now.year+10, :prefix => "activation_start", :use_month_numbers => false) %> </td>
+      </tr>
+      <tr>
+        <td> <%= _('Activation_end') %>   </td>
+        <td> <%= select_datetime(@sub.activation_end, :start_year => Time.zone.now.year-1, :end_year => Time.zone.now.year+10, :prefix => "activation_end", :use_month_numbers => false) %> </td>
+      </tr>
+
+
+    </table>
+
+
+    <br>
+    <%= submit_tag _('Edit'), :disable_with => _('Processing..') %>
+<% end %>
+<br>
+
+<% if @sub.service.servicetype.to_s == "flat_rate" %>
+    <script type="text/javascript">
+
+        $('activation_start_day').disabled = true;
+        $('activation_start_hour').disabled = true;
+        $('activation_start_minute').disabled = true;
+
+        $('activation_end_day').disabled = true;
+        $('activation_end_hour').disabled = true;
+        $('activation_end_minute').disabled = true;
+
+    </script>
+<% end %>

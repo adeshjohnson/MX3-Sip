@@ -1,0 +1,31 @@
+<br/>
+<br/>
+<table class="simple settings" width="100%">
+  <tr>
+    <td width="30"></td>
+    <td><b><%= _('Call_via_Quick_forward_DID_will_not_play_Balance_and_Time') %>:</b></td>
+    <td></td>
+  </tr>
+      <%= form_tag :action => 'update_settings' do %>
+        <tr>
+          <td width="30"></td>
+          <td> <%= _('Tell_Balance') %></td>
+          <td>
+            <%= radio_button_tag('tell_balance', 0, checked = (@tell_balance == 0)) %> <%= _('No') %>
+            <%= radio_button_tag('tell_balance', 1, checked = (@tell_balance == 1)) %> <%= _('Yes') %>
+          </td>
+        </tr>
+        <tr>
+          <td width="30"></td>
+          <td><%= _('Tell_Time') %></td>
+          <td>
+            <%= radio_button_tag('tell_time', 0, checked = (@tell_time == 0)) %> <%= _('No') %>
+            <%= radio_button_tag('tell_time', 1, checked = (@tell_time == 1)) %> <%= _('Yes') %>
+          </td>
+        </tr>
+        <tr>
+          <td width="30"></td>
+          <td><%= submit_tag _('Change'), :disable_with => _('Processing..') %></td>
+        </tr>
+      <% end %>
+</table>

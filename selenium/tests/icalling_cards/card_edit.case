@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>card_edit</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">card_edit</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>0.3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=card_daily_charge_paid_till_1i</td>
+	<td>label=2013</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=card_daily_charge_paid_till_2i</td>
+	<td>label=February</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=card_daily_charge_paid_till_3i</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[9]</td>
+	<td>Language :</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[9]</td>
+	<td>Language : en</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[4]</td>
+	<td>Minimal balance: 0.3000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=card_min_balance</td>
+	<td>0.3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>syhdtr</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td>ru</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[9]</td>
+	<td>Language :</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[9]</td>
+	<td>Language : ru</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[4]</td>
+	<td>Minimal balance: 0.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>$%^YG</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[9]</td>
+	<td>Language :</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[9]</td>
+	<td>Language : ru</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[4]</td>
+	<td>Minimal balance: 0.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>-10.25698</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad minimal balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>0.5</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance: 0.5000 </td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/acc_groups</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/permissions/edit/11?group_type=accountant</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=callingcard_manage_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/permissions/edit/12?group_type=reseller</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=calling_cards_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#confirm_without_message &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/list?cg=1&amp;clean=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>id=lang_7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add Cards</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000002</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=lang_22</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=lang_23</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=first_use_7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=daily_charge_7</td>
+	<td>2013-02-01</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=card_daily_charge_paid_till_2i</td>
+	<td>February</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=card_daily_charge_paid_till_3i</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/show/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[5]</td>
+	<td>First use:</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Daily charge paid till: 2013-02-01 </td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT-11:00) International Date Line West</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Personal details changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/list?cg=1&amp;clean=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=first_use_7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=daily_charge_7</td>
+	<td>2013-01-31</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=card_daily_charge_paid_till_2i</td>
+	<td>January</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=card_daily_charge_paid_till_3i</td>
+	<td>31</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/show/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>First use:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Daily charge paid till: 2013-01-31</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>accountant</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>accountant1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>0.3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[8]</td>
+	<td>Language :</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[8]</td>
+	<td>Language : en</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[3]</td>
+	<td>Minimal balance: 0.3000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=card_min_balance</td>
+	<td>0.3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>syhdtr</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td>ru</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[8]</td>
+	<td>Language : ru</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[8]</td>
+	<td>Language : </td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[8]</td>
+	<td>Language : en</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[3]</td>
+	<td>Minimal balance: 0.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>$%^YG</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[8]</td>
+	<td>Language : ru</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[8]</td>
+	<td>Language :</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[8]</td>
+	<td>Language : en</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[3]</td>
+	<td>Minimal balance: 0.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>-10.25698</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad minimal balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>0.5</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance: 0.5000 </td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/list?cg=1&amp;clean=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>id=lang_22</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>id=lang_23</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>id=lang_7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add Cards</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000003</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000004</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=lang_24</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=lang_25</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_name</td>
+	<td>cardgroup</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=price_with_vat</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_setup_fee</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_daily_charge</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000008</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000008</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>0.3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=card_daily_charge_paid_till_1i</td>
+	<td>label=2013</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=card_daily_charge_paid_till_2i</td>
+	<td>label=February</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=card_daily_charge_paid_till_3i</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[9]</td>
+	<td>Language :</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[9]</td>
+	<td>Language : en</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[4]</td>
+	<td>Minimal balance: 0.3000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=card_min_balance</td>
+	<td>0.3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>syhdtr</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td>ru</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[9]</td>
+	<td>Language :</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[9]</td>
+	<td>Language : ru</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[4]</td>
+	<td>Minimal balance: 0.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=card_min_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>$%^YG</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[9]</td>
+	<td>Language :</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>//p[9]</td>
+	<td>Language : ru</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//p[4]</td>
+	<td>Minimal balance: 0.0000</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>-10.25698</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad minimal balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_min_balance</td>
+	<td>0.5</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Minimal balance: 0.5000 </td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/list?cg=3&amp;clean=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>id=lang_26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add Cards</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000010</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000011</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=lang_27</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=lang_28</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=first_use_26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=daily_charge_26</td>
+	<td>2013-02-01</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=card_daily_charge_paid_till_2i</td>
+	<td>February</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=card_daily_charge_paid_till_3i</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/show/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>First use:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Daily charge paid till: 2013-02-01 </td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT-11:00) International Date Line West</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Personal details changed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/list?cg=3&amp;clean=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=first_use_26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=daily_charge_26</td>
+	<td>2013-01-31</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=card_daily_charge_paid_till_2i</td>
+	<td>January</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=card_daily_charge_paid_till_3i</td>
+	<td>31</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/show/26</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Daily charge paid till: 2013-01-31</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

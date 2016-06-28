@@ -1,0 +1,148 @@
+Asterisk 1.8.14.0, Copyright (C) 1999 - 2012 Digium, Inc. and others.
+Created by Mark Spencer <markster@digium.com>
+Asterisk comes with ABSOLUTELY NO WARRANTY; type 'core show warranty' for details.
+This is free software, with components licensed under the GNU General Public
+License version 2 and other licenses; you are welcome to redistribute it under
+certain conditions. Type 'core show license' for details.
+=========================================================================
+[0;37m[0mConnected to Asterisk 1.8.14.0 currently running on youdialer (pid = 1327)
+youdialer*CLI> [0KVerbosity is at least 3
+[Kyoudialer*CLI> [0K[2014-05-28 13:46:54] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K[2014-05-28 13:46:56] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K  == Manager 'mor' logged on from 127.0.0.1
+[Kyoudialer*CLI> [0K  == Manager 'mor' logged off from 127.0.0.1
+[Kyoudialer*CLI> [0K[2014-05-28 13:47:26] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K[2014-05-28 13:47:27] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K[2014-05-28 13:47:58] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K[2014-05-28 13:47:59] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K  == Manager 'mor' logged on from 127.0.0.1
+[Kyoudialer*CLI> [0K  == Manager 'mor' logged off from 127.0.0.1
+[Kyoudialer*CLI> [0K  == Using SIP RTP CoS mark 5
+[Kyoudialer*CLI> [0K    -- Executing [3132815814@mor_local:1] [1;36mGoto[0m("[1;35mSIP/john-00000055[0m", "[1;35mmor,3132815814,1[0m")
+[Kyoudialer*CLI> [0K    -- Goto (mor,3132815814,1)
+    -- Executing [3132815814@mor:1] [1;36mAGI[0m("[1;35mSIP/john-00000055[0m", "[1;35mmor_mnp[0m") in new stack
+    -- Launched AGI Script /var/lib/asterisk/agi-bin/mor_mnp
+[Kyoudialer*CLI> [0Kmor_mnp: 
+mor_mnp: MOR MNP AGI script started.
+[Kyoudialer*CLI> [0Kmor_mnp: Successfully connected to database.
+[Kyoudialer*CLI> [0Kmor_mnp: Extension: 3132815814
+[Kyoudialer*CLI> [0Kmor_mnp: New extension: 3132815814
+mor_mnp: MOR MNP AGI script stopped.
+mor_mnp: 
+[Kyoudialer*CLI> [0K    -- <SIP/john-00000055>AGI Script mor_mnp completed, returning 0
+[Kyoudialer*CLI> [0K    -- Executing [3132815814@mor:2] [1;36mGosub[0m("[1;35mSIP/john-00000055[0m", "[1;35mdiversion_settings,3132815814,1[0m") in new stack
+[Kyoudialer*CLI> [0K    -- Executing [3132815814@diversion_settings:1] [1;36mGotoIf[0m("[1;35mSIP/john-00000055[0m", "[1;35m1?2:return[0m") in new stack
+    -- Goto (diversion_settings,3132815814,2)
+    -- Executing [3132815814@diversion_settings:2] [1;36mGotoIf[0m("[1;35mSIP/john-00000055[0m", "[1;35m0?3:return[0m") in new stack
+[Kyoudialer*CLI> [0K    -- Goto (diversion_settings,3132815814,5)
+    -- Executing [3132815814@diversion_settings:5] [1;36mReturn[0m("[1;35mSIP/john-00000055[0m", "[1;35m[0m") in new stack
+    -- Executing [3132815814@mor:3] [1;36mGosub[0m("[1;35mSIP/john-00000055[0m", "[1;35mproxy_settings,3132815814,1[0m") in new stack
+[Kyoudialer*CLI> [0K    -- Executing [3132815814@proxy_settings:1] [1;36mGotoIf[0m("[1;35mSIP/john-00000055[0m", "[1;35m1?2:proxy_return[0m") in new stack
+    -- Goto (proxy_settings,3132815814,2)
+[Kyoudialer*CLI> [0K    -- Executing [3132815814@proxy_settings:2] [1;36mGotoIf[0m("[1;35mSIP/john-00000055[0m", "[1;35m0?3:proxy_return[0m") in new stack
+    -- Goto (proxy_settings,3132815814,6)
+    -- Executing [3132815814@proxy_settings:6] [1;36mReturn[0m("[1;35mSIP/john-00000055[0m", "[1;35m[0m") in new stack
+[Kyoudialer*CLI> [0K    -- Executing [3132815814@mor:4] [1;36mSet[0m("[1;35mSIP/john-00000055[0m", "[1;35mTIMEOUT(response)=20[0m") in new stack
+    -- Response timeout set to 20.000
+    -- Executing [3132815814@mor:5] [1;36mSet[0m("[1;35mSIP/john-00000055[0m", "[1;35mTIMEOUT(digit)=10[0m") in new stack
+[Kyoudialer*CLI> [0K    -- Digit timeout set to 10.000
+    -- Executing [3132815814@mor:6] [1;36mmor[0m("[1;35mSIP/john-00000055[0m", "[1;35m3132815814[0m") in new stack
+[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m167[0m [1;37mmor_exec[0m: Core version: 12.1.80, Server ID: 1, Dial out settings: , active calls enabled: 1, active calls count: 1, weekday: WD (2014-05-28), use lcr partials: 1, check_banned_clis: 1, use_speed_dials: 1, play_hgc_audio: 0, use_flat_rates: 1, server ip: 127.0.0.1
+[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_various.c[0m:[1;37m695[0m [1;37mmor_get_variables[0m: Tell balance: 0, tell time: 0, tell time mod.: 1.000000, tell r.time when left: 0 s, tell r.time every: 60 s, card_id: 0, callback: 0, call_leg1: 0
+[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authentication.c[0m:[1;37m1557[0m [1;37mmor_read_data_from_channel[0m: Date: 2014-05-28, time: 13:48:19
+[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_various.c[0m:[1;37m534[0m [1;37mmor_check_weekday[0m: Weekday: WD for date: 2014-05-28
+[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authentication.c[0m:[1;37m1709[0m [1;37mmor_read_data_from_channel[0m: CLID: "John" <3102630396>, Src: 3102630396, Dst: 3132815814, Acc/dev_id: 22, CallerID: 3102630396, uniqueid: 1401299299.85, LegA Channel Type: 1
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authentication.c[0m:[1;37m202[0m [1;37mmor_get_user_by_acc[0m: User's data retrieved: id: 13, lcr_id: 22, balance: 0.179012, frozen_balance: 0.000000, credit: 0.000000, blocked: 0, lcr_order: price, tariff_id: 82, postpaid: 0, day type: WD, exchange rate: 2613.310800, ani: 0, tell balance: 0, time: 0, when left: 60s, every: 60s, user currency: EUR, def.curr: EUR, tariff type: user_wholesale, allow loss calls: 1, cid from dids: 0, cid from did: , record: 0, owner: 0, sipchaninfo: 1, allow duplicate calls: 0, user call limit: 0, device call limit: 0, device active calls: 1, user active calls: 0, is_trunk: 0, vat_percent: 0.000000, originator_ip: 186.119.121.188, canreinvite: 0, record_forced: 0, recording_forced_enabled: 0, fake_ring: 1, save_call_log: 1, warning balance(wb) active: 1, wb value: 0.500000, wb call: 1, wb file id: 1, grace time: 3, reseller_allow_loss_calls: 0, lang: es, lcr_first_prov_perc: 0.000000, change_failed_code_to: 0, device_max_timeout: 0, forward_did: , user tell currency: EUR, failover_provider_id: 0, no_failover: 0, anti_resale_auto_answer: 0, device_time_limit_per_day: 0, control_callerid_by_cids: 0, qf_tell balance/time: 0/0, callerid advanced control: 0, block callerid: 0, tell rate: 0
+[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_tells.c[0m:[1;37m597[0m [1;37mmor_check_warning_balance[0m: Balance (0.179012) is lower than set (0.500000) so lets tell about this to the user...
+[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_various.c[0m:[1;37m779[0m [1;37mmor_answer[0m: Answering channel! Time: 1401299299
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:19] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_dids.c[0m:[1;37m688[0m [1;37mmor_play_ivr_sound_file[0m: Playing IVR Sound file: silence/silence1.wav
+[Kyoudialer*CLI> [0K    -- <SIP/john-00000055> Playing 'mor/ivr_voices/silence/silence1.slin' (language 'es')
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_callerid.c[0m:[1;37m142[0m [1;37mmor_localize_callerid[0m: Localized CallerID: +3102630396 (cut: , add: +)
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_callerid.c[0m:[1;37m158[0m [1;37mmor_localize_callerid[0m: Changed CallerID to: +3102630396
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authorization.c[0m:[1;37m128[0m [1;37mmor_authorize[0m: Caller type: Local
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_callerid.c[0m:[1;37m494[0m [1;37mmor_check_phonebooks[0m: Checking Phonebooks for CallerID Name change...
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_destinations.c[0m:[1;37m287[0m [1;37mmor_localize_destination[0m: Localization info: cut: , add: 57, new_did: , new_device_id: 0
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_destinations.c[0m:[1;37m312[0m [1;37mmor_localize_destination[0m: Localized destination: 573132815814
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_dids.c[0m:[1;37m22[0m [1;37mmor_check_did[0m: Checking DID (573132815814) ...
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_dids.c[0m:[1;37m310[0m [1;37mmor_check_did[0m: DID not found...
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m266[0m [1;37mprocess_sipchaninfo[0m: ============== SIPCHANINFO ===============
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m315[0m [1;37mprocess_sipchaninfo[0m: Peer IP: 186.119.121.188
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m319[0m [1;37mprocess_sipchaninfo[0m: Source IP: 186.119.121.188
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m323[0m [1;37mprocess_sipchaninfo[0m: From: sip:john@sip.phone2call.com:5060
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m327[0m [1;37mprocess_sipchaninfo[0m: Contact: sip:john@192.168.10.2:5060
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m331[0m [1;37mprocess_sipchaninfo[0m: Useragent: CooFone D60 2.3.73.57
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m335[0m [1;37mprocess_sipchaninfo[0m: Peername: john
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m339[0m [1;37mprocess_sipchaninfo[0m: T38Passthrough: 0
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_debug.c[0m:[1;37m345[0m [1;37mprocess_sipchaninfo[0m: ==========================================
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_callingdata.c[0m:[1;37m306[0m [1;37mmor_get_user_calling_data_wholesale[0m: user wholesale rate: 79.999900, incr.: 60, min_time: 0, conn_fee: 0.000000, ghost_min_perc_rate: 0.000000%
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_flatrates.c[0m:[1;37m21[0m [1;37mmor_flatrates_get_data[0m: Checking FlatRate plan...
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_flatrates.c[0m:[1;37m84[0m [1;37mmor_flatrates_get_data[0m: FlatRate plan not applicable for this number
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_callingdata.c[0m:[1;37m431[0m [1;37mmor_get_provider_calling_data[0m: LCR table:
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_callingdata.c[0m:[1;37m515[0m [1;37mmor_get_provider_calling_data[0m:  prov_id: 38, SIP/ johnja2 @ 64.251.20.140, device_id: 216, prefix: 57313, rate: 0.020400000000000, increment: 60, min_time: 0, conn_fee: 0.000000, exchange rate: 1.000000, cut: , add: , timeout: 60, interpret as failed: no answer: 0, busy: 0, priority: 1, call limit: 0, active calls: 0, latency: 0.000000, grace_time: 0, percent: 0, fake_ring: 0, save_call_log: 1, use pai: 0, 302 support: 0, common use: 0, owner_id: 0, time_limit_per_day: 0, max_timeout: 0, user_id: -1
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_callingdata.c[0m:[1;37m546[0m [1;37mmor_get_provider_calling_data[0m: Retrieved 1 route(s)
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authorization.c[0m:[1;37m759[0m [1;37mmor_authorize[0m: Initial timeout: 350
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authorization.c[0m:[1;37m851[0m [1;37mmor_authorize[0m: DID owner timeout: -1, DID incoming timeout: -1, reseller timeout: -1
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authorization.c[0m:[1;37m872[0m [1;37mmor_authorize[0m: Selected lowest timeout: 350
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authorization.c[0m:[1;37m905[0m [1;37mmor_authorize[0m: Timeout after increment(60) adjustment: 300
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authorization.c[0m:[1;37m978[0m [1;37mmor_authorize[0m: Timeout: 297, real timeout: 350, user_id: 13, callertype: Local, anitype: , postpaid: 0
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_authorization.c[0m:[1;37m1102[0m [1;37mmor_authorize[0m: Caller/card balance to freeze: 0.151532
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m203[0m [1;37mmor_exec[0m: SRC record: 0, record_forced: 0, rec_forced_enabled: 0, DST record: 0, record_forced: 0, rec_forced_enabled: 0
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_various.c[0m:[1;37m799[0m [1;37mmor_cdr_reset[0m: Reseting CDR! Previously answered billsec: 1
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_callerid.c[0m:[1;37m277[0m [1;37mmor_prov_rules_callerid[0m: CallerID after Provider Rules applied: +3102630396 (cut: , add: )
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m799[0m [1;37mmor_exec[0m: Destination after Provider Rules applied: 573132815814 (cut: , add: )
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m920[0m [1;37mmor_exec[0m: Terminator IP: 64.251.20.140
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m928[0m [1;37mmor_exec[0m: Activating Fake Ring! Device_fake_ring: 1, provider fake ring: 0
+[2014-05-28 13:48:20] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m973[0m [1;37mmor_exec[0m: Dial string (Local to Outside): 'SIP/573132815814@prov216,60,L(297000:60000:60000)riIgM(mor_answer,1401299299.85)'
+[Kyoudialer*CLI> [0K  == Using SIP RTP CoS mark 5
+[Kyoudialer*CLI> [0K    -- Called SIP/573132815814@prov216
+[Kyoudialer*CLI> [0K    -- SIP/prov216-00000056 is making progress passing it to SIP/john-00000055
+    -- SIP/prov216-00000056 PDD is 0.126903
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:29] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:31] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K    -- SIP/prov216-00000056 answered SIP/john-00000055
+[Kyoudialer*CLI> [0K    -- Executing [s@macro-mor_answer:1] [1;36mAGI[0m("[1;35mSIP/prov216-00000056[0m", "[1;35mmor_answer_mark[0m") in new stack
+[Kyoudialer*CLI> [0K    -- Launched AGI Script /var/lib/asterisk/agi-bin/mor_answer_mark
+[Kyoudialer*CLI> [0Kmor_answer_mark: Channel: SIP/prov216-00000056, Master Channel: SIP/john-00000055
+mor_answer_mark: Call Answered at 2014-05-28 13:48:39, mili-unix time: 1401299319.857
+[Kyoudialer*CLI> [0Kmor_answer_mark: Callee's (Leg B) Codec: g729, PDD: 0.126903
+[Kyoudialer*CLI> [0Kmor_answer_mark: Call marked as Answered
+[Kyoudialer*CLI> [0K    -- <SIP/prov216-00000056>AGI Script mor_answer_mark completed, returning 0
+[Kyoudialer*CLI> [0K    -- Locally bridging SIP/john-00000055 and SIP/prov216-00000056
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_various.c[0m:[1;37m1003[0m [1;37mmor_handle_call_end[0m: Real Duration: 22.786000, Real Billsec: 2.120000, Duration: 23, Billsec: 3
+[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m988[0m [1;37mmor_exec[0m: Res after dialing '-1', hangup cause: ANSWERED
+[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m198[0m [1;37mmor_acct_stop[0m: Seconds to bill: 3
+[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m291[0m [1;37mmor_acct_stop[0m: DID billsec: 24, duration: 24
+[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m297[0m [1;37mmor_acct_stop[0m: LegA: ANSWERED, LegB: ANSWERED
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m475[0m [1;37mmor_acct_stop[0m: User's grace time: 3, user billsec after grace time: 0
+[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m484[0m [1;37mmor_acct_stop[0m: DID's grace time: 0, user billsec after grace time: 0
+[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m534[0m [1;37mmor_acct_stop[0m: Provider's grace time: 0, provider's billsec after grace time: 3
+[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m565[0m [1;37mmor_acct_stop[0m: Provider billsec: 60, price: 0.020400, rate: 0.020400, dd_index: 0
+[2014-05-28 13:48:41] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m1112[0m [1;37mmor_update_provider_balance[0m: Updating provider's (ID: 38) balance by: 0.020400
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:42] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m586[0m [1;37mmor_acct_stop[0m: User billsec: 0, price: 0.000000, rate: 0.000000
+[2014-05-28 13:48:42] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m827[0m [1;37mmor_acct_stop[0m: Prices after convert to default currency: prov_rate: 0.020400, prov_price: 0.020400, user_rate: 0.030612, user_price: 0.000000
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:42] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m912[0m [1;37mmor_acct_stop[0m: Reseller's balance will be deducted by: 0.000000, and frozen balance by: 0.000000.
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:42] [1;33mNOTICE[0m[4398]: [1;37mapp_mor_accounting.c[0m:[1;37m979[0m [1;37mmor_acct_stop[0m: User's balance will be deducted by: 0.000000, and frozen balance by: 0.151532.
+[Kyoudialer*CLI> [0K[2014-05-28 13:48:42] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m1137[0m [1;37mmor_exec[0m: Hangupcause: ANSWERED, chan->hangupcause: 16, mor hangupcause: 16, hangupcause to DB: 16
+[2014-05-28 13:48:42] [1;33mNOTICE[0m[4398]: [1;37mapp_mor.c[0m:[1;37m1161[0m [1;37mmor_exec[0m: Application mor started and ended succesfully, with end code: 0!
+    -- Executing [h@mor:1] [1;36mSet[0m("[1;35mSIP/john-00000055[0m", "[1;35mMOR_DIALSTATUS=ANSWER[0m") in new stack
+[Kyoudialer*CLI> [0K    -- Executing [h@mor:2] [1;36mSet[0m("[1;35mSIP/john-00000055[0m", "[1;35mMOR_RDURATION=0.138501[0m") in new stack
+[Kyoudialer*CLI> [0K    -- Executing [h@mor:3] [1;36mSet[0m("[1;35mSIP/john-00000055[0m", "[1;35mMOR_RBILLSEC=0.000000[0m") in new stack
+    -- Executing [h@mor:4] [1;36mSet[0m("[1;35mSIP/john-00000055[0m", "[1;35mMOR_CLID="John" <+3102630396>[0m") in new stack
+    -- Executing [h@mor:5] [1;36mSet[0m("[1;35mSIP/john-00000055[0m", "[1;35mMOR_CHANNEL=SIP/john-00000055[0m") in new stack
+    -- Executing [h@mor:6] [1;36mSet[0m("[1;35mSIP/john-00000055[0m", "[1;35mMOR_PDD=-21.041287[0m") in new stack
+ [Kyoudialer*CLI> [0K   -- Executing [h@mor:7] [1;36mNoOp[0m("[1;35mSIP/john-00000055[0m", "[1;35mHANGUP CAUSE: 16[0m") in new stack
+[Kyoudialer*CLI> [0K[2014-05-28 13:49:01] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K  == Manager 'mor' logged on from 127.0.0.1
+[Kyoudialer*CLI> [0K[2014-05-28 13:49:03] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K  == Manager 'mor' logged off from 127.0.0.1
+[Kyoudialer*CLI> [0K[2014-05-28 13:49:14] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m20926[0m [1;37mhandle_response_peerpoke[0m: Peer 'eusebioarodrigueza' is now Lagged. (1422ms / 1000ms)
+[Kyoudialer*CLI> [0K[2014-05-28 13:49:25] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m20926[0m [1;37mhandle_response_peerpoke[0m: Peer 'eusebioarodrigueza' is now Reachable. (163ms / 1000ms)
+[Kyoudialer*CLI> [0K[2014-05-28 13:49:33] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K[2014-05-28 13:49:34] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K  == Manager 'mor' logged on from 127.0.0.1
+[Kyoudialer*CLI> [0K  == Manager 'mor' logged off from 127.0.0.1
+[Kyoudialer*CLI> [0K[2014-05-28 13:50:05] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> [0K[2014-05-28 13:50:06] [1;33mNOTICE[0m[1386]: [1;37mchan_sip.c[0m:[1;37m24904[0m [1;37mhandle_request_subscribe[0m: Received SIP subscribe for peer without mailbox: angeles46
+[Kyoudialer*CLI> exit
+Executing last minute cleanups
+[0m

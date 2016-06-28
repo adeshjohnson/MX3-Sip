@@ -1,0 +1,1990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>dialplans</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">dialplans</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/dids_for_ivr_dialplan</td>
+	<td></td>
+</tr>
+<!--Checking whether I can create a dialplan for calling cards, when no calling groups exist-->
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card Group deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card Group deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<!--callback-->
+<tr>
+	<td>type</td>
+	<td>dialplan[name]</td>
+	<td>1234567654</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit_link_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>assign_to_dp_pin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID assigned to Dial Plan: 1234567654</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=New Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>dialplan[data4]</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>callback_dp_name</td>
+	<td>1234566666</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>callback_dialplan[data4]_</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>icon_chech_dp_callback_afcac_12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>diaplan_edit_12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>dialplan_data4_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>dialplan_data4_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>dialplan_data4_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>icon_cross_dp_callback_afcac_12</td>
+	<td></td>
+</tr>
+<!--create-->
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dialplan[name]</td>
+	<td>test1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>dp_not_assign_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=New Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dialplan_name</td>
+	<td>55555</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ivr_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>dp_not_assign_12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>dp_not_assign_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=New DID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[@id='edit_link_1']/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>ap_dp_dids_11</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>ap_dp_dids_11</td>
+	<td>Assign_DID</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>dp_not_assign_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>dp_not_assign_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>WzBoDyI</td>
+	<td>This Dial Plan cannot be accessed because no DID is assigned to it</td>
+</tr>
+<tr>
+	<td>mouseOut</td>
+	<td>dp_not_assign_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>WzBoDyI</td>
+	<td></td>
+</tr>
+<!--* test for CallerID-->
+<!--* edit-->
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>dialplan[data4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#ap_dp_data4_11 img[title=&quot;check&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/11</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>dialplan[data4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#ap_dp_data4_11 img[title=&quot;cross&quot;]</td>
+	<td></td>
+</tr>
+<!--* new-->
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dialplan[name]</td>
+	<td>without_callerid</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#ap_dp_data4_15 img[title=&quot;cross&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dialplan[name]</td>
+	<td>with_callerid</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>dialplan[data4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#ap_dp_data4_16 img[title=&quot;check&quot;]</td>
+	<td></td>
+</tr>
+<!--number length-->
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_name</td>
+	<td>dp_test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_description</td>
+	<td>dp</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>price_with_vat</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_name</td>
+	<td>dp_test2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_description</td>
+	<td>dp2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>price_with_vat</td>
+	<td>50.0000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_number_length</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_pin_length</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dialplan[name]</td>
+	<td>cc_dp</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>dialplan_number_pin_length</td>
+	<td>label=10 / 6</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>add_calling_card</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>cc_dp_data1_17</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>cc_dp_data2_17</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/17</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>dialplan_number_pin_length</td>
+	<td>10 / 6</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>dp_not_assign_12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Make DID free']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>assign_to_dp_callback</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID assigned to Dial Plan: 1234566666</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Make DID free']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/12</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=37093042422</td>
+	<td>37093042422</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add new DID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>did_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//option[@value='1']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>assign_to_dp_callback</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=37093042422</td>
+	<td>37093042422</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>link=37063042438</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add new DID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>add_new_did</td>
+	<td>No DIDs available to add</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name_2</td>
+	<td>Vardas</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>data3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=data1</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data1_18</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name_2</td>
+	<td>Vardas 2</td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>data3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=data1</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data1_18</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data2_19</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#diaplan_edit_18 &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=data3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data1_18</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dialplan[name]</td>
+	<td>ccdp</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>dialplan[name]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>dialplan[data7]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>dialplan[data8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>dialplan[data3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>dialplan[data4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>add_calling_card</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#make_did_free &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID assigned to Dial Plan: ccdp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Delete']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Cannot delete Dial Plan. It is assigned to DID(s)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=New Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dialplan_name</td>
+	<td>ivrsas</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ivr_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//img[@alt='Arrow_refresh']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Arrow_refresh']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>page_title</td>
+	<td>Dial Plans</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=New Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dialplan_name</td>
+	<td>ivrsas</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>ivr_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//img[@alt='Arrow_refresh']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[@alt='Arrow_refresh']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>page_title</td>
+	<td>Dial Plans</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name_2</td>
+	<td>SuANI_SuDev</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>data3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user</td>
+	<td>label=System Admin (0)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/103</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>name=users_device</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name_2</td>
+	<td>SuANI_BeDev</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>data3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user</td>
+	<td>label=Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=users_device</td>
+	<td>Not used</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>name=users_device</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name_2</td>
+	<td>BeANI_SuDev</td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>data3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user</td>
+	<td>label=Test Reseller (3)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/104</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>name=users_device</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name_2</td>
+	<td>BeANI_BeDev</td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>data3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user</td>
+	<td>label=System Admin (0)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>name=users_device</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_name_26</td>
+	<td>BeANI_BeDev</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_name_25</td>
+	<td>BeANI_SuDev</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_name_24</td>
+	<td>SuANI_BeDev</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_name_23</td>
+	<td>SuANI_SuDev</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data5_26</td>
+	<td>Not used</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data5_25</td>
+	<td>IAX2/104</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data5_24</td>
+	<td>Not used</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data5_23</td>
+	<td>IAX2/103</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#make_did_free &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//select[@name='dp_id'])[2]</td>
+	<td>1234567654 BeANI_BeDev BeANI_SuDev SuANI_BeDev SuANI_SuDev test1 Vardas Vardas 2 without_callerid with_callerid</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>xpath=(//select[@name='dp_id'])[2]</td>
+	<td>label=SuANI_SuDev</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>assign_to_dp_pin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID assigned to Dial Plan: SuANI_SuDev</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>ap_dp_dids_26</td>
+	<td>Assign DID</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>ap_dp_dids_25</td>
+	<td>Assign DID</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>ap_dp_dids_24</td>
+	<td>Assign DID</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>ap_dp_dids_23</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=3726111234448</td>
+	<td>3726111234448</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=37261112375</td>
+	<td>37261112375</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=37261112382</td>
+	<td>37261112382</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=3726111234449</td>
+	<td>3726111234449</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=3726111234446</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Edit: 3726111234446</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Current status: Active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Allow this DID to be assigned to other users/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name_2</td>
+	<td>dp</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user</td>
+	<td>Not used User Resellers (5)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user</td>
+	<td>label=User Resellers (5)</td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=users_device</td>
+	<td>Not used IAX2/105</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/105</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data5_27</td>
+	<td>IAX2/105</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/27</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user</td>
+	<td>Not used User Resellers (5)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user</td>
+	<td>label=User Resellers (5)</td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().jQuery.active == 0</td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=users_device</td>
+	<td>Not used IAX2/105</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data1_27</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data2_27</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/27</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dialplan_data2</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dialplan_data1</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data2_27</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ap_dp_data1_27</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=dialplan[data8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=dialplan[data8]</td>
+	<td>End IVR #1 End IVR #2 End IVR #3</td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>//form[2]/table/tbody/tr/th[9]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Which End IVR to use when call is done over this Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>//form[2]/table/tbody/tr/th[9]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name_2</td>
+	<td>qf_dp</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=dialplan[data8]</td>
+	<td>label=End IVR #2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=cc_dp_data8_28</td>
+	<td>End IVR #2</td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=cc_dp_data8_28</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Which End IVR to use when call is done over this Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOut</td>
+	<td>id=cc_dp_data8_28</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/28</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=dialplan[data8]</td>
+	<td>End IVR #2</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=dialplan[data8]</td>
+	<td>label=End IVR #3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=cc_dp_data8_28</td>
+	<td>End IVR #3</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/delete_from_calls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=dialplan[data8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=dialplan[data8]</td>
+	<td>End IVR #1 End IVR #2 End IVR #3</td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>//th[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Which End IVR to use when call is done over this Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>//th[8]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name_2</td>
+	<td>qf_dp_re</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=dialplan[data8]</td>
+	<td>label=End IVR #2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=dp_PIN_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=cc_dp_data8_29</td>
+	<td>End IVR #2</td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=cc_dp_data8_29</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Which End IVR to use when call is done over this Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOut</td>
+	<td>id=cc_dp_data8_29</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/29</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=dialplan[data8]</td>
+	<td>End IVR #2</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=dialplan[data8]</td>
+	<td>label=End IVR #3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user</td>
+	<td>label=User Resellers (5)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;5&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/105</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=cc_dp_data8_29</td>
+	<td>End IVR #3</td>
+</tr>
+<!--reseller auth by pin-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device has Dial Plans - we cannot delete it</td>
+	<td></td>
+</tr>
+<!--istrinamas auth by pin dialplan su devaisu, kad butu galima istestuoti kita plana-->
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#diaplan_delete_29 &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td>qf</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=User Resellers (5)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/105</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<!--reseller qf-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device has Dial Plans - we cannot delete it</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<!--IAX2/104  priskirtas auth by pin -->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#delete_link_6 &gt; img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device has Dial Plans - we cannot delete it</td>
+	<td></td>
+</tr>
+<!--IAX2/1002  priskirtas callback-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#delete_link_4 &gt; img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device has Dial Plans - we cannot delete it</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_description</td>
+	<td>dial dev</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=device_device_type_IAX2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td>qf dialplan</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/1003</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@id='cb_add'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<!--IAX2/1004  priskirtas qf-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#delete_link_8 &gt; img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device has Dial Plans - we cannot delete it</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/dialplan/callback_dialplan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#quickforward_dp_delete_30 &gt; a &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan deleted: qf</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/101</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=dialplan[data3]</td>
+	<td>Test Device for Resellers User IAX2/105</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=c_dp_description_101</td>
+	<td>Test Device for Resellers User IAX2/105</td>
+</tr>
+<!--reseller callback dialplan devaisas-->
+<tr>
+	<td>open</td>
+	<td>/billing/devices/show_devices/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device has Dial Plans - we cannot delete it</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

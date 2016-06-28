@@ -1,0 +1,24 @@
+<%= link_to b_add + _('New_Voice'), :action => 'new' %>
+<br/>
+<br/>
+<table width="100%" class="maintable">
+  <tr>
+    <th align="left"><%= _("IVR_voice") %></th>
+    <th align="left"><%= _("Description") %></th>
+    <th align="center"><%= _("Created_At") %></th>
+    <th align="left"></th>
+    <th align="left"></th>
+  </tr>
+  <% @voices.each_with_index { |voice, index| %>
+      <tr class="row<%= index%2+1 %>">
+        <td align="left"><%= voice.voice %></td>
+        <td align="left"><%= voice.description %></td>
+        <td align="center"><%= nice_date_time(voice.created_at) %></td>
+        <td align="center"><%= link_to b_edit, :action => 'edit', :id => voice.id %></td>
+        <td align="center"><%= link_to b_delete, {:action => 'destroy', :id => voice.id}, :confirm => _('are_you_sure'), :method => "post" if voice.readonly.to_i == 0 %></td>
+      </tr>
+  <% } %>
+</table>
+<br />
+<br />
+<%= link_to b_play + _('Sound_files'), :action => "sound_files" %>

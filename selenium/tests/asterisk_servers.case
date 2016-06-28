@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>New Test</title> 
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/servers/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_id</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_hostname</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_ip</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_type</td>
+	<td>main</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_maxcalllimit</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_comment</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Server created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/servers/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_2</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=hostname_2</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=ip_2</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=type_2</td>
+	<td>asterisk</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=max_call_2</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=comment_2</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>id=version_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>id=uptime_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/servers/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_id</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_hostname</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_ip</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_maxcalllimit</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_comment</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_url</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_ami_username</td>
+	<td>mor</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_ami_secret</td>
+	<td>morsecret</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_port</td>
+	<td>5060</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_ssh_username</td>
+	<td>root</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_ssh_secret</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_ssh_port</td>
+	<td>22</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/servers/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_hostname</td>
+	<td>dfdsfdsf</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_ip</td>
+	<td>sdfsdfsdf</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Server was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Server IP is not valid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Hostname is not valid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Server was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Server IP cannot be empty</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Hostname cannot be empty</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_hostname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=server_ip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_hostname</td>
+	<td>12..123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_ip</td>
+	<td>abcd.65.12</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Server was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Server IP is not valid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Hostname is not valid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_hostname</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Server was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Server IP cannot be empty</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_ip</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Server was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Hostname cannot be empty</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_ip</td>
+	<td>fgdfgdfg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_hostname</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Server was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td> * Server IP is not valid</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_hostname</td>
+	<td>123.123.123.123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_ip</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Server created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_hostname</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_ip</td>
+	<td>123.123.123.123</td>
+</tr>
+<tr>
+	<td>setTimeout</td>
+	<td>200000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Configuration error. Please consult this help link.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/servers/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_id</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_hostname</td>
+	<td>123.123.123.123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_ip</td>
+	<td>123.123.123.123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_type</td>
+	<td>main</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_maxcalllimit</td>
+	<td>50</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=server_comment</td>
+	<td>test</td>
+</tr>
+<!--bando jungtis prie neegzistuojancio serverio ir tai uztrunka, del to reikia ilgai laukti, kad butu gautas error-->
+<tr>
+	<td>setTimeout</td>
+	<td>200000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Configuration error. Please consult this help link.</td>
+	<td></td>
+</tr>
+<!--pagal defaulta reselerio devaisai saugomi ant pirmojo serverio iš dropdown-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/make_select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=devices</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/resellers/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=resellers_server</td>
+	<td>label=Server_5: 127.0.0.1|123.123.123.123</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<!--pasirinkus kita serveri reseleriui, pasikeicia serveriai-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/make_select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=devices</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>3</td>
+</tr>
+<!--make rspro-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_bundle_sql/?path=asterisk_servers/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td># bundle loaded</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--nauji reselerio provai ir devaisai turi buti saugomi ant pasirinkto severio-->
+<tr>
+	<td>open</td>
+	<td>/billing/providers/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=provider_name</td>
+	<td>test provider</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Provider successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_description</td>
+	<td>test device</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Device created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/make_select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=devices</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=serverproviders</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=provider_id_value</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=server_devices</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=device_id_value</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=device_id_value</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=device_id_value</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=server_id_value</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/additional_modules</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=CCL_Active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ip_address</td>
+	<td>127.0.0.6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=host</td>
+	<td>127.0.0.6</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=status</td>
+	<td>CCL activated</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/servers/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//a[contains(@href, '/billing/servers/server_test/4')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/servers/server_test/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=notice</td>
+	<td>Access Denied</td>
+</tr>
+</tbody></table>
+</body>
+</html>

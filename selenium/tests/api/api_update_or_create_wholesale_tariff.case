@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>./basic.case</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">./basic.case</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/mor_eleven_extend</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=allow_api</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=allow_get_api</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=api_secret_key</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=xml_api_extension</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=api_login_redirect_to_main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=api_allow_registration</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Settings saved</td>
+	<td></td>
+</tr>
+<!--#hash1-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?id=15</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash1</td>
+</tr>
+<!--#hash2-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?id=22</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash2</td>
+</tr>
+<!--#hash4-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?id=15&amp;name=updated_tariff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash4</td>
+</tr>
+<!--#hash11-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?id=6&amp;currency=EUR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash11</td>
+</tr>
+<!--#hash12-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?id=8&amp;currency=EUR&amp;name=belen kas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash12</td>
+</tr>
+<!--#hash14-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/test_api?u=admin&amp;id=7&amp;currency=EUR&amp;name=belen kas rspro</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>hash14</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?u=admin&amp;test=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Incorrect hash</td>
+	<td></td>
+</tr>
+<!--#hash1-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?id=15&amp;test=1&amp;hash=${hash1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad login</td>
+	<td></td>
+</tr>
+<!--#hash1-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?u=admin&amp;id=15&amp;test=1&amp;hash=${hash1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ok</td>
+	<td></td>
+</tr>
+<!--#hash2-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?u=admin&amp;id=22&amp;test=1&amp;hash=${hash2}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tariff not found</td>
+	<td></td>
+</tr>
+<!--#hash4-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?u=admin&amp;id=15&amp;name=updated_tariff&amp;test=1&amp;hash=${hash4}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ok</td>
+	<td></td>
+</tr>
+<!--#hash11-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?u=admin&amp;id=6&amp;currency=EUR&amp;test=1&amp;hash=${hash11}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ok</td>
+	<td></td>
+</tr>
+<!--#hash12-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?u=admin&amp;id=8&amp;currency=EUR&amp;name=belen kas&amp;test=1&amp;hash=${hash12}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ok</td>
+	<td></td>
+</tr>
+<!--#hash14-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?u=admin&amp;id=7&amp;currency=EUR&amp;name=belen kas rspro&amp;test=1&amp;hash=${hash14}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ok</td>
+	<td></td>
+</tr>
+<!--su password-->
+<tr>
+	<td>open</td>
+	<td>/billing/api/wholesale_tariff?u=admin&amp;p=admin1&amp;id=8&amp;currency=EUR&amp;name=belen kas&amp;test=1&amp;hash=${hash12}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ok</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/tariffs/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_15</td>
+	<td>updated_tariff</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=currency_6</td>
+	<td>EUR</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_7</td>
+	<td>belen kas rspro</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=currency_7</td>
+	<td>EUR</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=name_8</td>
+	<td>belen kas</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=currency_8</td>
+	<td>EUR</td>
+</tr>
+</tbody></table>
+</body>
+</html>

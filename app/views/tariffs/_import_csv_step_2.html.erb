@@ -1,0 +1,308 @@
+<%= _('File_size') %>: <%= session[:file_size] %> <%= _('bytes') %><br />
+<br/>
+<b><%= _('First_file_lines') %>:</b>
+<br/>
+<br/>
+<% tl = 0 %>
+<% for line in session[:file].split(/\n|\r|\rn/) %>
+    <%= raw (line + "<br />").html_safe if tl < 5 %>
+    <% tl += 1 %>
+<% end %>
+<%= raw "....<br />".html_safe if tl > 5 %>
+<br/>
+<%- #session[:file_lines] = (tl - 1)  -%>
+<b><%= _('Total_file_lines') %>: <%= session[:file_lines] %> </b>
+<br/>
+<br/>
+<br/>
+<% action = params[:action] == 'import_csv' ? 'import_csv' : 'import_csv2' %>
+<%= form_tag :action => action, :step => "3" do %>
+    <div id="tariff_time_select">
+      <%= _("Rate_day_type") %>
+      : <%= select_tag("rate_day_type", options_for_select(@rate_type, session[:imp_date_day_type]), :onchange => "check_values();") %>
+      <%= _("From") %>:
+      <select id="time_from_hour" name="time_from[hour]" onchange="check_values();">
+        <% 24.times { |i| %>
+            <option value="<%= i < 10 ? "0#{i}" : i %>" <%= 'selected' if i.to_s == 00 %>><%= i < 10 ? "0#{i}" : i %></option>
+        <% } %>
+      </select>
+      <select id="time_from_minute" name="time_from[minute]" onchange="check_values();">
+        <% 60.times { |i| %>
+            <option value="<%= i < 10 ? "0#{i}" : i %>" <%= 'selected' if i.to_s == 00 %>><%= i < 10 ? "0#{i}" : i %></option>
+        <% } %>
+      </select>
+      <select id="time_from_second" name="time_from[second]" onchange="check_values();">
+        <% 60.times { |i| %>
+            <option value="<%= i < 10 ? "0#{i}" : i %>" <%= 'selected' if i.to_s == 00 %>><%= i < 10 ? "0#{i}" : i %></option>
+        <% } %>
+      </select>
+
+      <%= _("Till") %>:
+      <select id="time_till_hour" name="time_till[hour]" onchange="check_values();">
+        <% 24.times { |i| %>
+            <option value="<%= i < 10 ? "0#{i}" : i %>" selected="selected"><%= i < 10 ? "0#{i}" : i %></option>
+        <% } %>
+      </select>
+      <select id="time_till_minute" name="time_till[minute]" onchange="check_values();">
+        <% 60.times { |i| %>
+            <option value="<%= i < 10 ? "0#{i}" : i %>" selected="selected"><%= i < 10 ? "0#{i}" : i %></option>
+        <% } %>
+      </select>
+      <select id="time_till_second" name="time_till[second]" onchange="check_values();">
+        <% 60.times { |i| %>
+            <option value="<%= i < 10 ? "0#{i}" : i %>" selected="selected"><%= i < 10 ? "0#{i}" : i %></option>
+        <% } %>
+      </select>
+    </div>
+
+    <br/>
+    <% if admin? %>
+      <%= _('Update_destination_names_from_file') %>: <%= check_box_tag("update_dest_names", 1, false) %>
+      <br/>
+      <%= _('Update_subcodes_from_file') %>: <%= check_box_tag("update_subcodes", 1, false) %>
+      <br />
+      <%= _('Update_directions_based_on_country_code') %>: <%= check_box_tag("update_directions", 1, false) %>
+      <br />
+      <%= _('Update_destination_groups') %>: <%= check_box_tag("update_destination_groups", 1, false) %>
+      <br />
+    <% end %>
+    <br/>
+    <table class="maintable" width="70%">
+      <tr>
+        <th id="value_column"><%= _('Value') %></th>
+        <th id="select_from_csv_file_column"><%= _('Select_from_CSV_file') %></th>
+        <th id="enter_manually_column"><%= _('Enter_manually') %></th>
+        <th id="default_column"><%= _('Default') %></th>
+      </tr>
+      <tr class="row1">
+        <td>   <%= _('Prefix') %>/<%= _('NPANXX') %>*  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "prefix_id", :value => :imp_prefix} %>
+        <td></td>
+        <td id="prefix_npanxx_value"></td>
+      </tr>
+      <tr>
+        <td>   <%= _('Rate') %>*  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "rate_id", :value => :imp_rate} %>
+        <td></td>
+        <td id="rate_value"></td>
+      </tr>
+      <tr class="row1">
+        <td>   <%= _('Connection_Fee') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "connection_fee_id", :value => :imp_connection_fee} %>
+        <td align="center"><%= text_field_tag 'manual_connection_fee', "", "class" => "input", :size => "8", :maxlength => "8" %></td>
+        <td id="connection_fee_value" align="center">0</td>
+      </tr>
+      <tr>
+        <td>   <%= _('Increment') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "increment_id", :value => :imp_inc} %>
+        <td align="center"><%= text_field_tag 'manual_increment', "", "class" => "input", :size => "8", :maxlength => "8" %></td>
+        <td id="increment_value" align="center">1</td>
+      </tr>
+      <tr class="row1">
+        <td>   <%= _('Min_time') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "min_time_id", :value => :imp_mint} %>
+        <td align="center"><%= text_field_tag 'manual_min_time', "", "class" => "input", :size => "8", :maxlength => "8" %></td>
+        <td id="min_time_value" align="center">0</td>
+      </tr>
+      <tr class="row1">
+        <td>   <%= _('Ghost_percent') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "ghost_percent_id", :value => :imp_ghost_percent} %>
+        <td align="center"><%= text_field_tag 'manual_ghost_percent', "", "class" => "input", :size => "8", :maxlength => "8" %></td>
+        <td id="ghost_percent_value" align="center">0</td>
+      </tr>
+      <tr>
+        <td  id='dest_cell' >   <%= _('Destination') %>/<%= _('OCN_Name') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "destination_id", :value => :imp_dst} %>
+        <td></td>
+        <td id="destination_ocn_name_value"></td>
+      </tr>
+      <tr class="row1">
+        <td>   <%= _('City') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "city_id", :value => :imp_city} %>
+        <td></td>
+        <td id="city_value"></td>
+      </tr>
+      <tr>
+        <td>   <%= _('Country') %>/<%= _('Direction') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "country_id", :value => :imp_country} %>
+        <td></td>
+        <td id="country_value"></td>
+      </tr>
+      <tr class="row1">
+        <td id='Country_code_cell'> <%= _('Country_code') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "country_code_id", :value => :imp_cc} %>
+        <td></td>
+        <td id="country_code_value"></td>
+      </tr>
+      <tr class="row2">
+        <td id='Subcode_cell'>   <%= _('Subcode') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "subcode", :value => :imp_subcode} %>
+        <td></td>
+        <td id="subcode_value" align="center">NGN</td>
+      </tr>
+      <tr>
+        <th height="20" colspan="4" align="left">
+          <b><%= _('USA_specifics') %></b>
+        </th>
+      </tr>
+      <tr class="row1">
+        <td>   <%= _('State') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "state_id", :value => :imp_state} %>
+        <td></td>
+        <td id="state_value"></td>
+      </tr>
+      <tr>
+        <td>   <%= _('LATA') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "lata_id", :value => :imp_state} %>
+        <td></td>
+        <td id="lata_value"></td>
+      </tr>
+      <tr class="row1">
+        <td>   <%= _('Class') %>/<%= _('Tier') %>  </td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "tier_id", :value => :imp_tier} %>
+        <td></td>
+        <td id="class_tier_value"></td>
+      </tr>
+      <tr>
+        <td><%= _('OCN') %></td>
+        <%= render :partial => "import_csv_step_2_select", :locals => {:name => "ocn_id", :value => :imp_ocn} %>
+        <td></td>
+        <td id="ocn_value"></td>
+      </tr>
+    </table>
+    <br/>
+    <%= submit_tag(_('Assign_columns'), :disable_with => _('Processing..'), :id => "submit_button") %>
+<% end %>
+<br/>
+<%= _('Next_step') + ": " + _('Column_confirmation') %>
+<script type='text/javascript'>
+  Event.observe(window, 'load', function() {
+    //select element ids that are required to be selected. if you ever add new 'required' 
+    //select element, then add it's id to this  assoc array and set it to false(eg smth_id: false). 
+    //Note that 'not selected' value should be -1
+    var required_options = {'prefix_id': false, 'rate_id': false}
+
+    //add event listener to update_directions checkbox. If it is checked, then country code
+    //should be required so we add 'country_code_id' to required_options add event listener 
+    //to select element appropriately and trigger change event on prefix_id select element(we 
+    //also could trigger event on rate_id, but not on country_code_id cause it might be not be 
+    //in required_options assoc array)
+
+      Event.observe($('update_dest_names'), 'change', function(event) {
+          dest_required = event.target.checked;
+          if(dest_required){
+              $('dest_cell').innerHTML += '*'
+              required_options['destination_id'] = ($('destination_id').value != '-1');
+              Event.observe($('destination_id'), 'change', validate_selected_options);
+          }else{
+              $('dest_cell').innerHTML = $('dest_cell').innerHTML.slice(0,-1);
+              delete required_options['destination_id'];
+              Event.stopObserving($('destination_id'), 'change', validate_selected_options);
+          }
+          $('submit_button').disabled = check_for_not_selected();
+      });
+
+     Event.observe($('update_directions'), 'change', function(event) {
+          if($('update_subcodes').checked != true)  {
+              country_code_required = event.target.checked;
+
+              if(country_code_required){
+                  $('Country_code_cell').innerHTML += '*'
+                  required_options['country_code_id'] = ($('country_code_id').value != '-1');
+                  Event.observe($('country_code_id'), 'change', validate_selected_options);
+              }else{
+                  $('Country_code_cell').innerHTML = $('Country_code_cell').innerHTML.slice(0,-1);
+                  delete required_options['country_code_id'];
+                  Event.stopObserving($('country_code_id'), 'change', validate_selected_options);
+              }
+          }
+          $('submit_button').disabled = check_for_not_selected();
+      });
+
+      Event.observe($('update_subcodes'), 'change', function(event) {
+          if($('update_directions').checked != true)  {
+              country_code_required = event.target.checked;
+              if(country_code_required){
+                  $('Country_code_cell').innerHTML += '*'
+                  $('Subcode_cell').innerHTML += '*'
+
+                  required_options['country_code_id'] = ($('country_code_id').value != '-1');
+                  required_options['subcode'] = ($('subcode').value != '-1');
+
+                  Event.observe($('country_code_id'), 'change', validate_selected_options);
+                  Event.observe($('subcode'), 'change', validate_selected_options);
+              }else{
+                  $('Country_code_cell').innerHTML = $('Country_code_cell').innerHTML.slice(0,-1);
+                  $('Subcode_cell').innerHTML = $('Subcode_cell').innerHTML.slice(0,-1);
+                  delete required_options['country_code_id'];
+                  Event.stopObserving($('country_code_id'), 'change', validate_selected_options);
+                  delete required_options['subcode'];
+                  Event.stopObserving($('subcode'), 'change', validate_selected_options);
+              }
+          }else{
+              country_code_required = event.target.checked;
+
+              if(country_code_required){
+                  $('Subcode_cell').innerHTML += '*'
+                  required_options['subcode'] = ($('subcode').value != '-1');
+                  Event.observe($('subcode'), 'change', validate_selected_options);
+              }else{
+                  $('Subcode_cell').innerHTML = $('Subcode_cell').innerHTML.slice(0,-1);
+                  delete required_options['subcode'];
+                  Event.stopObserving($('subcode'), 'change', validate_selected_options);
+              }
+          }
+          $('submit_button').disabled = check_for_not_selected();
+      });
+      //main point of this method is to enable submit button if all required options are selected
+
+    //add event listener to update_subcodes checkbox. If it is checked, then subcode 
+    //should be required so we add 'subcode' to required_options add event listener 
+    //to select element appropriately and trigger change event on prefix_id select element(we 
+    //also could trigger event on rate_id, but not on subcode cause it might be not be 
+    //in required_options assoc array)
+    /*Event.observe($('update_subcodes'), 'change', function(event) {
+      subcode_required = event.target.checked;
+      if(subcode_required){
+        $('subcode_cell').innerHTML += '*'
+        required_options['subcode'] = ($('subcode').value != '-1');
+        Event.observe($('subcode'), 'change', validate_selected_options);
+      }else{
+        $('subcode_cell').innerHTML = $('Country_code_cell').innerHTML.slice(0,-1);
+        delete required_options['subcode'];
+        Event.stopObserving($('subcode'), 'change', validate_selected_options);
+      }
+      $('submit_button').disabled = check_for_not_selected();
+    });*/
+
+    //main point of this method is to enable submit button if all required options are selected
+    //note that id's of those options are kept in required_options assoc array.
+    validate_selected_options = function(event){
+      required_options[event.target.id] = (event.target.value != '-1');
+      $('submit_button').disabled = check_for_not_selected();
+    }
+
+    function check_for_not_selected(){
+      var disable = false;
+      for(var key in required_options){
+        console.debug(key + ": " + required_options[key])
+        if(!required_options[key]){
+          disable = true;       
+          break;
+        }
+      }
+      return disable;
+    }
+    //add event listener to select element that is required, note that 'not selected' value is -1
+    //and in case(on reaload for instance) browser would change to smth other value, we set it to -1 again.
+    for(var element_name in required_options){
+      $(element_name).value = '-1'
+      Event.observe($(element_name), 'change', validate_selected_options);
+    }
+
+    //in case(on reload for instance) browser would check country_code_id we explisitly set it to false
+    $('update_directions').checked = false;
+    //disable submit button cause required options shouldnt be selected
+    $('submit_button').disabled = true;
+  });
+</script>

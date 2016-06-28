@@ -1,0 +1,59 @@
+<% if @rates and @rates.size.to_i > 0 %>
+  <% tariff_tipe = '' %>
+  <b><%= _('Rates') %>:</b>
+  <br/>
+  <% @rates.group_by{ |rate| [rate['purpose']] }.map { |key, rates_grouped_by_purpose| %>
+    <% first_rate = rates_grouped_by_purpose[0] %>
+    <% first_rate_purpose = first_rate['purpose'].to_s %>
+    <% if first_rate_purpose != '' %>
+      <br/>
+      <br/>
+      <b style='text-decoration:underline;'>
+        <%= _('User_Retail') if first_rate_purpose == 'user' %>
+        <%= _('Provider') if first_rate_purpose == 'provider' %>
+        <%= _('User_Wholesale') if first_rate_purpose == 'user_wholesale' %>
+        <%= _('Tariffs') %>:
+      </b>
+     <%end%>
+    <br/>
+  <% rates_grouped_by_purpose.group_by{ |rate| [rate['tariffs_id']] }.map { |key, rates_grouped_by_tariff| %>
+      <% rates_grouped_by_tariff.group_by{ |rate| [rate['prefix']] }.map { |key, rates_grouped| %>
+      <% first_rate = rates_grouped[0] %>
+        <br/>
+        <b><%= first_rate['tariffs_name'].to_s %> (<%= _('prefix') %>: <%= first_rate['prefix'].to_s %>):</b>
+        <br/>
+        <%= draw_flag(first_rate['direction_code']) if first_rate['direction_code'] %> <%= first_rate['subcode'].to_s + ' ' + first_rate['name'].to_s %>
+        <% rates_grouped.each { |r| %>
+          <% effective_from = r['effective_from'] %>
+          <% color = (r['active'] == 0) ? 'color: #BFBFBF;' : ''; text_color = "style=\"#{color}\"".html_safe if color.present? %>
+          
+		  <% if user? %>
+          <div <%= text_color %>>
+          <% else %>
+          <div onclick="location.href = '<%= Web_Dir %>/tariffs/<%= get_link_to_rate(r) %>';" class="max_paragraph_width" style="cursor:pointer;" id="link_to_rate_<%= r['rate_id'] %>" <%= text_color %>>
+          <% end %>
+		  
+          <% if r['purpose'] == 'user' %>
+              <%= nice_time2 r['arate_start_time'] %> - <%= nice_time2 r['arate_end_time'] %> => <%= r['price'] %>
+              (<%= r['currency'] %>)
+              <% if r['currency'] != Currency.get_default.name%>
+                  / <%= nice_number(r['price'].to_f * Currency.count_exchange_rate(r['currency'],  Currency.get_default.name)) %> (<%= Currency.get_default.name %>)
+              <%end%>
+          <% else %>
+            <%= nice_time2 r['start_time'] %> - <%= nice_time2 r['end_time'] %> => <%= r['rate'] %>
+            (<%= r['currency'] %>)
+            <% if r['currency'] != Currency.get_default.name%>
+                  / <%= nice_number(r['rate'].to_f * Currency.count_exchange_rate(r['currency'],  Currency.get_default.name)) %> (<%= Currency.get_default.name %>)
+            <%end%>
+          <% end %>
+          <% if effective_from.present? %>
+            <%= _('Effective_from') %>: <%= nice_date_time effective_from %>
+          <% end %>
+          </div>
+        <% } %>
+      <% } %>
+    <% } %>
+  <% } %>
+<% elsif params[:prefix].present? %>
+  <%= _('NO_RESULTS') %>
+<% end %>

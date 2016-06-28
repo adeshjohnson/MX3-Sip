@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>cc_pin_length</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">cc_pin_length</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>New Card Group</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_number_length</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_pin_length</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_name</td>
+	<td>pavadinimas</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card Group: pavadinimas</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>start_number</td>
+	<td>0000000001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>end_number</td>
+	<td>0010000000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>PIN is too short for this interval. You can create maximum : 200000 cards</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>New Card Group</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_number_length</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_pin_length</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>cardgroup_name</td>
+	<td>pavadinimas antras</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card Group successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ATTENTION! It is not safe to use PIN shorter than 6 symbols.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000055</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>PIN is too short for this interval. You can create maximum : 20 cards</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000056</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000012</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad interval start and/or end</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000056</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000060</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Cards created: 5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000026</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000050</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>PIN is too short for this interval. You can create maximum : 20 cards</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000026</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000040</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Cards created: 15</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/list?cg=4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Cards: 20</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_name</td>
+	<td>cctest1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td>40</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Pin length can be between 1 and 30</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card Group was not created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Pin length must be greater than 0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_name</td>
+	<td>cctest2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td>-40</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Pin length can be between 1 and 30</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td>-20</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Pin length can be between 1 and 30</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td>20.5</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card Group successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>pin_length</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_name</td>
+	<td>cctest3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td>asd</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Pin length must consist only of digits</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Pin length must be greater than 0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_name</td>
+	<td>cctest4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td>6</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000010</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/42</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>111111</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>111111</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/42</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>11111</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad pin length should be: 6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad pin length should be: 6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>111111111</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>111111</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/42</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>11.111</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>11.111</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/42</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>aaaaaa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>aaaaaa</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/42</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>aaaaa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad pin length should be: 6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/42</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>%^$a;[^ūĖĘ#</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>%^$a;[ </td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cardgroups/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_name</td>
+	<td>cctest5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=cardgroup_pin_length</td>
+	<td>30</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/new?cg=7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_number</td>
+	<td>0000000011</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_number</td>
+	<td>0000000020</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/52</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>111111111111111111111111111111</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>111111111111111111111111111111</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/52</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>111111111111111111111111111111222</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Card successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>111111111111111111111111111111</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/cards/edit/52</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=card_pin</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bad pin length should be: 30</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

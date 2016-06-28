@@ -1,0 +1,79 @@
+<div style="background-image: url('https://fututel.com/images/supervoz/City-lights-tokyo_1280.jpg'); height: 700px;">
+<table width="100%">
+  <tr>
+    <td valign="top" align="center">
+      <table class="simple" style="color:white; font-size: 11px;">
+        <tr>
+          <td>
+            <b><%= _('Thank_you_for_registering') %>!</b>
+          </td>
+        </tr>
+        <tr>
+          <td height="20"></td>
+        </tr>
+
+        <% if @send_email_to_user == 1 %>
+            <tr>
+              <td>
+                <%= _('Email_with_details_sent_to') %>: <%= @user.address.email %>
+
+ 
+				<% if Confline.get_value("Default_User_blocked", @user.owner_id).to_i == 1 %>
+				<%= _('Check_email_to_verify_account_during_registration') %>				
+				<% end %>
+              </td>
+            </tr>
+            <tr>
+              <td height="20"></td>
+            </tr>
+        <% end %>
+        <% if @device %>
+            <tr>
+              <td><%= _('You_can_configure_your_device_with_following_settings') %></td>
+            </tr>
+            <tr>
+              <td height="10"></td>
+            </tr>
+            <tr>
+              <td>
+                <table class="simple" width="100%" style=" color:white; font-size: 11px;">
+                  <tr>
+                    <td><%= _('Username_device') %>:</td>
+                    <td id="username"><b><%= @device.username %></b></td>
+                  </tr>
+                  <tr>
+                    <td><%= _('Password') %>:</td>
+                    <td id="secret"><b><%= @device.secret %></b></td>
+                  </tr>
+                  <tr>
+                    <td><%= _('Server_IP') %>:</td>
+                    <td id="server_ip"><b><%= Confline.get_value("Asterisk_Server_IP", 0) %></b></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+        <% end %>
+        <tr>
+          <td height="20"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <b><%= _('You_can_login') %> <%= link_to _('here'), {:action => "login", :id => @user.owner.uniquehash}, :style => "color: white; font-size: 11px;" %></b>
+          </td>
+        </tr>
+        <tr>
+          <td height="20"></td>
+        </tr>
+
+        <tr>
+          <td><b><%= _('Registration_notice').html_safe %></b></td>
+        </tr>
+        <tr>
+          <td height="20"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</div>

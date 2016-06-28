@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>profit</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">profit</td></tr>
+</thead><tbody>
+<!--Test /stats/profit for admin-->
+<tr>
+	<td>open</td>
+	<td>billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>login_username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/good_calls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>billing/stats/profit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_day</td>
+	<td>label=21</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_day</td>
+	<td>label=21</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Profit for: All , Period: 2012-11-21 - 2012-11-21</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_calls</td>
+	<td>17</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_self_price</td>
+	<td>-3.3653</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_calls_profit</td>
+	<td>13.5250</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_call_price</td>
+	<td>10.1597</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user_id</td>
+	<td>value=2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Profit for: user_admin - Test User #1 , Period: 2012-11-21 - 2012-11-21 </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_self_price</td>
+	<td>-0.5547</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_calls</td>
+	<td>9</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_call_price</td>
+	<td>5.9987</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_calls_profit</td>
+	<td>6.5533</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user_id</td>
+	<td>value=3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Profit for: reseller - Test Reseller , Period: 2012-11-21 - 2012-11-21 </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_calls</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_self_price</td>
+	<td>-2.8107</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_call_price</td>
+	<td>4.1610</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_calls_profit</td>
+	<td>6.9717</td>
+</tr>
+<!--Test /stats/profit for reseller-->
+<tr>
+	<td>open</td>
+	<td>billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>login_username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>billing/stats/profit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_day</td>
+	<td>label=21</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_day</td>
+	<td>label=21</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Profit for: All , Period: 2012-11-21 - 2012-11-21</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_calls</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_self_price</td>
+	<td>0.5027</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_call_price</td>
+	<td>4.5477</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_calls_profit</td>
+	<td>4.0450</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=User Resellers</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Profit for: user_reseller - User Resellers , Period: 2012-11-21 - 2012-11-21</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_calls</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_self_price</td>
+	<td>0.5027</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_call_price</td>
+	<td>4.5477</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_calls_profit</td>
+	<td>4.0450</td>
+</tr>
+<!--2009 05 25 profit for test user subscription-->
+<tr>
+	<td>open</td>
+	<td>billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>login_username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>billing/stats/profit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_day</td>
+	<td>label=21</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_day</td>
+	<td>label=31</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Profit for: All , Period: 2012-11-21 - 2012-11-30</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=Test User #1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<!--without TAX -->
+<tr>
+	<td>assertText</td>
+	<td>number_total_call_price</td>
+	<td>14.3827</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_self_price</td>
+	<td>0.4593</td>
+</tr>
+<!--calls profit-->
+<tr>
+	<td>assertText</td>
+	<td>number_calls_profit</td>
+	<td>13.9233</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_avg_profit_per_min</td>
+	<td>0.3507</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_day</td>
+	<td>label=31</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_profit</td>
+	<td>39.7933</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_avg_profit_per_min</td>
+	<td>0.3507</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_day</td>
+	<td>label=21</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_calls_profit</td>
+	<td>6.5533</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_total_call_price</td>
+	<td>5.9987</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_avg_profit_per_min</td>
+	<td>0.3327</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_month</td>
+	<td>label=January</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_year</td>
+	<td>label=2013</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_month</td>
+	<td>label=May</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_day</td>
+	<td>label=15</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_calls</td>
+	<td>24</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_answer_calls</td>
+	<td>16</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_total_call_price</td>
+	<td>14.3827</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_total_self_price</td>
+	<td>0.4593</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_calls_profit</td>
+	<td>13.9233</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_avg_profit_per_min</td>
+	<td>0.3507</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_total_profit</td>
+	<td>194.6320</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_year</td>
+	<td>label=2009</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_year</td>
+	<td>label=2007</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_month</td>
+	<td>label=January</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_year</td>
+	<td>label=2009</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_month</td>
+	<td>label=June</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_calls</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_answer_calls</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_no_ans_calls</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_busy_calls</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_erro_calls</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_call_price</td>
+	<td>11.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_self_price</td>
+	<td>-2.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_calls_profit</td>
+	<td>13.0000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_avg_profit_per_min</td>
+	<td>9.7500</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_day</td>
+	<td>label=17</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>number_total_profit</td>
+	<td>40.3333</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>date_till_month</td>
+	<td>label=June</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--tikrinama, ar gerai skaiciuoja dienos vidurki-->
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/sql/good_calls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/profit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_day</td>
+	<td>label=30</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_calls_profit</td>
+	<td>38.1150</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=avg_profit_per_day</td>
+	<td>1.2705</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT+13:00) Nuku'alofa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/profit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_day</td>
+	<td>label=30</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_calls_profit</td>
+	<td>26.1667</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=avg_profit_per_day</td>
+	<td>0.8722</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/profit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_day</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_day</td>
+	<td>label=30</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_calls_profit</td>
+	<td>13.6117</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=avg_profit_per_day</td>
+	<td>0.4537</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/personal_details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_time_zone</td>
+	<td>label=(GMT+13:00) Nuku'alofa</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/stats/profit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_from_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_year</td>
+	<td>label=2012</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_month</td>
+	<td>label=November</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=date_till_day</td>
+	<td>label=30</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=number_calls_profit</td>
+	<td>8.8283</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=avg_profit_per_day</td>
+	<td>0.2943</td>
+</tr>
+</tbody></table>
+</body>
+</html>

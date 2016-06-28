@@ -1,0 +1,2280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>./basic.case</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">./basic.case</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/quickforwards_rules/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//a[contains(@href, '/billing/quickforwards_rules/settings')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Call via Quick forward DID will not play Balance and Time:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tell Balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Tell Time</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=tell_balance_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=tell_balance_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=tell_time_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=tell_time_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tell_balance_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tell_time_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_balance_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_time_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/quickforwards_rules/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_balance_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_time_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/make_select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=dialplans</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quick Forward DIDs DP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=dptype_value</td>
+	<td>quickforwarddids</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=data1_value</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=data2_value</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/quickforwards_rules/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_balance_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_time_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tell_balance_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_balance_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/make_select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=dialplans</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quick Forward DIDs DP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=dptype_value</td>
+	<td>quickforwarddids</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=data1_value</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=data2_value</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/quickforwards_rules/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_balance_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_time_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tell_time_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_time_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/make_select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=dialplans</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quick Forward DIDs DP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=dptype_value</td>
+	<td>quickforwarddids</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=data1_value</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=data2_value</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/quickforwards_rules/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_balance_1</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_time_1</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=tell_balance_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/test/make_select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=table</td>
+	<td>label=dialplans</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=search_devices_all</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quick Forward DIDs DP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=dptype_value</td>
+	<td>quickforwarddids</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=data1_value</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=data2_value</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/quickforwards_rules/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_balance_0</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_balance_1</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_time_0</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=tell_time_1</td>
+	<td>off</td>
+</tr>
+<!--MOR11 <tr>	<td>open</td>	<td>/billing/dialplans/new</td>	<td></td></tr><tr>	<td>type</td>	<td>//input[@id='quickforward_dp_name']</td>	<td>qfdp</td></tr><tr>	<td>select</td>	<td>id=quickforwards_user</td>	<td>label=System Admin (0)</td></tr><tr>	<td>assertElementPresent</td>	<td>name=users_device</td>	<td></td></tr><tr>	<td>select</td>	<td>name=users_device</td>	<td>label=IAX2/103</td></tr><tr>	<td>clickAndWait</td>	<td>id=cb_add</td>	<td></td></tr><tr>	<td>assertText</td>	<td>id=status</td>	<td>Dial Plan successfully created</td></tr><tr>	<td>open</td>	<td>/billing/dids/edit/1</td>	<td></td></tr><tr>	<td>assertElementPresent</td>	<td>name=dp_id</td>	<td></td></tr><tr>	<td>assertText</td>	<td>name=dp_id</td>	<td>qfdp</td></tr><tr>	<td>assertSelectedLabel</td>	<td>name=dp_id</td>	<td>qfdp</td></tr><tr>	<td>clickAndWait</td>	<td>css=input[type=&quot;image&quot;]</td>	<td></td></tr><tr>	<td>assertTextPresent</td>	<td>DID assigned to Dial Plan: qfdp</td>	<td></td></tr><tr>	<td>assertTextPresent</td>	<td>Allow this DID to be assigned to other users/dialplans</td>	<td></td></tr><tr>	<td>open</td>	<td>/billing/dids/list</td>	<td></td></tr><tr>	<td>assertText</td>	<td>id=dialplan_1</td>	<td>qfdp (quickforwarddids)</td></tr><tr>	<td>assertElementNotPresent</td>	<td>link=Quick Forward DIDs DP (quickforwarddids)</td>	<td></td></tr><tr>	<td>open</td>	<td>/billing/dids/edit/1</td>	<td></td></tr><tr>	<td>clickAndWait</td>	<td>css=#make_did_free &gt; input[name=&quot;commit&quot;]</td>	<td></td></tr><tr>	<td>assertTextPresent</td>	<td>DID made available</td>	<td></td></tr><tr>	<td>assertText</td>	<td>name=dp_id</td>	<td>qfdp</td></tr><tr>	<td>assertSelectedLabel</td>	<td>name=dp_id</td>	<td>qfdp</td></tr>-->
+<!--MOR12-->
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>Quick Forwards Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>name=dp_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<!--VERIFY FIELDS-->
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quickforward</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_name</td>
+	<td>Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user</td>
+	<td>User</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device</td>
+	<td>Device</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_diversion</td>
+	<td>Use Diversion instead of CallerID</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quickforward Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_name</td>
+	<td>Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user</td>
+	<td>User</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device</td>
+	<td>Device</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_diversion</td>
+	<td>Use Diversion instead of CallerID</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=quickforwards_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<!--CREATE NEW ONE-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please enter name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td>qf_dp</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,System Admin (0),Test Accountant (4),Test Reseller (3),Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForSelectOptions</td>
+	<td>name=users_device</td>
+	<td>Not used,IAX2/101,FAX/102,IAX2/1002</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#quickforwards_device &gt; #users_device &gt; option[value=&quot;3&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=FAX/102</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=data10</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=data10</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_2</td>
+	<td>qf_dp</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device_id_2</td>
+	<td>FAX/102</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user_2</td>
+	<td>user_admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_data10_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please enter name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td>qf_dp2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_3</td>
+	<td>qf_dp2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device_id_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_data10_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,System Admin (0),Test Accountant (4),Test Reseller (3),Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=Test Accountant (4)</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Test Accountant (4)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().jQuery.active == 0 </td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>waitForSelectOptions</td>
+	<td>name=users_device</td>
+	<td>Not used</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#quickforwards_device &gt; #users_device &gt; option</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=users_device</td>
+	<td>Not used</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,System Admin (0),Test Accountant (4),Test Reseller (3),Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=System Admin (0)</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>System Admin (0)</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=users_device</td>
+	<td>Not used</td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().jQuery.active == 0 </td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>waitForSelectOptions</td>
+	<td>name=users_device</td>
+	<td>Not used,IAX2/103</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/103</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=users_device</td>
+	<td>IAX2/103</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_2</td>
+	<td>qf_dp</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user_2</td>
+	<td>user_admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device_id_2</td>
+	<td>FAX/102</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#quickforward_dp_data10_2 &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_3</td>
+	<td>qf_dp2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user_3</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device_id_3</td>
+	<td>IAX2/103</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#quickforward_dp_data10_3 &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=users_device</td>
+	<td>FAX/102</td>
+</tr>
+<!--Konvertavus kaip suprantu vistiek mato-->
+<!--<tr> 	<td>assertNotVisible</td> 	<td>name=users_device</td> 	<td></td> </tr>-->
+<tr>
+	<td>assertValue</td>
+	<td>name=dialplan[name]</td>
+	<td>qf_dp</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,System Admin (0),Test Accountant (4),Test Reseller (3),Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=users_device</td>
+	<td>Not used,IAX2/101,FAX/102,IAX2/1002</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#users_device &gt; option[value=&quot;4&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=users_device</td>
+	<td>label=IAX2/1002</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=dialplan[name]</td>
+	<td>qf_dp2</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,System Admin (0),Test Accountant (4),Test Reseller (3),Test User #1 (2)</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>System Admin (0)</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>change</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=users_device</td>
+	<td>IAX2/103</td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quick Forwards Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=dp_id</td>
+	<td>qf_dp qf_dp2</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=dp_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=dp_id</td>
+	<td>label=qf_dp2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID assigned to Dial Plan: qf_dp2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=dialplan_1</td>
+	<td>qf_dp2 (quickforwarddids)</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID made available</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=dp_id</td>
+	<td>qf_dp qf_dp2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=did_did</td>
+	<td>11111111111111</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=user_id</td>
+	<td>label=Test Reseller</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=tr.row1 &gt; td &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID reserved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/users/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_username</td>
+	<td>102</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password_password</td>
+	<td>10221022</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_first_name</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_last_name</td>
+	<td>Reseller</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/devices/new?return_to_action=list&amp;return_to_controller=users&amp;user_id=6[alt=&quot;Device&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_description</td>
+	<td>SIP_device</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_name</td>
+	<td>Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user</td>
+	<td>User</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device</td>
+	<td>Device</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_diversion</td>
+	<td>Use Diversion instead of CallerID</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quickforward Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_name</td>
+	<td>Name</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user</td>
+	<td>User</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device</td>
+	<td>Device</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_diversion</td>
+	<td>Use Diversion instead of CallerID</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=quickforwards_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please enter name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td>qf_dp_re</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,Test Reseller (6),User Resellers (5)</td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>name=users_device</td>
+	<td>Not used,SIP/1003</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=option[value=&quot;6&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=SIP/1003</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=data10</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_4</td>
+	<td>qf_dp_re</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user_4</td>
+	<td>102</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device_id_4</td>
+	<td>SIP/1003</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_data10_4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Please enter name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td>qf_dp2</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,Test Reseller (6),User Resellers (5)</td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>name=users_device</td>
+	<td>Not used,SIP/1003</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#quickforwards_device &gt; #users_device &gt; option</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>name=users_device</td>
+	<td>Not used</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td>qf_dp2</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,Test Reseller (6),User Resellers (5)</td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>name=users_device</td>
+	<td>Not used,SIP/1003</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=option[value=&quot;6&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=SIP/1003</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,Test Reseller (6),User Resellers (5)</td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=User Resellers (5)</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>User Resellers (5)</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForCondition</td>
+	<td>selenium.browserbot.getCurrentWindow().Ajax.activeRequestCount == 0</td>
+	<td>10000</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>name=users_device</td>
+	<td>Not used,IAX2/105</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=option[value=&quot;7&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/105</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_4</td>
+	<td>qf_dp_re</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user_4</td>
+	<td>102</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device_id_4</td>
+	<td>SIP/1003</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_data10_4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#quickforward_dp_data10_4 &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_5</td>
+	<td>qf_dp2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_user_5</td>
+	<td>user_reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=quickforward_dp_device_id_5</td>
+	<td>IAX2/105</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/4</td>
+	<td></td>
+</tr>
+<!--Konvertavus vistiek mato kaip supratau-->
+<!--<tr> 	<td>assertNotVisible</td> 	<td>name=users_device</td> 	<td></td> </tr>-->
+<tr>
+	<td>assertValue</td>
+	<td>name=dialplan[name]</td>
+	<td>qf_dp_re</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>assertEditable</td>
+	<td>id=quickforwards_user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,Test Reseller (6),User Resellers (5)</td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=quickforwards_user</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>blur</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>change</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>Test Reseller (6)</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=users_device</td>
+	<td>Not used,SIP/1003</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=option[value=&quot;6&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=users_device</td>
+	<td>label=SIP/1003</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=dialplan[name]</td>
+	<td>qf_dp2</td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=quickforwards_user</td>
+	<td>Not used,Test Reseller (6),User Resellers (5)</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=quickforwards_user</td>
+	<td>User Resellers (5)</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>off</td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=quickforwards_user</td>
+	<td>change</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertSelectOptions</td>
+	<td>id=users_device</td>
+	<td>Not used,IAX2/105</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>id=users_device</td>
+	<td>IAX2/105</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>fireEvent</td>
+	<td>id=data10</td>
+	<td>focus</td>
+</tr>
+<tr>
+	<td>keyDown</td>
+	<td>id=data10</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=data10</td>
+	<td></td>
+</tr>
+<tr>
+	<td>keyUp</td>
+	<td>id=data10</td>
+	<td>w</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=data10</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan successfully updated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Quick Forwards Dial Plan</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=dp_id</td>
+	<td>qf_dp2 qf_dp_re</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=dp_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=dp_id</td>
+	<td>label=qf_dp2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;image&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID assigned to Dial Plan: qf_dp2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=dialplan_3</td>
+	<td>qf_dp2 (quickforwarddids)</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>user_admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>user_admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=notice</td>
+	<td>Access Denied</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>user_reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>user_reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>accountant</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>accountant1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You are not authorized to view this page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<!--here we often get Dont_be_so_smart-->
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#quickforward_dp_delete_3 &gt; a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Cannot delete Dial Plan. It is assigned to DID(s)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#make_did_free &gt; input[name=&quot;commit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID made available</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/dialplans</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#quickforward_dp_delete_3 &gt; a &gt; img[alt=&quot;Delete&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Are you sure?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan deleted: qf_dp2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/edit/X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Dial Plan was not found</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/destroy/-3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/update/3333333</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Access Denied</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

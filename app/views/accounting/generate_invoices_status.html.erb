@@ -1,0 +1,8 @@
+<%= _('Generating_invoices_for_period') %>: <%= nice_date(@period_start, 0) %> - <%= nice_date(@period_end, 0) %>
+<br><br>
+<%= _('Invoices_generated') %>: <%= @invoices_generated %>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<%= link_to b_back + _('Back_to_Invoices'), :action=>:invoices%>

@@ -1,0 +1,261 @@
+<tr>
+  <td colspan="2" height="20"></td>
+</tr>
+<tr <%= tooltip(_('Advanced'), _('Advanced_Options_Notice')) %>>
+  <td colspan="2" class="bottom_border">
+    <b><%= _('Advanced') %></b>
+  </td>
+</tr>
+<tr>
+  <td colspan="2" height="10"></td>
+</tr>
+<% if @device_type == "SIP" %>
+        <tr>
+          <td> <%= _('Fromuser') %>:</td>
+          <td> <%= text_field_tag 'fromuser', @device.fromuser, "class" => "input" %>  </td>
+        </tr>
+        <tr>
+          <td> <%= _('Fromdomain') %>:</td>
+          <td> <%= text_field_tag 'fromdomain', @device.fromdomain, "class" => "input" %>  </td>
+        </tr>
+        <tr>
+          <td> <%= _('Trustrpid') %>:</td>
+          <td>
+            <%= radio_button_tag('device[trustrpid]', 'no', @device.trustrpid == 'no') %> <%= _('No') %>
+            <%= radio_button_tag('device[trustrpid]', 'yes', @device.trustrpid == 'yes') %> <%= _('Yes') %>
+          </td>
+        </tr>
+        <tr>
+          <td> <%= _('Sendrpid') %>:</td>
+          <td>
+            <%= radio_button_tag('device[sendrpid]', 'no', @device.sendrpid == 'no') %> <%= _('No') %>
+            <%= radio_button_tag('device[sendrpid]', 'yes', @device.sendrpid == 'yes') %> <%= _('Yes') %>
+          </td>
+        </tr>
+        <tr>
+          <td> <%= _('Insecure') %>:</td>
+          <% if params[:action] == "default_device" or !ccl_active? %>
+            <td>
+              <%= _("Port") %>: <%= check_box_tag 'insecure_port', "1", @device.insecure.to_s.include?("port") %>
+              <%= _("Invite") %>: <%= check_box_tag 'insecure_invite', "1", @device.insecure.to_s.include?("invite") %>
+            </td>
+          <% else %>
+            <td>
+              <%= _("Port") %>: <%= check_box_tag 'insecure_port', "1", @device.insecure.to_s.include?("port"), :blocked => true if @device_type == "SIP" and @device.host == "dynamic" and ccl_active? %>
+              <%= _("Invite") %>: <%= check_box_tag 'insecure_invite', "1", @device.insecure.to_s.include?("invite"), :blocked => true if @device_type == "SIP" and @device.host == "dynamic" and ccl_active? %>
+            </td>
+          <% end %>
+        </tr>
+
+        <% if session[:usertype] != "reseller" %>
+            <tr <%= tooltip(_('SIP_302_Reinvite_Support'), _('SIP_302_Reinvite_Support_Explanation')) %>>
+              <td><%= b_exclamation + _('SIP_302_Reinvite_Support') %>:</td>
+              <td>
+                <%= radio_button_tag('device[promiscredir]', 'no', @device.promiscredir.to_s == 'no') %> <%= _('No') %>
+                <%= radio_button_tag('device[promiscredir]', 'yes', @device.promiscredir.to_s == 'yes') %> <%= _('Yes') %>
+              </td>
+            </tr>
+        <% end %>
+<% end %>
+<% lang = @device.language.to_s.blank? ? 'en' : @device.language %>
+<% if @device_type != "Virtual" %>
+    <tr <%= tooltip(_('Grace_Time'), _('Grace_Time_Explanation')) %>>
+      <td> <%= _('Grace_Time') %>:</td>
+      <td> <%= text_field_tag 'grace_time', @device.grace_time, :size => 5, "class" => "input" %> s</td>
+    </tr>
+    <% if @device_type == 'SIP' %> 
+      <tr>
+        <td> <%= _('Progressinband') %>:</td>
+        <td>
+          <%= radio_button_tag('device[progressinband]', 'no', @device.progressinband.to_s == 'no') %> <%= _('No') %>
+          <%= radio_button_tag('device[progressinband]', 'yes', @device.progressinband.to_s == 'yes') %> <%= _('Yes') %>
+          <%= radio_button_tag('device[progressinband]', 'never', @device.progressinband.to_s == 'never') %> <%= _('Never') %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= _('Video_support') %>:</td>
+        <td>
+          <%= radio_button_tag('device[videosupport]', 'no', @device.videosupport == 'no') %> <%= _('No') %>
+          <%= radio_button_tag('device[videosupport]', 'yes', @device.videosupport == 'yes') %> <%= _('Yes') %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td nowrap><%= _('Allow_duplicate_calls') %>:</td>
+      <td>
+        <%= radio_button_tag('device[allow_duplicate_calls]', '0', @device.allow_duplicate_calls.to_i == 0) %> <%= _('No') %>
+        <%= radio_button_tag('device[allow_duplicate_calls]', '1', @device.allow_duplicate_calls.to_i == 1) %> <%= _('Yes') %>
+      </td>
+    </tr>
+    <% if @device_type != 'FAX' %>
+      <tr <%= tooltip(_('Fake_Ring'), _('Fake_Ring_Explanation')) %>>
+        <td><%= _('Fake_Ring') %>:</td>
+        <td>
+          <%= radio_button_tag('device[fake_ring]', '0', @device.fake_ring.to_i == 0) %> <%= _('No') %>
+          <%= radio_button_tag('device[fake_ring]', '1', @device.fake_ring.to_i == 1) %> <%= _('Yes') %>
+        </td>
+      </tr>
+    <% end %>
+    <tr <%= tooltip(_('Language'), _('Device_Language_Explanation')) %>>
+      <td><%= _('Language') %>:</td>
+      <td>
+        <%= text_field_tag 'device[language]', lang, :size => 10, "class" => "input" %>
+      </td>
+    </tr>
+<% end %>
+<tr <%= tooltip(_('Use_ANI_if_available_fo_CallerID'), h(_('ANI_Explanation'))) %> >
+  <td nowrap><%= _('Use_ANI_if_available_fo_CallerID') %>:</td>
+  <td>
+    <%= radio_button_tag('device[use_ani_for_cli]', '0', (not @device.use_ani_for_cli)) %> <%= _('No') %>
+    <%= radio_button_tag('device[use_ani_for_cli]', '1', @device.use_ani_for_cli) %> <%= _('Yes') %>
+  </td>
+</tr>
+<tr <%= tooltip(_('Incoming_Call_CallerID_Presentation'), h(_('Calleridpres_Explanation'))) %> >
+  <td nowrap><%= _('Incoming_Call_CallerID_Presentation') %>:</td>
+  <td>
+    <%= select_tag 'device[calleridpres]', options_for_select([[_('None', nil)]]+Device.calleridpresentation, @device.calleridpres.to_s) %>
+  </td>
+</tr>
+<% if @device_type != "Virtual" %>
+    <tr <%= tooltip(_('Change_Failed_Code_To'), h(_('Change_Failed_Code_To_Explanation'))) %> >
+      <td><%= _('Change_Failed_Code_To') %>:</td>
+      <td>
+        <%= render :partial => '/layouts/hgc_end_select', :locals => {:select_field_tag => "device[change_failed_code_to]", :filed_value => @device.change_failed_code_to.to_i} %>
+      </td>
+    </tr>
+    <!---
+  <%# http://trac.kolmisoft.com/trac/ticket/4236
+  if call_shop_active? %>
+
+    <tr <%#= tooltip(_('Allow_grandstreams'),h( _('Allow_grandstreams_Explanation'))) %> >
+      <td><%#= _('Allow_grandstreams') %>:</td>
+      <td>
+  <%#= radio_button_tag('device[allow_grandstreams]', '0', (allow_grandstreams.to_i == 0) ) %> <%#= _('No') %>
+    <%#= radio_button_tag('device[allow_grandstreams]', '1', (allow_grandstreams.to_i == 1) ) %> <%#= _('Yes') %>
+      </td>
+    </tr>
+  <%#end%>
+  --->
+<% end %>
+<% if @default.to_i != 1 %>
+    <tr>
+      <td><%= _('Forward_DID') %>:</td>
+      <td>
+<% current_forward_did = ( fdid = @device.forward_did_id.to_i and fdid > 0 ? Did.select("did").where(["id = ?", fdid]).first.did.to_s : "" ) rescue "Invalid DID" %>
+      <input title="DID live search" type="text" size="30" id="forward_did" name="forward_did" autocomplete="off" value="<%=raw current_forward_did %>" style="margin-top:0px;" />
+      <table id="did_list" style='z-index:1;margin-left:2px;margin-top:0px;position:absolute;min-width:100px;border-width: 1px;border-image: initial;-webkit-box-shadow: rgba(0, 0, 0, 0.398438) 0px 2px 4px;box-shadow: rgba(0, 0, 0, 0.398438) 0px 2px 4px;background-clip: initial;background-color: rgb(255, 255, 255);background-position: initial initial;background-repeat: initial initial;'></table>
+      </span><br/><br/>
+           <script type='text/javascript'>
+              Event.observe(window, 'load',  function() {
+                Event.observe($('forward_did'), 'click', function(){
+                  if ($('forward_did').value == "") {
+                    $('did_list').innerHTML = "";
+                    <%=raw remote_function(:update => 'did_list',:url => {:controller => :locations, :action => :get_did_map }, :with => "'empty_click=true'") %>
+                  }
+                    Event.observe($('forward_did'), 'keyup', function(){
+                      $('did_list').innerHTML = "";
+                      <%=raw remote_function(:update => 'did_list',:url => {:controller => :locations, :action => :get_did_map }, :with => "'filter=forward_dids&did_livesearch='+$('forward_did').value") %>
+                    });
+
+                    Event.observe($('did_list'), 'mouseover', function(){
+                      var el = document.getElementById('did_list').getElementsByTagName('td');
+                      for(var i=0;i<el.length;i++){
+                          el[i].onclick=function(){
+                              if (this.id != -2) {
+                                  document.getElementById('forward_did').value = this.innerHTML
+                                <%= raw remote_function(:update => 'did_list',:url => {:controller => :locations, :action => :get_did_map }, :with => "'did_livesearch='") %>
+                              }
+                          }
+                          el[i].onmouseover=function(){
+                              this.style.backgroundColor="#BBBBBB";
+                          }
+                          el[i].onmouseout=function(){
+                              this.style.backgroundColor="rgb(255, 255, 255)";
+                          }
+                      }
+                    });
+
+                });
+            });
+            </script> 
+      </td>
+    </tr>
+<% end %>
+<tr>
+  <td nowrap> <%= _('Anti_resale_auto_answer') %>: </td>
+  <td>
+    <%= radio_button_tag('device[anti_resale_auto_answer]', '0', (not @device.anti_resale_auto_answer?)) %> <%= _('No') %>
+    <%= radio_button_tag('device[anti_resale_auto_answer]', '1', @device.anti_resale_auto_answer?) %> <%= _('Yes') %>
+  </td>
+</tr>
+<% if defined? PROVB_Active and PROVB_Active.to_i == 1 and @device_type != "FAX" %>
+    <tr>
+      <td nowrap> <%= _('Time_limit_per_day') %>: </td>
+      <td>
+        <%= text_field_tag 'device[time_limit_per_day]', @device.time_limit_per_day, :size => 10, "class" => "input" %>
+        <%= _('min') %>
+      </td>
+    </tr>
+<% end %>
+<% if @device_type == 'SIP' and defined? AST_18 and AST_18.to_i == 1 %>
+  <tr>
+    <td> <%= _('Transport') %>: </td>
+    <td>
+      <%= radio_button_tag('device[transport]', 'udp', (@device.transport == 'udp')) %> <%= _('udp') %>
+      <%= radio_button_tag('device[transport]', 'tcp', (@device.transport == 'tcp')) %> <%= _('tcp') %>
+      <%= radio_button_tag('device[transport]', 'udp,tcp', (@device.transport == 'udp,tcp')) %> <%= _('udp,tcp') %>
+      <%= radio_button_tag('device[transport]', 'tcp,udp', (@device.transport == 'tcp,udp')) %> <%= _('tcp,udp') %>
+    </td>
+  </tr>
+<% end %>
+<% if (@device_type == 'FAX' or @device_type == 'SIP') and defined? AST_18 and AST_18.to_i == 1 %>
+  <tr> 
+    <td> <%= _('T.38_support') %>: </td> 
+    <td> 
+      <%= radio_button_tag('device[t38pt_udptl]', "no", (@device.t38pt_udptl == 'no')) %> <%= _('No') %>
+      <%= radio_button_tag('device[t38pt_udptl]', "yes", (@device.t38pt_udptl == 'yes')) %> <%= _('Yes') %>
+      <%= radio_button_tag('device[t38pt_udptl]', "fec", (@device.t38pt_udptl == 'yes, fec')) %> <%= _('Fec') %>
+      <%= radio_button_tag('device[t38pt_udptl]', "redundancy", (@device.t38pt_udptl == 'yes, redundancy')) %> <%= _('Redundancy') %>
+      <%= radio_button_tag('device[t38pt_udptl]', "none", (@device.t38pt_udptl == 'yes, none')) %> <%= _('None') %>
+    </td>
+  </tr>
+<% end %>
+<% if @device_type == 'SIP' and defined? AST_18 and AST_18.to_i == 1 %>
+  <tr>
+    <td> <%= _('SRTP_encryption') %>: </td>
+    <td>
+      <%= radio_button_tag('device[encryption]', "no",  (not @device.srtp_encryption?)) %> <%= _('No') %>
+      <%= radio_button_tag('device[encryption]', "yes", @device.srtp_encryption?) %> <%= _('Yes') %>
+    </td>
+  </tr>
+<% end %>
+<% if ['SIP','IAX2', 'dahdi', 'H323'].include? @device_type %>
+  <tr>
+    <td>
+      <%= _('Block_callerid_if') %>
+      <%= text_field_tag 'device[block_callerid]', @device.block_callerid, :disabled => (not @device.block_callerid?), :size => 3, "class" => "input"  %>
+      <%= _('simultaneous_calls_come_from_it') %>:
+    </td>
+    <td>
+      <%= radio_button_tag('block_callerid_enable', "no",  (not @device.block_callerid?)) %> <%= _('No') %>
+      <%= radio_button_tag('block_callerid_enable', "yes", @device.block_callerid?) %> <%= _('Yes') %>
+    </td>
+  </tr>
+  <script type='text/javascript' >
+    /*after window loads register event listener on two radio buttons
+    (block_callerid_enable_yes, block_callerid_enable_no). if 'yes' radio
+    button is checked enable block_callerid input box and set default value
+    to 2 else if 'no' radio button is checked disable block_callerid input
+    box and set it to empty string.*/
+    Event.observe(window, 'load', function() {
+      ['block_callerid_enable_yes','block_callerid_enable_no'].each(function(radio_button){
+        Event.observe(radio_button, 'change', function(event) {
+          var block_clid_enabled = (event.target.checked && event.target.value == 'yes')
+          $('device_block_callerid').disabled = (!block_clid_enabled)
+          $('device_block_callerid').value = (block_clid_enabled ? '2' : '')
+        });
+      });
+    });
+  </script>
+<% end %>
+

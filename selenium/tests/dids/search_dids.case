@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>search_dids</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">search_dids</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dialplans/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='quickforward_dp_name']</td>
+	<td>qf_dp</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=quickforwards_user</td>
+	<td>label=System Admin (0)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#quickforwards_user &gt; option[value=&quot;0&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>name=users_device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=users_device</td>
+	<td>label=IAX2/103</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=cb_add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>did_start</td>
+	<td>37060012345</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>did_end</td>
+	<td>37060012350</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='commit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>6 DIDs were successfully created</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user_id</td>
+	<td>label=Test Reseller</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Reserve']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID reserved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='image']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID assigned to Dial Plan: qf_dp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Terminate']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID terminated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Reserve']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID reserved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/7</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user_id</td>
+	<td>label=User Resellers</td>
+</tr>
+<tr>
+	<td>assertSelectedLabel</td>
+	<td>user_id</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Reserve']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID reserved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>user_id</td>
+	<td>label=Test Reseller</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Reserve']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID reserved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>reseller</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>reseller1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/edit/3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@name='commit' and @value='Reserve']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>DID reserved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>s_status</td>
+	<td>label=Free</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37060012350</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012345</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>s_status</td>
+	<td>label=Reserved</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37060012345</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Reserved</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012350</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>s_status</td>
+	<td>All Free Reserved Active Closed Terminated</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/callc/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>login_psw</td>
+	<td>admin1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Successfully logged in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>All Free Reserved Active Closed Terminated</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>s_status</td>
+	<td>label=Free</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--FREE-->
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012345</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012346</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012347</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012348</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012349</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012350</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37063042438</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37093042422</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>s_status</td>
+	<td>label=Reserved</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--RESERVED-->
+<tr>
+	<td>assertTextPresent</td>
+	<td>37060012345</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012346</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012347</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37060012348</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37060012349</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37060012350</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37063042438</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37093042422</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>s_status</td>
+	<td>label=Active</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--ACTIVE-->
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012345</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37060012346</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012347</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012348</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012349</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012350</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37063042438</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37093042422</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>s_status</td>
+	<td>label=Closed</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--CLOSED-->
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012345</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012346</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012347</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012348</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012349</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012350</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37063042438</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37093042422</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>s_status</td>
+	<td>label=Terminated</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>commit</td>
+	<td></td>
+</tr>
+<!--TERMINATED-->
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012345</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012346</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>37060012347</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012348</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012349</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012350</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37063042438</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37093042422</td>
+	<td></td>
+</tr>
+<!--Search dids by owner -->
+<tr>
+	<td>open</td>
+	<td>/billing/test/load_delta_sql/tests/dids/dids</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=s_did_owner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Owner:</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Clear search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_32</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=s_did_owner</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_32</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<!--šitas did priskirtas System Admin, nors neturi owner-->
+<tr>
+	<td>assertText</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>Syst</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_32</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_6</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_4</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>Syst%</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_6</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_4</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_status</td>
+	<td>label=Active</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_16</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_4</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_14</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>%st%</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_28</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_36</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_29</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_status</td>
+	<td>label=All</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_28</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_36</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_29</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<!--stripinimas-->
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>reseller&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_20</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_33</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_28</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_6</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_4</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reseller&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_20</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_33</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_28</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_6</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_4</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>%nt</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_42</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_20</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_33</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_28</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_6</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_4</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>Te%r #1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_24</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_40</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_2</td>
+	<td>Test User #1</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_42</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_20</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_33</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_28</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_6</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_4</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<!--orderinimas ir puslapiavimas-->
+<tr>
+	<td>open</td>
+	<td>/billing/functions/settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=items_per_page</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/billing/dids/list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=s_did_owner</td>
+	<td>%Admin</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.1.0</td>
+	<td>37060012346</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.1.0</td>
+	<td>37060011228</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=s_did_owner</td>
+	<td>%Admin</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'1')])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.1.0</td>
+	<td>37060012346</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Clear search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.1.0</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.4.0</td>
+	<td>37060012346</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.7.0</td>
+	<td>37060012349</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_language</td>
+	<td>label=en</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.1.0</td>
+	<td>37063042438</td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012346</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37060012349</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_language</td>
+	<td>label=</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>37063042438</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.2.0</td>
+	<td>37060012346</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.5.0</td>
+	<td>37060012349</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_user</td>
+	<td>label=Test Reseller</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;3&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=s_language</td>
+	<td>label=All</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=reseller_3</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=reseller_3</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_3</td>
+	<td>User Resellers</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.2.0</td>
+	<td>37060012350</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.4.0</td>
+	<td>37060011231</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.6.0</td>
+	<td>37060011236</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_42</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_8</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=reseller_8</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=user_25</td>
+	<td>Test Reseller</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_39</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_6</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_4</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_15</td>
+	<td>System Admin</td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>id=user_23</td>
+	<td>Test Accountant</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.1.0</td>
+	<td>37060011238</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.2.0</td>
+	<td>37060011239</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'1')])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.2.0</td>
+	<td>37060012350</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.4.0</td>
+	<td>37060011231</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.6.0</td>
+	<td>37060011236</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.1.0</td>
+	<td>37060011238</td>
+</tr>
+<tr>
+	<td>assertTable</td>
+	<td>css=table.maintable.2.0</td>
+	<td>37060011239</td>
+</tr>
+</tbody></table>
+</body>
+</html>
