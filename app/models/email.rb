@@ -113,7 +113,7 @@ class Email < ActiveRecord::Base
       opts = opts.merge({
                             :device_type => device.device_type.to_s,
                             :device_username => device.username.to_s,
-                            :device_password => device.secret.to_s,
+                            :device_password => device.sippasswd.to_s,
                             :primary_device_pin => device.pin.to_s
                         })
     end

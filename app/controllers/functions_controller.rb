@@ -266,17 +266,17 @@ class FunctionsController < ApplicationController
     @acc = ""
     @src = ""
     @dst = ""
-    secret = ""
+    sippasswd = ""
 
     @acc = params[:acc].to_i if params[:acc]
     @src = params[:src] if params[:src]
     @dst = params[:dst] if params[:dst]
-    secret = params[:secret] if params[:secret]
+    sippasswd = params[:sippasswd] if params[:sippasswd]
 
     if params[:acc].length > 0 and @src.length > 0
 
 
-      device= Device.find(:first, :joins => "LEFT JOIN users ON (users.id = devices.user_id)", :conditions => ["devices.id = ? AND secret = ? AND device_type != 'FAX' AND (users.owner_id = ? OR users.id = ?) AND name not like 'mor_server_%'", @acc, secret, corrected_user_id, corrected_user_id])
+      device= Device.find(:first, :joins => "LEFT JOIN users ON (users.id = devices.user_id)", :conditions => ["devices.id = ? AND sippasswd = ? AND device_type != 'FAX' AND (users.owner_id = ? OR users.id = ?) AND name not like 'mor_server_%'", @acc, sippasswd, corrected_user_id, corrected_user_id])
 
       unless device
         flash[:notice] = _('Device_not_found')
@@ -289,7 +289,7 @@ class FunctionsController < ApplicationController
       custom_legA = Confline.get_value2('Callback_legA_CID', 0)
       custom_legB = Confline.get_value2('Callback_legB_CID', 0)
 
-      if device #Device.count(@acc, :conditions => "secret = '#{secret}'") > 0
+      if device #Device.count(@acc, :conditions => "sippasswd = '#{sippasswd}'") > 0
 
         legA_cid = (legA == 'device' ? device.callerid_number : (legA == 'custom' ? custom_legA : @src))
         legB_cid = (legB == 'device' ? device.callerid_number : (legB == 'custom' ? custom_legB : @src))
@@ -2306,7 +2306,7 @@ Sets default tax values for users or cardgroups
     @destinations_without_dg = Destination.find(:all, :conditions => "destinationgroup_id = 0", :order => "direction_code ASC")
     @dialplans = Dialplan.find(:all, :conditions => "dptype = 'ivr' and data8 = 1")
     @actions = Action.find(:all, :joins => " JOIN users ON (actions.user_id = users.id) ", :conditions => "action = 'error' AND processed = '0' ")
-    @devices = Device.find(:all, :conditions => "LENGTH(secret) < 8 AND LENGTH(username) > 0 AND device_type != 'H323' AND username NOT LIKE 'mor_server_%' AND user_id != -1")
+    @devices = Device.find(:all, :conditions => "LENGTH(sippasswd) < 8 AND LENGTH(username) > 0 AND device_type != 'H323' AND username NOT LIKE 'mor_server_%' AND user_id != -1")
     @users = User.find(:all, :conditions => ["password = SHA1('') or password = SHA1(username)"])
     @default_users_erors = Confline.get_default_user_pospaid_errors
     if  @default_users_erors and @default_users_erors.size.to_i > 0
@@ -3113,7 +3113,7 @@ Sets default tax values for users or cardgroups
               device.extension = clean_value_all(r_arr[session[:imp_device_extension]].to_s)
               device.name = clean_value_all(r_arr[session[:imp_device_username]].to_s)
               device.username = clean_value_all(r_arr[session[:imp_device_username]].to_s)
-              device.secret = clean_value_all(r_arr[session[:imp_device_password]].to_s)
+              device.sippasswd = clean_value_all(r_arr[session[:imp_device_password]].to_s)
               device.pin = pin if pin != ""
               device.device_type = ['SIP', 'IAX2', 'H323', 'FAX'].include?(device_type.upcase) ? device_type.upcase : (['dahdi'].include?(device_type.downcase) ? device_type.downcase : device_type.capitalize)
               device.permit = "0.0.0.0/0.0.0.0"

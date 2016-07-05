@@ -101,7 +101,7 @@ class DevicesController < ApplicationController
     end
 
     fextension = free_extension()
-    device = user.create_default_device({:device_ip_authentication_record => par[:ip_authentication].to_i, :description => par[:device][:description], :device_type => par[:device][:device_type], :dev_group => par[:device][:devicegroup_id], :free_ext => fextension, :secret => random_password(12), :username => fextension, :pin => par[:device][:pin]})
+    device = user.create_default_device({:device_ip_authentication_record => par[:ip_authentication].to_i, :description => par[:device][:description], :device_type => par[:device][:device_type], :dev_group => par[:device][:devicegroup_id], :free_ext => fextension, :sippasswd => random_password(12), :username => fextension, :pin => par[:device][:pin]})
     if ccl_active? and par[:device][:device_type] == "SIP"
       device.insecure = 'port,invite'
     elsif ccl_active? and par[:device][:device_type] != "SIP"
@@ -428,10 +428,10 @@ class DevicesController < ApplicationController
       unless @device.is_dahdi?
         if change_opt_2 == true
           params[:device][:name]=params[:device][:name].to_s.strip
-          params[:device][:secret]=params[:device][:secret].to_s.strip
+          params[:device][:sippasswd]=params[:device][:sippasswd].to_s.strip
         else
           params[:device][:name]= @device.name
-          params[:device][:secret]=@device.secret
+          params[:device][:sippasswd]=@device.sippasswd
         end
         if @device.device_type != "FAX"
           change_opt_2 == true ? params[:device][:name]=params[:device][:name].to_s.strip : params[:device][:name]= @device.name
@@ -589,7 +589,7 @@ class DevicesController < ApplicationController
       if params[:ip_authentication].to_s == "1"
 
         @device.username = ""
-        @device.secret = ""
+        @device.sippasswd = ""
         if !@device.name.include?('ipauth')
           name = @device.generate_rand_name('ipauth', 8)
           while Device.where(['name= ? and id != ?', name, @device.id]).first
@@ -774,8 +774,8 @@ class DevicesController < ApplicationController
         if @device_old.pin != @device.pin
           Action.add_action_hash(session[:user_id], {:target_id => @device.id, :target_type => "device", :action => :device_pin_changed, :data => @device_old.pin, :data2 => @device.pin})
         end
-        if @device_old.secret != @device.secret
-          Action.add_action_hash(session[:user_id], {:target_id => @device.id, :target_type => "device", :action => :device_secret_changed, :data => @device_old.secret, :data2 => @device.secret})
+        if @device_old.sippasswd != @device.sippasswd
+          Action.add_action_hash(session[:user_id], {:target_id => @device.id, :target_type => "device", :action => :device_secret_changed, :data => @device_old.sippasswd, :data2 => @device.sippasswd})
         end
         if old_vm.password != vm.password
           Action.add_action_hash(session[:user_id], {:target_id => @device.id, :target_type => "device", :action => :device_voice_mail_password_changed, :data => old_vm.password, :data2 => vm.password})
@@ -2165,9 +2165,9 @@ class DevicesController < ApplicationController
     session[:devices_devices_weak_passwords_options] ? @options = session[:devices_devices_weak_passwords_options] : @options = {}
     params[:page] ? @options[:page] = params[:page].to_i : (@options[:page] = 1 if !@options[:page] or @options[:page] <= 0)
 
-    @total_pages = (Device.where("LENGTH(secret) < 8 AND LENGTH(username) > 0 AND device_type != 'H323' AND username NOT LIKE 'mor_server_%'").count.to_d/session[:items_per_page].to_d).ceil
+    @total_pages = (Device.where("LENGTH(sippasswd) < 8 AND LENGTH(username) > 0 AND device_type != 'H323' AND username NOT LIKE 'mor_server_%'").count.to_d/session[:items_per_page].to_d).ceil
     @options[:page] = @total_pages.to_i if @total_pages.to_i < @options[:page].to_i and @total_pages > 0
-    @devices = Device.where("LENGTH(secret) < 8 AND LENGTH(username) > 0 AND device_type != 'H323' AND username NOT LIKE 'mor_server_%' AND user_id != -1").
+    @devices = Device.where("LENGTH(sippasswd) < 8 AND LENGTH(username) > 0 AND device_type != 'H323' AND username NOT LIKE 'mor_server_%' AND user_id != -1").
                       limit(session[:items_per_page]).
                       offset(session[:items_per_page]*(@options[:page]-1))
 
@@ -2247,7 +2247,7 @@ class DevicesController < ApplicationController
       params[:device] = params[:device].except(:extension) if session[:acc_device_edit_opt_1] != 2 if params[:device]
       if session[:acc_device_edit_opt_2] != 2 and params[:device]
         params[:device] = params[:device].except(:name)
-        params[:device] = params[:device].except(:secret)
+        params[:device] = params[:device].except(:sippasswd)
       end
       params = params.except(:cid_name) if session[:acc_device_edit_opt_3] != 2 if !params.blank?
       params = params.except(:cid_number) if session[:acc_device_edit_opt_4] != 2 if !params.blank?
@@ -2271,8 +2271,8 @@ class DevicesController < ApplicationController
         order_by = "devices.extension"
       when "username"
         order_by = "devices.name"
-      when "secret"
-        order_by = "devices.secret"
+      when "sippasswd"
+        order_by = "devices.sippasswd"
       when "cid"
         order_by = "devices.callerid"
       else

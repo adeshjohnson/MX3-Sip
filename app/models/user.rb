@@ -1309,7 +1309,7 @@ class User < ActiveRecord::Base
     owner_id = self.owner_id
 
     fextension = options[:free_ext]
-    device = Device.new({:user_id => id, :devicegroup_id => options[:dev_group].to_i, :context => "mor_local", :device_type => options[:device_type].to_s, :extension => fextension, :pin => options[:pin].to_s, :secret => options[:secret].to_s})
+    device = Device.new({:user_id => id, :devicegroup_id => options[:dev_group].to_i, :context => "mor_local", :device_type => options[:device_type].to_s, :extension => fextension, :pin => options[:pin].to_s, :sippasswd => options[:sippasswd].to_s})
     device.update_cid(options[:caller_name], options[:callerid], false)  #
     device.description = options[:description] if options[:description]
     device.device_ip_authentication_record = options[:device_ip_authentication_record] if options[:device_ip_authentication_record]
@@ -2305,12 +2305,12 @@ GROUP BY terminators.id;").map { |t| t.id }
 	if Confline.get_value("Allow_registration_only_passwords_in_devices").to_i == 0
 		if Confline.get_value("Allow_registration_username_passwords_in_devices").to_i == 1
 
-			device = user.create_default_device({:device_type => params[:device_type], :dev_group => dev_group.id, :free_ext => free_ext, :secret => params[:password], :username => user.username, :pin => pin, :callerid => params[:caller_id].to_s, :caller_name => params[:caller_name].to_s})
+			device = user.create_default_device({:device_type => params[:device_type], :dev_group => dev_group.id, :free_ext => free_ext, :sippasswd => params[:password], :username => user.username, :pin => pin, :callerid => params[:caller_id].to_s, :caller_name => params[:caller_name].to_s})
 		else
-            device = user.create_default_device({:device_type => params[:device_type], :dev_group => dev_group.id, :free_ext => free_ext, :secret => pasw, :pin => pin, :callerid => params[:caller_id].to_s, :caller_name => params[:caller_name].to_s})
+            device = user.create_default_device({:device_type => params[:device_type], :dev_group => dev_group.id, :free_ext => free_ext, :sippasswd => pasw, :pin => pin, :callerid => params[:caller_id].to_s, :caller_name => params[:caller_name].to_s})
 		end
 	else
-		device = user.create_default_device({:device_type => params[:device_type], :dev_group => dev_group.id, :free_ext => free_ext, :secret => params[:password], :username => params[:mob_phone], :pin => pin, :callerid => params[:caller_id].to_s, :caller_name => params[:caller_name].to_s})
+		device = user.create_default_device({:device_type => params[:device_type], :dev_group => dev_group.id, :free_ext => free_ext, :sippasswd => params[:password], :username => params[:mob_phone], :pin => pin, :callerid => params[:caller_id].to_s, :caller_name => params[:caller_name].to_s})
 	end
 	
 	
@@ -2977,7 +2977,7 @@ GROUP BY terminators.id;").map { |t| t.id }
       params[:device] = params[:device].except(:extension) if session[:acc_device_edit_opt_1] != 2 if params[:device]
       if session[:acc_device_edit_opt_2] != 2 and params[:device]
         params[:device] = params[:device].except(:name)
-        params[:device] = params[:device].except(:secret)
+        params[:device] = params[:device].except(:sippasswd)
       end
       params = params.except(:cid_name) if session[:acc_device_edit_opt_3] != 2 if !params.blank?
       params = params.except(:cid_number) if session[:acc_device_edit_opt_4] != 2 if !params.blank?

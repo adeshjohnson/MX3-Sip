@@ -90,7 +90,7 @@
         <td id="extension_<%= device.id %>"><%= device.extension %></td>
         <td id="name_<%= device.id %>"><%= device.name if device.show_username? %></td>
         <% if !(session[:usertype] == "accountant" and session[:acc_device_password].to_i == 0) %>
-            <td id="secret_<%= device.id %>"><%= device.secret if device.device_type == "SIP" or device.device_type == "IAX2" %></td>
+            <td id="sippasswd_<%= device.id %>"><%= device.sippasswd if device.device_type == "SIP" or device.device_type == "IAX2" %></td>
         <% end %>
         <td id="callerid_<%= device.id %>"><%= h device.callerid %></td>
         <% if (session[:usertype] == "admin" or session[:usertype] == "reseller") %>

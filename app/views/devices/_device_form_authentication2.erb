@@ -146,8 +146,8 @@
                 <td id="username_value"><%= text_field 'device', 'name', "class" => "input" %></td>
               </tr>
               <tr id='ip_dyn2'>
-                <td id="secret_name"> <%= _('secret') %>:</td>
-                <td id="secret_value"><%= text_field 'device', 'secret', "class" => "input" %></td>
+                <td id="sippasswd_name"> <%= _('secret') %>:</td>
+                <td id="sippasswd_value"><%= text_field 'device', 'sippasswd', "class" => "input" %></td>
               </tr>
 
               <tr id='ip_dyn3'>
@@ -197,7 +197,7 @@
               </tr>
               <tr id='ip_dyn2a'>
                 <td> <%= _('secret') %>:</td>
-                <td id="secret_value_a"><%= @device.secret %></td>
+                <td id="sippasswd_value_a"><%= @device.sippasswd %></td>
               </tr>
 
               <tr id='ip_dyn3a'>

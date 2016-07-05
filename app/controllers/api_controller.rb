@@ -165,7 +165,7 @@ class ApiController < ApplicationController
 										doc.device_id(device.id)
 										doc.caller_id(device.callerid) if params[:caller_id]
 										doc.username(device.username)
-										doc.password(device.secret)
+										doc.password(device.sippasswd)
 										doc.pin(device.pin)
 										doc.server_ip(Confline.get_value("Asterisk_Server_IP", 0))
 									end
@@ -208,13 +208,13 @@ class ApiController < ApplicationController
                     doc.device_id(devices.id)
                     doc.caller_id(devices.callerid) if params[:caller_id]
                     doc.username(devices.username)
-                    doc.password(devices.secret)
+                    doc.password(devices.sippasswd)
                     doc.pin(devices.pin)
                     doc.server_ip(Confline.get_value("Asterisk_Server_IP", 0))
                   }
                   #START ----- Send Notification by SMS
                   @user1 = User.where(:id => 0).first
-                  message = _('Body_message_device_credentials_already_registered', devices.username.to_s, devices.secret.to_s)
+                  message = _('Body_message_device_credentials_already_registered', devices.username.to_s, devices.sippasswd.to_s)
                   sms = SmsMessage.new
                   sms.sending_date = Time.now
                   sms.user_id = @user1.id
@@ -939,7 +939,7 @@ class ApiController < ApplicationController
               doc.type("#{dev.device_type}")
               doc.extension("#{dev.extension}")
               doc.username("#{dev.name}")
-              doc.password("#{dev.secret}")
+              doc.password("#{dev.sippasswd}")
               doc.cid("#{dev.callerid}")
               doc.last_time_registered("#{nice_date_time(Time.at(dev.regseconds))}")
             }
@@ -2053,7 +2053,7 @@ class ApiController < ApplicationController
 					doc.device_id(device.id)
 					doc.caller_id(device.callerid) if params[:caller_id]
 					doc.username(device.username)
-					doc.password(device.secret)
+					doc.password(device.sippasswd)
 					doc.pin(device.pin)
 					doc.server_ip(Confline.get_value("Asterisk_Server_IP", 0))
 				  end
@@ -2885,14 +2885,14 @@ class ApiController < ApplicationController
               end
               params2[:device][:pin] = new_device_pin if !params2[:device][:pin]
               fextension = free_extension()
-              device = user_u.create_default_device({:device_ip_authentication_record => params2[:ip_authentication].to_i, :description => params2[:device][:description], :device_type => params2[:device][:device_type], :dev_group => params2[:device][:devicegroup_id], :free_ext => fextension, :secret => random_password(12), :username => fextension, :pin => params2[:device][:pin]})
+              device = user_u.create_default_device({:device_ip_authentication_record => params2[:ip_authentication].to_i, :description => params2[:device][:description], :device_type => params2[:device][:device_type], :dev_group => params2[:device][:devicegroup_id], :free_ext => fextension, :sippasswd => random_password(12), :username => fextension, :pin => params2[:device][:pin]})
               device.callerid = callerid if callerid
               if device.save
                 a = Thread.new { configure_extensions(device.id, {:api => 1, :current_user => @user}) }
                 doc.status(device.check_callshop_user(_('device_created')))
                 doc.id(device.id)
                 doc.username(device.username)
-                doc.password(device.secret)
+                doc.password(device.sippasswd)
               else
                 doc.error("Device was not created")
                 device.errors.each { |key, value|

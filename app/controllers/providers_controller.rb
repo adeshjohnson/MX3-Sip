@@ -226,6 +226,7 @@ class ProvidersController < ApplicationController
       dev.host = "0.0.0.0"
       dev.ipaddr = "0.0.0.0"
       dev.secret = @provider.password.strip
+	  dev.sippasswd = dev.secret
       dev.context = Default_Context
       dev.callerid = "" #coming from provider
       dev.extension = random_password(10) #should be not-quesable
@@ -483,6 +484,7 @@ class ProvidersController < ApplicationController
       @device.name = "prov_" + @provider.id.to_s
       @device.username = @provider.login.strip
       @device.secret = (@provider.password).strip
+	  @device.sippasswd = @device.secret
     end
     #------- Network related -------
     @provider.network(params[:hostname_ip].to_s, params[:provider][:server_ip].to_s.strip, params[:device][:ipaddr].to_s.strip, params[:provider][:port].to_s.strip)

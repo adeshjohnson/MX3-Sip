@@ -37,7 +37,7 @@
         <td id="extension_<%= device.id.to_s %>" align="left"><%= device.extension %></td>
         <td id="name_<%= device.id.to_s %>" align="left"><%= device.name %></td>
         <% unless hide_device_passwords_for_users %>
-            <td id="secret_<%= device.id.to_s %>" align="left"><%= device.secret %></td>
+            <td id="sippasswd_<%= device.id.to_s %>" align="left"><%= device.sippasswd %></td>
         <% end %>
         <td id="callerid_<%= device.id.to_s %>" align="left"><%= device.callerid %></td>
         <td id="callflow_<%= device.id.to_s %>" align="center"><%= link_to b_callflow, :action => "callflow", :id => device.id %></td>

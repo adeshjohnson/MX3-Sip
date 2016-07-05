@@ -58,7 +58,7 @@
     <th id="device_type_header" align="center" colspan=2> <%= ordered_list_header("devices.device_type", "type", "Type", @options) %> </th>
     <th id="extension_header" align="left"> <%= ordered_list_header("devices.extension", "extension", "Extension", @options) %> </th>
     <th id="name_header" align="left"> <%= ordered_list_header("devices.name", "username", "Username", @options) %> </th>
-    <th id="secret_header" align="left"> <%= ordered_list_header("devices.secret", "secret", "Password", @options) %> </th>
+    <th id="sippasswd_header" align="left"> <%= ordered_list_header("devices.sippasswd", "sippasswd", "Password", @options) %> </th>
     <th id="calledid_header" align="left"> <%= ordered_list_header("devices.callerid", "cid", "CallerID", @options) %> </th>
     <th id="rules_header" align="center"><%= _('Rules') %></th>
     <th id="callflow_header" align="center"> <%= _('Call_Flow') %> </th>
@@ -86,7 +86,7 @@
         <td id="extension_<%= device.id %>"><%= device.extension %></td>
 
         <td id="name_<%= device.id %>"><%= device.name if device.show_username? %></td>
-        <td id="secret_<%= device.id %>"><%= device.secret if device.device_type != 'Virtual' %></td>
+        <td id="sippasswd_<%= device.id %>"><%= device.sippasswd if device.device_type != 'Virtual' %></td>
         <td id="calledid_<%= device.id %>"><%= h device.callerid %></td>
         <td id="rules_<%= device.id %>" align="center"><%= link_to b_rules, {:controller => :device_rules, :action => :list, :id => device.id}, {:id => "rules_link_"+device.id.to_s} %></td>
         <td id="callflow_<%= device.id %>" align="center"><%= link_to b_callflow, {:action => "callflow", :id => device.id}, {:id => "callflow_link_"+ device.id.to_s} %></td>

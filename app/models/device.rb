@@ -42,7 +42,7 @@ class Device < ActiveRecord::Base
   validates_presence_of :name, :message => _('Device_must_have_name')
   validates_presence_of :extension, :message => _('Device_must_have_extension')
   validates_uniqueness_of :extension, :message => _('Device_extension_must_be_unique')
-  #validates_uniqueness_of :username, :scope => [:username, :secret, :ipaddr, :port, :device_type], :message => _('Device_Username_Must_Be_Unique'), :if => :with_owner_credentials
+  #validates_uniqueness_of :username, :scope => [:username, :sippasswd, :ipaddr, :port, :device_type], :message => _('Device_Username_Must_Be_Unique'), :if => :with_owner_credentials
   validates_format_of :max_timeout, :with => /^[0-9]+$/, :message => _('Device_Call_Timeout_must_be_greater_than_or_equal_to_0')
   validates_numericality_of :port, :message => _("Port_must_be_number"), :if => Proc.new{ |o| not o.port.blank? }
 
@@ -128,13 +128,13 @@ class Device < ActiveRecord::Base
 =end
   def check_password
     unless self.server_device? or self.username.blank? or self.provider or ["dahdi", "virtual", "h323"].include?(self.device_type.downcase)
-      if self.name and self.secret.to_s == self.name.to_s
-        errors.add(:secret, _("Name_And_Secret_Cannot_Be_Equal"))
+      if self.name and self.sippasswd.to_s == self.name.to_s
+        errors.add(:sippasswd, _("Name_And_Secret_Cannot_Be_Equal"))
         return false
       end
 
-      if self.secret.to_s.length < 8 and Confline.get_value("Allow_short_passwords_in_devices").to_i == 0
-        errors.add(:secret, _("Password_is_too_short"))
+      if self.sippasswd.to_s.length < 8 and Confline.get_value("Allow_short_passwords_in_devices").to_i == 0
+        errors.add(:sippasswd, _("Password_is_too_short"))
         return false
       end
     end
@@ -213,8 +213,8 @@ class Device < ActiveRecord::Base
   end
 
   def random_password
-    if  (self.device_type.to_s == 'FAX' or self.device_type.to_s == 'Virtual') and self.secret.blank?
-      self.secret = ApplicationController::random_password(10).to_s
+    if  (self.device_type.to_s == 'FAX' or self.device_type.to_s == 'Virtual') and self.sippasswd.blank?
+      self.sippasswd = ApplicationController::random_password(10).to_s
     end
   end
 
